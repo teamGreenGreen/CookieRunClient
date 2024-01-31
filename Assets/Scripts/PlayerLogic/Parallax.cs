@@ -9,7 +9,7 @@ public class Parallax : MonoBehaviour
 
     private void Awake()
     {
-        player= GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
     void Start()
     {

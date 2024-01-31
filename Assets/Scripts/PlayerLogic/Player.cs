@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -18,10 +19,11 @@ public class Player : MonoBehaviour
 
     public float speed = 1.0f;
 
+    SpriteRenderer playerRender;
 
     void Start()
     {
-        
+        playerRender = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -52,12 +54,35 @@ public class Player : MonoBehaviour
             pos.y += velocity.y * Time.fixedDeltaTime;
             velocity.y += gravity * Time.fixedDeltaTime;
 
-            if (pos.y <= groundHeight)
+            if (velocity.y < 0)
             {
-                pos.y = groundHeight;
-                bGround = true;
-                bDoubleJump = false;
+                Vector2 rayOrigin = new Vector2(pos.x + (playerRender.size.x / 2), pos.y - (playerRender.size.y / 2));
+                Vector2 rayDirection = Vector2.down;
+                RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, playerRender.size.y / 2);
+                if (hit2D.collider != null)
+                {
+                    Ground ground = hit2D.collider.GetComponent<Ground>();
+                    if (ground != null)
+                    {
+                        groundHeight = ground.groundHeight;
+                        pos.y = groundHeight + (playerRender.size.y / 2);
+                        bGround = true;
+                        bDoubleJump = false;
+                    }
+                }
+                Debug.DrawRay(rayOrigin, rayDirection * playerRender.size.y / 2, Color.red);
             }
+        }
+        else
+        {
+            Vector2 rayOrigin = new Vector2(pos.x - (playerRender.size.x / 2), pos.y - (playerRender.size.y / 2));
+            Vector2 rayDirection = Vector2.down;
+            RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, 1);
+            if (hit2D.collider == null)
+            {
+                bGround = false;
+            }
+            Debug.DrawRay(rayOrigin, rayDirection * playerRender.size.y / 2, Color.yellow);
         }
 
         velocity.x += speed * Time.fixedDeltaTime;
