@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,11 +9,16 @@ public class Player : MonoBehaviour
 {
     public float gravity;
     public Vector2 velocity;
+
     public float jumpVelocity = 20.0f;
     public float groundHeight = 10.0f;
-    public bool bGround = false;
 
+    public bool bGround = false;
     public bool bDoubleJump = false;
+
+    public float speed = 1.0f;
+
+
     void Start()
     {
         
@@ -53,6 +59,8 @@ public class Player : MonoBehaviour
                 bDoubleJump = false;
             }
         }
+
+        velocity.x += speed * Time.fixedDeltaTime;
 
         transform.position = pos;
     }
