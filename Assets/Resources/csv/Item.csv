@@ -1,0 +1,17 @@
+﻿ID,Name,Prefab,ScorePoint,MoneyPoint
+0,NoJelly,Null,0,0
+1,SilverCoin,Prefabs/SilverCoin,4666,1
+2,GoldCoin,Prefabs/GoldCoin,6444,10
+101,JellyBean,Prefabs/JellyBean,18888,0
+201,JellyBearYellow,Prefabs/JellyBearYellow,40555,0
+202,JellyBearPink,Prefabs/JellyBearPink,58444,0
+203,JellyBearBig,Prefabs/JellyBearBig,122222,0
+301,JellyB,Prefabs/JellyB,8111,0
+302,JellyO,Prefabs/JellyO,8111,0
+303,JellyN,Prefabs/JellyN,8111,0
+304,JellyU,Prefabs/JellyU,8111,0
+305,JellyS,Prefabs/JellyS,8111,0
+306,JellyT,Prefabs/JellyT,8111,0
+307,JellyI,Prefabs/JellyI,8111,0
+308,JellyM,Prefabs/JellyM,8111,0
+309,JellyE,Prefabs/JellyE,8111,0
