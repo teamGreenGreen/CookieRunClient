@@ -10,8 +10,8 @@ using Unity.VisualScripting;
 
 public class CreateMap : MonoBehaviour
 {
-    static string LINE_SPLIT_RE = @"\r\n|\n\r|\n|\r";                   // ÁÙ ¹Ù²Ş ¹®ÀÚ¿­
-    static string SPLIT_RE = @",(?=(?:[^""]*""[^""]*"")*(?![^""]*""))"; // ½°Ç¥·Î ±¸ºĞµÈ °¢ ¿­À» ºĞÇÒÇÏ±â À§ÇØ »ç¿ë
+    static string LINE_SPLIT_RE = @"\r\n|\n\r|\n|\r";                   // ì¤„ ë°”ê¿ˆ ë¬¸ìì—´
+    static string SPLIT_RE = @",(?=(?:[^""]*""[^""]*"")*(?![^""]*""))"; // ì‰¼í‘œë¡œ êµ¬ë¶„ëœ ê° ì—´ì„ ë¶„í• í•˜ê¸° ìœ„í•´ ì‚¬ìš©
 
     [SerializeField]
     static Dictionary<int, GameObject> prefabInfo;
@@ -26,14 +26,14 @@ public class CreateMap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Item.csv¿¡¼­ ÀĞÀº Á¤º¸¸¦ ¹ÙÅÁÀ¸·Î ÇÁ¸®ÆÕ »ı¼º ¹× ÀúÀå
+        // Item.csvï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         prefabInfo = new Dictionary<int, GameObject>();
         string dir = "csv/Item";
         TextAsset itemData = Resources.Load(dir) as TextAsset;
 
         if(itemData == null )
         {
-            Debug.Log("Item.csvÀÇ °æ·Î°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+            Debug.Log("Item.csvï¿½ï¿½ ï¿½ï¿½Î°ï¿½ ï¿½ß¸ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
             return;
         }
 
@@ -65,7 +65,7 @@ public class CreateMap : MonoBehaviour
             Destroy(newObject);
         }
 
-        // ¸Ê Á¤º¸¸¦ ÀĞ¾î¼­ Æ¯Á¤ À§Ä¡¿¡ ÇÁ¸®ÆÕ ¹èÄ¡
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ğ¾î¼­ Æ¯ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡
         dir = "csv/SingleMap";
         TextAsset data = Resources.Load(dir) as TextAsset;
         var lines = Regex.Split(data.text, LINE_SPLIT_RE);
@@ -84,7 +84,7 @@ public class CreateMap : MonoBehaviour
             float yPos = Convert.ToSingle(jellyYPos[i]);
             int cnt = Convert.ToInt32(jellyAmount[i]);
 
-            // ID·Î gameObject Ã£±â
+            // IDï¿½ï¿½ gameObject Ã£ï¿½ï¿½
             if (prefabInfo.ContainsKey(id))
             {
                 GameObject newObject = prefabInfo[id];
@@ -99,12 +99,12 @@ public class CreateMap : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("SingleMap.csv ÆÄÀÏ¿¡ id ¹øÈ£¿Í ¸ÅÄªµÇ´Â °ÔÀÓ ¿ÀºêÁ§Æ® Á¤º¸°¡ ¾ø½À´Ï´Ù. id ¹øÈ£ : " + id);
+                    Debug.Log("SingleMap.csv íŒŒì¼ì— id ë²ˆí˜¸ì™€ ë§¤ì¹­ë˜ëŠ” ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤. id ë²ˆí˜¸ : " + id);
                 }
             }
             else
             {
-                Debug.Log("SingleMap.csv ÆÄÀÏ¿¡ ÇØ´ç id ¹øÈ£°¡ ¾ø½À´Ï´Ù. id ¹øÈ£ : " + id);
+                Debug.Log("SingleMap.csv íŒŒì¼ì— í•´ë‹¹ id ë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤. id ë²ˆí˜¸ : " + id);
             }
         }
     }
