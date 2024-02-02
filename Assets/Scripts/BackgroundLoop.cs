@@ -8,8 +8,8 @@ public class BackgroundLoop : MonoBehaviour
 
     private void Start()
     {
-        BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        width = collider.size.x;
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        width = rectTransform.rect.width;
     }
 
     private void Update()
