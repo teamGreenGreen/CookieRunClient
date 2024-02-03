@@ -5,12 +5,8 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public class Item : InGameObject
 {
-    [SerializeField]
-    private int id = 0;
-    [SerializeField]
-    private string itemName = "";
     [SerializeField]
     private int scorePoint = 0;
     [SerializeField]
@@ -21,16 +17,6 @@ public class Item : MonoBehaviour
     {
     }
 
-    public int ID
-    {
-        get { return id; }
-        set { id = value; }
-    }
-    public string Name
-    {
-        get { return itemName; }
-        set { itemName = value; }
-    }
     public int ScorePoint
     {
         get { return scorePoint; }
