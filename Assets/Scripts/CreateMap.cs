@@ -1,12 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions; 
 using UnityEngine;
 using UnityEditor;
-
-using static Item;
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using System.IO;
 
 public class CreateMap : MonoBehaviour
 {
@@ -14,88 +12,150 @@ public class CreateMap : MonoBehaviour
     static string SPLIT_RE = @",(?=(?:[^""]*""[^""]*"")*(?![^""]*""))"; // 쉼표로 구분된 각 열을 분할하기 위해 사용
 
     [SerializeField]
-    static Dictionary<int, GameObject> prefabInfo;
-    public enum EItemInfo
+    static Dictionary<int, GameObject> objects;
+    public enum EObjectInfo
     {
         ID,
         Name,
+        Type,
         ScorePoint,
         MoneyPoint,
+    }
+
+    // csv 파일 내용을 바탕으로 프리팹 생성
+    void CreatePrefabs()
+    {
+        string dir = "csv/Objects";
+        TextAsset itemData = Resources.Load(dir) as TextAsset;
+
+        if (itemData == null)
+        {
+            Debug.Log("Objects.csv의 경로가 잘못되었습니다.");
+            return;
+        }
+
+        string[] itemDataLines = Regex.Split(itemData.text, LINE_SPLIT_RE);
+        int maxIdx = itemDataLines.Length;
+
+        for (var i = 1; i < maxIdx - 1; i++)
+        {
+            var values = Regex.Split(itemDataLines[i], SPLIT_RE);
+
+            GameObject newObject = new GameObject(values[(int)EObjectInfo.Name]);
+
+            SpriteRenderer spriteRenderer = newObject.AddComponent<SpriteRenderer>();
+            Sprite sprite = Resources.Load<Sprite>("Objects/" + values[(int)EObjectInfo.Name]);
+            if (sprite == null)
+            {
+                Debug.Log("Objects/ 에 해당 이름을 가진 sprite가 존재하지 않습니다. sprite 이름 : " + values[(int)EObjectInfo.Name]);
+            }
+
+            spriteRenderer.sprite = sprite;
+            spriteRenderer.sortingOrder = 800;
+
+            if(values[(int)EObjectInfo.Type] == "Item")
+            {
+                Item itemComponent = newObject.AddComponent<Item>();
+                itemComponent.ID = Convert.ToInt32(values[(int)EObjectInfo.ID]);
+                itemComponent.Name = values[(int)EObjectInfo.Name];
+                itemComponent.Type = values[(int)EObjectInfo.Type];
+                itemComponent.ScorePoint = Convert.ToInt32(values[(int)EObjectInfo.ScorePoint]);
+                itemComponent.MoneyPoint = Convert.ToInt32(values[(int)EObjectInfo.MoneyPoint]);
+            }
+            else if(values[(int)EObjectInfo.Type] == "Land")
+            {
+                Item itemComponent = newObject.AddComponent<Item>();
+                itemComponent.ID = Convert.ToInt32(values[(int)EObjectInfo.ID]);
+                itemComponent.Name = values[(int)EObjectInfo.Name];
+                itemComponent.Type = values[(int)EObjectInfo.Type];
+            }
+
+            string prefabPath = "Assets/Resources/Obj/" + values[(int)EObjectInfo.Name] + ".prefab";
+            PrefabUtility.SaveAsPrefabAsset(newObject, prefabPath);
+
+            Destroy(newObject);
+        }
+    }
+
+    // Resources/Obj에서 프리팹 가져와 맵에 id와 gameobject 저장
+    void UpdateObjectInfo()
+    {
+        CreatePrefabs();
+
+        objects = new Dictionary<int, GameObject>();
+        string prefabDir = "Obj";
+
+        GameObject[] objectArray = Resources.LoadAll<GameObject>(prefabDir);
+
+        foreach (GameObject obj in objectArray)
+        {
+            InGameObject inGameObject = obj.GetComponent<InGameObject>();
+            if (inGameObject != null)
+            {
+                int id = inGameObject.ID;
+                objects.Add(id, obj);
+            }
+        }
+    }
+
+    void UpdateMapCSV()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        GameObject[] allGameObjects = currentScene.GetRootGameObjects();
+
+        string dir = "Assets/Resources/csv/SingleMap.csv";
+        StreamWriter writer = new StreamWriter(dir, false);
+        string format = "ID,X,Y";
+        writer.WriteLine(format);
+
+        foreach (GameObject rootObj in allGameObjects)
+        {
+            if (rootObj.name == "Map")
+            {
+                foreach (Transform childTransform in rootObj.transform)
+                {
+                    GameObject childObj = childTransform.gameObject;
+                    if (childObj != null)
+                    {
+                        InGameObject gameObject = childObj.GetComponent<InGameObject>();
+
+                        if (gameObject != null)
+                        {
+                            string position = gameObject.ID + "," + childTransform.position.x + "," + childTransform.position.y;
+                            writer.WriteLine(position);
+                        }
+                    }
+                }
+            }
+        }
+
+        writer.Close();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        // Item.csv���� ���� ������ �������� ������ ���� �� ����
-        prefabInfo = new Dictionary<int, GameObject>();
-        string dir = "csv/Item";
-        TextAsset itemData = Resources.Load(dir) as TextAsset;
+        UpdateObjectInfo();
+        // UpdateMapCSV();
 
-        if(itemData == null )
-        {
-            Debug.Log("Item.csv�� ��ΰ� �߸��Ǿ����ϴ�.");
-            return;
-        }
-
-        string[] itemDataLines = Regex.Split(itemData.text, LINE_SPLIT_RE);
-
-        for (var i = 1; i < itemDataLines.Length - 1; i++)
-        {
-            var values = Regex.Split(itemDataLines[i], SPLIT_RE);
-            if (Convert.ToInt32(values[(int)EItemInfo.ID]) == 0)
-                continue;
-
-            GameObject newObject = new GameObject(values[(int)EItemInfo.Name]);
-            
-            SpriteRenderer spriteRenderer = newObject.AddComponent<SpriteRenderer>();
-            Sprite sprite = Resources.Load<Sprite>("Item/" + values[(int)EItemInfo.Name]);
-            spriteRenderer.sprite = sprite;
-            spriteRenderer.sortingOrder = 10;
-
-            Item itemComponent = newObject.AddComponent<Item>();
-            itemComponent.ID = Convert.ToInt32(values[(int)EItemInfo.ID]);
-            itemComponent.Name = values[(int)EItemInfo.Name];
-            itemComponent.ScorePoint = Convert.ToInt32(values[(int)EItemInfo.ScorePoint]);
-            itemComponent.MoneyPoint = Convert.ToInt32(values[(int)EItemInfo.MoneyPoint]);
-
-            string prefabPath = "Assets/Prefabs/Item/" + values[(int)EItemInfo.Name] + ".prefab";
-            PrefabUtility.SaveAsPrefabAsset(newObject, prefabPath);
-
-            prefabInfo.Add(itemComponent.ID, newObject);
-            Destroy(newObject);
-        }
-
-        // �� ������ �о Ư�� ��ġ�� ������ ��ġ
-        dir = "csv/SingleMap";
+        string dir = "csv/SingleMap";
         TextAsset data = Resources.Load(dir) as TextAsset;
         var lines = Regex.Split(data.text, LINE_SPLIT_RE);
-        var header = Regex.Split(lines[0], SPLIT_RE);
 
-        var jellyTypes = Regex.Split(lines[1], SPLIT_RE);
-        var jellyYPos = Regex.Split(lines[2], SPLIT_RE);
-        var jellyAmount = Regex.Split(lines[3], SPLIT_RE);
-        var obstacle = Regex.Split(lines[4], SPLIT_RE);
-
-        float xPos = -5.0f;
-
-        for (int i = 1; i < jellyTypes.Length; i++)
+        for(int i = 1; i < lines.Length - 1; i++)
         {
-            int id = Convert.ToInt32(jellyTypes[i]);
-            float yPos = Convert.ToSingle(jellyYPos[i]);
-            int cnt = Convert.ToInt32(jellyAmount[i]);
+            var curInfo = Regex.Split(lines[i], SPLIT_RE);
+            int id = Convert.ToInt32(curInfo[0]);
+            float x = Convert.ToSingle(curInfo[1]);
+            float y = Convert.ToSingle(curInfo[2]);
 
-            // ID�� gameObject ã��
-            if (prefabInfo.ContainsKey(id))
+            if (objects.ContainsKey(id))
             {
-                GameObject newObject = prefabInfo[id];
+                GameObject newObject = objects[id];
                 if (newObject != null)
                 {
-                    for (int j = 0; j < cnt; j++)
-                    {
-                        Vector3 pos = new Vector3(xPos, yPos, 0);
-                        Instantiate(newObject, pos, Quaternion.identity);
-                        xPos += 0.8f;
-                    }
+                    Vector3 pos = new Vector3(x, y, 0);
+                    Instantiate(newObject, pos, Quaternion.identity);
                 }
                 else
                 {
