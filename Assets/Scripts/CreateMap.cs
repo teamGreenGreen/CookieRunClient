@@ -22,6 +22,49 @@ public class CreateMap : MonoBehaviour
         MoneyPoint,
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        //UpdateObjectInfo();
+        //// UpdateMapCSV();
+
+        //string dir = "csv/SingleMap";
+        //TextAsset data = Resources.Load(dir) as TextAsset;
+        //var lines = Regex.Split(data.text, LINE_SPLIT_RE);
+
+        //for(int i = 1; i < lines.Length - 1; i++)
+        //{
+        //    var curInfo = Regex.Split(lines[i], SPLIT_RE);
+        //    int id = Convert.ToInt32(curInfo[0]);
+        //    float x = Convert.ToSingle(curInfo[1]);
+        //    float y = Convert.ToSingle(curInfo[2]);
+
+        //    if (objects.ContainsKey(id))
+        //    {
+        //        GameObject newObject = objects[id];
+        //        if (newObject != null)
+        //        {
+        //            Vector3 pos = new Vector3(x, y, 0);
+        //            Instantiate(newObject, pos, Quaternion.identity);
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("SingleMap.csv 파일에 id 번호와 매칭되는 게임 오브젝트 정보가 없습니다. id 번호 : " + id);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("SingleMap.csv 파일에 해당 id 번호가 없습니다. id 번호 : " + id);
+        //    }
+        //}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     // csv 파일 내용을 바탕으로 프리팹 생성
     void CreatePrefabs()
     {
@@ -53,7 +96,7 @@ public class CreateMap : MonoBehaviour
             spriteRenderer.sprite = sprite;
             spriteRenderer.sortingOrder = 800;
 
-            if(values[(int)EObjectInfo.Type] == "Item")
+            if (values[(int)EObjectInfo.Type] == "Item")
             {
                 Item itemComponent = newObject.AddComponent<Item>();
                 itemComponent.ID = Convert.ToInt32(values[(int)EObjectInfo.ID]);
@@ -62,12 +105,15 @@ public class CreateMap : MonoBehaviour
                 itemComponent.ScorePoint = Convert.ToInt32(values[(int)EObjectInfo.ScorePoint]);
                 itemComponent.MoneyPoint = Convert.ToInt32(values[(int)EObjectInfo.MoneyPoint]);
             }
-            else if(values[(int)EObjectInfo.Type] == "Land")
+            else if (values[(int)EObjectInfo.Type] == "Land")
             {
-                Item itemComponent = newObject.AddComponent<Item>();
-                itemComponent.ID = Convert.ToInt32(values[(int)EObjectInfo.ID]);
-                itemComponent.Name = values[(int)EObjectInfo.Name];
-                itemComponent.Type = values[(int)EObjectInfo.Type];
+                InGameObject inGameObjComponent = newObject.AddComponent<InGameObject>();
+                inGameObjComponent.ID = Convert.ToInt32(values[(int)EObjectInfo.ID]);
+                inGameObjComponent.Name = values[(int)EObjectInfo.Name];
+                inGameObjComponent.Type = values[(int)EObjectInfo.Type];
+                newObject.AddComponent<Parallax>();
+                newObject.AddComponent<Ground>();
+                newObject.AddComponent<BoxCollider2D>();
             }
 
             string prefabPath = "Assets/Resources/Obj/" + values[(int)EObjectInfo.Name] + ".prefab";
@@ -130,48 +176,5 @@ public class CreateMap : MonoBehaviour
         }
 
         writer.Close();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        UpdateObjectInfo();
-        // UpdateMapCSV();
-
-        string dir = "csv/SingleMap";
-        TextAsset data = Resources.Load(dir) as TextAsset;
-        var lines = Regex.Split(data.text, LINE_SPLIT_RE);
-
-        for(int i = 1; i < lines.Length - 1; i++)
-        {
-            var curInfo = Regex.Split(lines[i], SPLIT_RE);
-            int id = Convert.ToInt32(curInfo[0]);
-            float x = Convert.ToSingle(curInfo[1]);
-            float y = Convert.ToSingle(curInfo[2]);
-
-            if (objects.ContainsKey(id))
-            {
-                GameObject newObject = objects[id];
-                if (newObject != null)
-                {
-                    Vector3 pos = new Vector3(x, y, 0);
-                    Instantiate(newObject, pos, Quaternion.identity);
-                }
-                else
-                {
-                    Debug.Log("SingleMap.csv 파일에 id 번호와 매칭되는 게임 오브젝트 정보가 없습니다. id 번호 : " + id);
-                }
-            }
-            else
-            {
-                Debug.Log("SingleMap.csv 파일에 해당 id 번호가 없습니다. id 번호 : " + id);
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
