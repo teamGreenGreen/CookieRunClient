@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
             {
                 bDoubleJump = true;
                 velocity.y = jumpVelocity * 0.8f;
-                Debug.Log("��������!");
+                Debug.Log("더블점프!");
             }
         }
     }
@@ -59,22 +59,30 @@ public class Player : MonoBehaviour
                 Vector2 rayOrigin = new Vector2(pos.x + (playerRender.size.x / 2), pos.y - (playerRender.size.y / 2));
                 Vector2 rayDirection = Vector2.down;
                 RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, playerRender.size.y / 2);
+
                 if (hit2D.collider != null)
                 {
+                    Debug.Log("히트다 히트");
                     Ground ground = hit2D.collider.GetComponent<Ground>();
                     if (ground != null)
                     {
-                        groundHeight = ground.groundHeight;
+                        groundHeight = hit2D.point.y;
                         pos.y = groundHeight + (playerRender.size.y / 2);
                         bGround = true;
                         bDoubleJump = false;
                     }
+                    else
+                    {
+                        Debug.Log("히트했는데, Ground 없다");
+                    }
                 }
+
                 Debug.DrawRay(rayOrigin, rayDirection * playerRender.size.y / 2, Color.red);
             }
         }
         else
         {
+            Debug.Log("떨어진다");
             Vector2 rayOrigin = new Vector2(pos.x - (playerRender.size.x / 2), pos.y - (playerRender.size.y / 2));
             Vector2 rayDirection = Vector2.down;
             RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, 1);
