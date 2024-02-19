@@ -21,9 +21,12 @@ public class Player : MonoBehaviour
 
     SpriteRenderer playerRender;
 
+    private Animator anim;
+
     void Start()
     {
         playerRender = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -44,6 +47,8 @@ public class Player : MonoBehaviour
                 Debug.Log("더블점프!");
             }
         }
+
+        UpdateAnimation();
     }
     private void FixedUpdate()
     {
@@ -66,7 +71,7 @@ public class Player : MonoBehaviour
                     Ground ground = hit2D.collider.GetComponent<Ground>();
                     if (ground != null)
                     {
-                        groundHeight = hit2D.point.y;
+                        groundHeight = ground.groundHeight;
                         pos.y = groundHeight + (playerRender.size.y / 2);
                         bGround = true;
                         bDoubleJump = false;
@@ -97,4 +102,23 @@ public class Player : MonoBehaviour
 
         transform.position = pos;
     }
+
+    private void UpdateAnimation()
+    {
+        if (!bGround && !bDoubleJump)
+        {
+            anim.SetBool("jumping", true);
+        }
+        else if (!bGround && bDoubleJump)
+        {
+            anim.SetBool("jumping", false);
+            anim.SetBool("d_jumping", true);
+        }
+        else
+        {
+            anim.SetBool("jumping", false);
+            anim.SetBool("d_jumping", false);
+        }
+    }
+
 }
