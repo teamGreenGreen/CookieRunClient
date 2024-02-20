@@ -11,6 +11,8 @@ public class Item : InGameObject
     private int scorePoint = 0;
     [SerializeField]
     private int moneyPoint = 0;
+    [SerializeField]
+    private bool isAlphabet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,12 @@ public class Item : InGameObject
         get { return moneyPoint; }
         set { moneyPoint = value; }
     }
+    public bool Alphabet
+    {
+        get { return isAlphabet; }
+        set { isAlphabet = value; }
+    }
+
     // Update is called once per frame
     void Update()
     {
