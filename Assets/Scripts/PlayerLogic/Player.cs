@@ -32,10 +32,10 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         if (cookieName == "")
         {
-            cookieName = "Brave_Cookie_Controller";
+            cookieName = "Brave";
         }
         // 동적으로 애니메이션 할당. 씬이 넘어올 때 cookieName에 해당하는 컨트롤러 명을 넘겨줘야 한다. 만약 안넘어오면 용감한 쿠키로 됨
-        anim.runtimeAnimatorController = (RuntimeAnimatorController)Instantiate(Resources.Load($"Cookie\\Animation\\{cookieName}", typeof(RuntimeAnimatorController)));
+        anim.runtimeAnimatorController = (RuntimeAnimatorController)Instantiate(Resources.Load($"Cookie\\Animation\\{cookieName}_Cookie_Controller", typeof(RuntimeAnimatorController)));
     }
     void Update()
     {
