@@ -140,7 +140,21 @@ public class Player : MonoBehaviour
 
         transform.position = pos;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Item item = collision.gameObject.GetComponent<Item>();
+        if (item != null)
+        {
+            // BONUSTIME이면
+            if (item.Alphabet)
+                GameManager.AddAlphabet(item.name);
 
+            GameManager.AddScore(item.ScorePoint);
+            GameManager.AddCoin(item.MoneyPoint);
+
+            Destroy(collision.gameObject);
+        }
+    }
     private void UpdateAnimation()
     {
         if (!bGround && !bDoubleJump)
@@ -166,5 +180,4 @@ public class Player : MonoBehaviour
             anim.SetBool("sliding", false);
         }
     }
-
 }
