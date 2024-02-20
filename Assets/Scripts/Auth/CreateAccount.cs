@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Text.RegularExpressions;
 using TMPro;
@@ -26,35 +27,54 @@ public class CreateAccount : MonoBehaviour
     [SerializeField]
     private GameObject notificationUI;
 
-    public void CheckInput()
+    public void OnClick()
     {
-        if (string.IsNullOrEmpty(inputEmail.text))
-        {
-            textEmailWarning.text = "이메일을 입력해주세요.";
-        }
-        else if(!IsVaildEmail(inputEmail.text))
-        {
-            textEmailWarning.text = "올바른 이메일 형식이 아닙니다.";
-        }
-        else
-        {
-            textEmailWarning.text = "";
-        }
+        bool isValidEmail = false, isValidPassword = false;
 
+        isValidEmail = IsValidEmail();
+        isValidPassword = IsValidPassword();
+
+        if (isValidEmail && isValidPassword)
+        {
+            StartCoroutine(Create());
+        }
+    }
+
+    private bool IsValidPassword()
+    {
         if (string.IsNullOrEmpty(inputPassword.text))
         {
             textPasswordWarning.text = "비밀번호를 입력해주세요.";
-            return;
+            return false;
         }
         else
         {
             textPasswordWarning.text = "";
+            return true;
         }
 
-        StartCoroutine(Login());
     }
 
-    private bool IsVaildEmail(string email)
+    private bool IsValidEmail()
+    {
+        if (string.IsNullOrEmpty(inputEmail.text))
+        {
+            textEmailWarning.text = "이메일을 입력해주세요.";
+            return false;
+        }
+        else if (!IsVaildEmailFormat(inputEmail.text))
+        {
+            textEmailWarning.text = "올바른 이메일 형식이 아닙니다.";
+            return false;
+        }
+        else
+        {
+            textEmailWarning.text = "";
+            return true;
+        }
+    }
+
+    private bool IsVaildEmailFormat(string email)
     {
         bool valid = Regex.IsMatch(email, @"[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?");
 
@@ -63,7 +83,7 @@ public class CreateAccount : MonoBehaviour
 
     public enum EErrorCode
     {
-        None
+        None,
     }
 
     public class ErrorCodeDTO
@@ -83,7 +103,8 @@ public class CreateAccount : MonoBehaviour
     {
     }
 
-    IEnumerator Login()
+
+    public IEnumerator Create()
     {
         string url = "https://localhost:7034/Account/Create";
 
@@ -93,11 +114,12 @@ public class CreateAccount : MonoBehaviour
             Password = inputPassword.text
         };
 
-        string jsonRequest = JsonUtility.ToJson(request);
-        byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonRequest); // JSON 문자열을 바이트 배열로 변환
+        string json = JsonUtility.ToJson(request);
+        byte[] jsonBytes = Encoding.UTF8.GetBytes(json); // JSON 문자열을 바이트 배열로 변환
 
         UnityWebRequest www = new UnityWebRequest(url, "POST");
         www.uploadHandler = new UploadHandlerRaw(jsonBytes);
+        www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         www.SetRequestHeader("Content-Type", "application/json");
 
         yield return www.SendWebRequest();
@@ -111,7 +133,7 @@ public class CreateAccount : MonoBehaviour
             string jsonResponse = www.downloadHandler.text;
             CreateAccountRes response = JsonUtility.FromJson<CreateAccountRes>(jsonResponse);
 
-            Debug.Log("Login Response: " + response);
+            Debug.Log("Login Response: " + response.Result);
         }
     }
 }
