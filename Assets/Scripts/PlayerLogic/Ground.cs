@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
+    SpriteRenderer groundRender;
     public float groundHeight;
     void Start()
     {
-        groundHeight = transform.position.y + (transform.localScale.y / 2);
-        Debug.Log(groundHeight);
+        groundRender = GetComponent<SpriteRenderer>();
+        groundHeight = transform.position.y + (groundRender.size.y / 2);
     }
 
     void Update()

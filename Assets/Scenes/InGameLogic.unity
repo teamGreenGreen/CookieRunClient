@@ -123,32 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &835794724 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 650676248362833390, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
-  m_PrefabInstance: {fileID: 1956645930}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &835794730
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835794724}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: cd24ff09446d9b34aa3d838283885a67, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &896914106
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +354,10 @@ PrefabInstance:
       value: GroundPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 4016773393424555298, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016773393424555298, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
       propertyPath: m_Size.x
       value: 18.777218
       objectReference: {fileID: 0}
@@ -428,20 +406,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801627636035571914, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8801627636035571914, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 18.777218
       objectReference: {fileID: 0}
     - target: {fileID: 8801627636035571914, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.09375
+      value: 1.458333
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 650676248362833390, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 835794730}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1336c660d67b2b5469b36974b8dcb253, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

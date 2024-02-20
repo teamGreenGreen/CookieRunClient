@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     public bool bGround = false;
     public bool bDoubleJump = false;
+    public bool bSliding = false;
 
     public float speed = 1.0f;
 
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                bSliding = false;
                 bGround = false;
                 velocity.y = jumpVelocity;
             }
@@ -46,6 +48,14 @@ public class Player : MonoBehaviour
                 velocity.y = jumpVelocity * 0.8f;
                 Debug.Log("더블점프!");
             }
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            bSliding = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            bSliding = false;
         }
 
         UpdateAnimation();
@@ -61,7 +71,7 @@ public class Player : MonoBehaviour
 
             if (velocity.y < 0)
             {
-                Vector2 rayOrigin = new Vector2(pos.x + (playerRender.size.x / 2), pos.y - (playerRender.size.y / 2));
+                Vector2 rayOrigin = new Vector2(pos.x + (playerRender.size.x / 2), pos.y);
                 Vector2 rayDirection = Vector2.down;
                 RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, playerRender.size.y / 2);
 
@@ -72,7 +82,7 @@ public class Player : MonoBehaviour
                     if (ground != null)
                     {
                         groundHeight = ground.groundHeight;
-                        pos.y = groundHeight + (playerRender.size.y / 2);
+                        pos.y = groundHeight;
                         bGround = true;
                         bDoubleJump = false;
                     }
@@ -87,13 +97,14 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("떨어진다");
-            Vector2 rayOrigin = new Vector2(pos.x - (playerRender.size.x / 2), pos.y - (playerRender.size.y / 2));
+            Vector2 rayOrigin = new Vector2(pos.x - (playerRender.size.x / 2), pos.y);
             Vector2 rayDirection = Vector2.down;
             RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, 1);
             if (hit2D.collider == null)
             {
+                Debug.Log("떨어진다");
                 bGround = false;
+                bSliding = false;
             }
             Debug.DrawRay(rayOrigin, rayDirection * playerRender.size.y / 2, Color.yellow);
         }
@@ -108,16 +119,24 @@ public class Player : MonoBehaviour
         if (!bGround && !bDoubleJump)
         {
             anim.SetBool("jumping", true);
+            anim.SetBool("sliding", false);
         }
         else if (!bGround && bDoubleJump)
         {
             anim.SetBool("jumping", false);
             anim.SetBool("d_jumping", true);
         }
+        else if (bGround && bSliding)
+        {
+            anim.SetBool("jumping", false);
+            anim.SetBool("d_jumping", false);
+            anim.SetBool("sliding", true);
+        }
         else
         {
             anim.SetBool("jumping", false);
             anim.SetBool("d_jumping", false);
+            anim.SetBool("sliding", false);
         }
     }
 
