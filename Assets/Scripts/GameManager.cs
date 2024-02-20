@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     private static bool[] alphabets = new bool[9];
     private static Texture2D[] bonusTimeTextures = new Texture2D[9];
 
-
     public enum EAlphabet
     {
         JellyB,
@@ -31,7 +30,6 @@ public class GameManager : MonoBehaviour
         JellyM,
         JellyE
     }
-
 
     public static GameManager Instance
     {
