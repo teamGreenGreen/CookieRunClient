@@ -52,13 +52,14 @@ public class Account : MonoBehaviour
 
         if (isValidEmail && isValidPassword)
         {
-            LoginAccountReq request = new LoginAccountReq
-            {
+            LoginAccountRes res = await HttpManager.Instance.Post<LoginAccountRes>("Account/Login", new {
                 Email = inputEmail.text,
                 Password = inputPassword.text
-            };
-           
-            LoginAccountRes res = await HttpManager.Instance.Post<LoginAccountReq, LoginAccountRes>("Account/Login", request);
+            });
+
+            Debug.Log(res.UserId);
+            Debug.Log(res.AuthToken);
+
             return;
         }
     }

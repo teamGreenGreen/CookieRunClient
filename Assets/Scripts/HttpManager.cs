@@ -46,7 +46,7 @@ public class HttpManager : MonoBehaviour
 
     // 서버에 post 요청을 보내는 함수
     // 요청, 응답의 타입을 지정해서 사용
-    public async UniTask<TResponse> Post<TRequest, TResponse>(string path, TRequest dto)
+    public async UniTask<TResponse> Post<TResponse>(string path, object dto)
     {
         string url = ServerURL + '/' + path;
 
