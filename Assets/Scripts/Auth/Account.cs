@@ -57,7 +57,7 @@ public class Account : MonoBehaviour
                 Email = inputEmail.text,
                 Password = inputPassword.text
             };
-
+           
             LoginAccountRes res = await HttpManager.Instance.Post<LoginAccountReq, LoginAccountRes>("Account/Login", request);
             return;
         }
