@@ -1,3 +1,7 @@
+using Assets.Scripts.DTO;
+using Assets.Scripts.DTO.AuthServer;
+using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +18,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using static System.Net.WebRequestMethods;
 
-public class CreateAccount : MonoBehaviour
+public class Account : MonoBehaviour
 {
     [SerializeField]
     private TMP_InputField inputEmail;
@@ -27,7 +31,19 @@ public class CreateAccount : MonoBehaviour
     [SerializeField]
     private GameObject notificationUI;
 
-    public void OnClick()
+    public class LoginAccountReq
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+
+    public class LoginAccountRes : ErrorCodeDTO
+    {
+        public Int64 UserId { get; set; }
+        public string AuthToken { get; set; }
+    }
+
+    public async void OnClick()
     {
         bool isValidEmail = false, isValidPassword = false;
 
@@ -36,7 +52,14 @@ public class CreateAccount : MonoBehaviour
 
         if (isValidEmail && isValidPassword)
         {
-            StartCoroutine(Create());
+            LoginAccountReq request = new LoginAccountReq
+            {
+                Email = inputEmail.text,
+                Password = inputPassword.text
+            };
+
+            LoginAccountRes res = await HttpManager.Instance.Post<LoginAccountReq, LoginAccountRes>("Account/Login", request);
+            return;
         }
     }
 
@@ -79,61 +102,5 @@ public class CreateAccount : MonoBehaviour
         bool valid = Regex.IsMatch(email, @"[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?");
 
         return valid;
-    }
-
-    public enum EErrorCode
-    {
-        None,
-    }
-
-    public class ErrorCodeDTO
-    {
-        public EErrorCode Result { get; set; } = EErrorCode.None;
-    }
-
-    [Serializable]
-    public class CreateAccountReq
-    {
-        public string Email;
-        public string Password;
-    }
-
-
-    public class CreateAccountRes : ErrorCodeDTO
-    {
-    }
-
-
-    public IEnumerator Create()
-    {
-        string url = "https://localhost:7034/Account/Create";
-
-        CreateAccountReq request = new CreateAccountReq
-        {
-            Email = inputEmail.text,
-            Password = inputPassword.text
-        };
-
-        string json = JsonUtility.ToJson(request);
-        byte[] jsonBytes = Encoding.UTF8.GetBytes(json); // JSON 문자열을 바이트 배열로 변환
-
-        UnityWebRequest www = new UnityWebRequest(url, "POST");
-        www.uploadHandler = new UploadHandlerRaw(jsonBytes);
-        www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
-        www.SetRequestHeader("Content-Type", "application/json");
-
-        yield return www.SendWebRequest();
-
-        if (www.isNetworkError || www.isHttpError)
-        {
-            Debug.LogError("HTTP Error: " + www.error);
-        }
-        else
-        {
-            string jsonResponse = www.downloadHandler.text;
-            CreateAccountRes response = JsonUtility.FromJson<CreateAccountRes>(jsonResponse);
-
-            Debug.Log("Login Response: " + response.Result);
-        }
     }
 }
