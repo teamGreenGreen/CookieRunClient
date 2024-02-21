@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,9 @@ public class Player : MonoBehaviour
 
     public float speed = 1.0f;
 
+    public float hp { get; set; }
+    public float maxHp { get; set; }
+
     SpriteRenderer playerRender;
 
     private Animator anim;
@@ -36,9 +40,21 @@ public class Player : MonoBehaviour
         }
         // 동적으로 애니메이션 할당. 씬이 넘어올 때 cookieName에 해당하는 컨트롤러 명을 넘겨줘야 한다. 만약 안넘어오면 용감한 쿠키로 됨
         anim.runtimeAnimatorController = (RuntimeAnimatorController)Instantiate(Resources.Load($"Cookie\\Animation\\{cookieName}_Cookie_Controller", typeof(RuntimeAnimatorController)));
+
+        hp = 10.0f;
+        maxHp = 10.0f;
     }
     void Update()
     {
+        // 플레이어가 죽으면
+        if (hp <= 0.0f)
+        {
+            // 현재 플레이어 hp 값만 체크하기 때문에 0.0f 밑이면 계속 해당 함수 호출됨
+            // 애니메이션 완성되면 애니메이션이 끝날 때 한 번만 호출되어야 함
+            // 그리고 플레이어가 죽었는지 아닌지에 따라 아래의 update 내용을 호출할지 안할지를 결정해 줄 수 있는 bool값 필요해보임
+            GameManager.OpenLoadingCanvas();
+        }
+
         if (bGround)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -80,20 +96,13 @@ public class Player : MonoBehaviour
             if (velocity.y < 0)
             {
                 Vector2 rayDirection = Vector2.down;
-                Vector2 rayOrigin1 = new Vector2(pos.x + (playerRender.size.x / 2), pos.y);
-                RaycastHit2D hit2D1 = Physics2D.Raycast(rayOrigin1, rayDirection, 0.1f);
-                Vector2 rayOrigin2 = new Vector2(pos.x, pos.y);
-                RaycastHit2D hit2D2 = Physics2D.Raycast(rayOrigin2, rayDirection, 0.1f);
-                Vector2 rayOrigin3 = new Vector2(pos.x - (playerRender.size.x / 2), pos.y);
-                RaycastHit2D hit2D3 = Physics2D.Raycast(rayOrigin3, rayDirection, 0.1f);
+                Vector2 rayOrigin = new Vector2(pos.x, pos.y);
+                int layerMask = 1 << LayerMask.NameToLayer("Ground");
+                RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, 0.1f, layerMask);
 
-
-                if (hit2D1.collider != null || hit2D3.collider != null || hit2D3.collider != null)
+                if (hit2D.collider != null)
                 {
-                    Ground ground
-                        = hit2D1.collider != null ? hit2D1.collider.GetComponent<Ground>()
-                        : hit2D2.collider != null ? hit2D2.collider.GetComponent<Ground>()
-                        : hit2D3.collider.GetComponent<Ground>();
+                    Ground ground = hit2D.collider.GetComponent<Ground>();
 
                     if (ground != null)
                     {
@@ -109,35 +118,27 @@ public class Player : MonoBehaviour
                     }
                 }
 
-                Debug.DrawRay(rayOrigin1, rayDirection * 0.1f, Color.red);
-                Debug.DrawRay(rayOrigin2, rayDirection * 0.1f, Color.red);
-                Debug.DrawRay(rayOrigin3, rayDirection * 0.1f, Color.red);
+                Debug.DrawRay(rayOrigin, rayDirection * 0.1f, Color.red);
             }
         }
         else
         {
             Vector2 rayDirection = Vector2.down;
-            Vector2 rayOrigin1 = new Vector2(pos.x - (playerRender.size.x / 2), pos.y);
-            RaycastHit2D hit2D1 = Physics2D.Raycast(rayOrigin1, rayDirection, 0.1f);
-            Vector2 rayOrigin2 = new Vector2(pos.x, pos.y);
-            RaycastHit2D hit2D2 = Physics2D.Raycast(rayOrigin2, rayDirection, 0.1f);
-            Vector2 rayOrigin3 = new Vector2(pos.x + (playerRender.size.x / 2), pos.y);
-            RaycastHit2D hit2D3 = Physics2D.Raycast(rayOrigin3, rayDirection, 0.1f);
+            Vector2 rayOrigin = new Vector2(pos.x, pos.y);
+            int layerMask = 1 << LayerMask.NameToLayer("Ground");
+            RaycastHit2D hit2D = Physics2D.Raycast(rayOrigin, rayDirection, 0.1f, layerMask);
 
-            if (hit2D1.collider == null && hit2D2.collider == null && hit2D3.collider == null)
+            if (hit2D.collider == null)
             {
                 Debug.Log("떨어진다");
                 bGround = false;
                 bSliding = false;
             }
 
-            Debug.DrawRay(rayOrigin1, rayDirection *0.1f, Color.yellow);
-            Debug.DrawRay(rayOrigin2, rayDirection * 0.1f, Color.yellow);
-            Debug.DrawRay(rayOrigin3, rayDirection * 0.1f, Color.yellow);
+            Debug.DrawRay(rayOrigin, rayDirection * 0.1f, Color.yellow);
         }
 
         velocity.x += speed * Time.fixedDeltaTime;
-
         transform.position = pos;
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -155,6 +156,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
     private void UpdateAnimation()
     {
         if (!bGround && !bDoubleJump)

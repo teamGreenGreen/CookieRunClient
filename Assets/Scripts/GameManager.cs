@@ -17,7 +17,11 @@ public class GameManager : MonoBehaviour
     private static int score = 0;
     private static bool[] alphabets = new bool[9];
     private static Texture2D[] bonusTimeTextures = new Texture2D[9];
+    private Player player = null;
+    private float elapsedTime = 0.0f;
 
+    [SerializeField]
+    private Image HPBar;
 
     public enum EAlphabet
     {
@@ -31,7 +35,6 @@ public class GameManager : MonoBehaviour
         JellyM,
         JellyE
     }
-
 
     public static GameManager Instance
     {
@@ -62,6 +65,30 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Update()
+    { 
+        if(player == null)
+        {
+            player = GameObject.Find("Player").GetComponent<Player>();
+        }
+        else
+        {
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime > 1.0f && player.hp > 0.0f && HPBar != null)
+            {
+                elapsedTime -= 1.0f;
+                PlayerTakeDamage(0.1f);
+            }
+        }
+    }
+
+    public void PlayerTakeDamage(float value)
+    {
+        player.hp -= value;
+        HPBar.fillAmount = player.hp / (float)player.maxHp;
+    }
+
     public void TogglePause()
     {
         isPaused = !isPaused;
@@ -83,7 +110,7 @@ public class GameManager : MonoBehaviour
 
     private void ResumeGame()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; 
     }
 
     public static void AddAlphabet(string name)
@@ -158,6 +185,16 @@ public class GameManager : MonoBehaviour
         if (curMoneyText)
         {
             curMoneyText.text = money.ToString("N0");
+        }
+    }
+
+    public static void OpenLoadingCanvas()
+    {
+        OpenCanvas canvas = GameObject.Find("LoadingCanvasController").GetComponent<OpenCanvas>();
+
+        if(canvas != null)
+        {
+            canvas.OnClick();
         }
     }
 }
