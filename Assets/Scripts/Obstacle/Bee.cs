@@ -13,10 +13,4 @@ public class Bee : Obstacle
     {
         base.Move(dir);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

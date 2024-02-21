@@ -79,7 +79,6 @@ public class GameManager : MonoBehaviour
             {
                 elapsedTime -= 1.0f;
                 PlayerTakeDamage(0.1f);
-                HPBar.fillAmount = player.hp / (float)player.maxHp;
             }
         }
     }
@@ -87,6 +86,7 @@ public class GameManager : MonoBehaviour
     public void PlayerTakeDamage(float value)
     {
         player.hp -= value;
+        HPBar.fillAmount = player.hp / (float)player.maxHp;
     }
 
     public void TogglePause()
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
 
     private void ResumeGame()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; 
     }
 
     public static void AddAlphabet(string name)
@@ -185,6 +185,16 @@ public class GameManager : MonoBehaviour
         if (curMoneyText)
         {
             curMoneyText.text = money.ToString("N0");
+        }
+    }
+
+    public static void OpenLoadingCanvas()
+    {
+        OpenCanvas canvas = GameObject.Find("LoadingCanvasController").GetComponent<OpenCanvas>();
+
+        if(canvas != null)
+        {
+            canvas.OnClick();
         }
     }
 }
