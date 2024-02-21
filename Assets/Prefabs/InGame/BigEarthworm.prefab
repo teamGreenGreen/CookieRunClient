@@ -173,4 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: down
   depth: 1
+  damage: 0.5
   speed: 2
