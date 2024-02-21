@@ -23,6 +23,7 @@ public class LoadSceneManager : MonoBehaviour
     public void SceneChange()
     {
         sceneNumber++;
+
         SceneManager.LoadScene(sceneNumber);
     }
 }
