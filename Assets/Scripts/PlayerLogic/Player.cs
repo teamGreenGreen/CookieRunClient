@@ -46,6 +46,15 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        // 플레이어가 죽으면
+        if (hp <= 0.0f)
+        {
+            // 현재 플레이어 hp 값만 체크하기 때문에 0.0f 밑이면 계속 해당 함수 호출됨
+            // 애니메이션 완성되면 애니메이션이 끝날 때 한 번만 호출되어야 함
+            // 그리고 플레이어가 죽었는지 아닌지에 따라 아래의 update 내용을 호출할지 안할지를 결정해 줄 수 있는 bool값 필요해보임
+            GameManager.OpenLoadingCanvas();
+        }
+
         if (bGround)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -147,6 +156,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
     private void UpdateAnimation()
     {
         if (!bGround && !bDoubleJump)

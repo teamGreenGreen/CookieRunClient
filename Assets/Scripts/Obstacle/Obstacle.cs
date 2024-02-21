@@ -28,8 +28,22 @@ public class Obstacle : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
+        if(player != null) 
+        {
+            Vector3 playerPos = player.transform.position;
+            Vector3 myPos = transform.position;
+
+            // 내 위치에서 플레이어 위치를 뺀다.
+            float gapXPos = myPos.x - playerPos.x;
+
+            // 해당 값이 -10보다 작으면 destroy 한다.
+            if (gapXPos < -10)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
    
     void FixedUpdate()
