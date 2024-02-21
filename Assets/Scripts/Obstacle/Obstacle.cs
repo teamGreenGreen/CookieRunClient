@@ -10,13 +10,16 @@ public class Obstacle : MonoBehaviour
     [SerializeField]
     protected float depth = 1.0f;
     protected Player player;
+    protected GameManager gameManager;
+    [SerializeField]
     protected float damage = 0.0f;
     [SerializeField]
-    protected float speed = 0.0f; 
+    protected float speed = 0.0f;
 
     protected void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Start is called before the first frame update
@@ -58,7 +61,7 @@ public class Obstacle : MonoBehaviour
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            // PlayerHP 감소
+            gameManager.PlayerTakeDamage(damage);
         }
     }
 }

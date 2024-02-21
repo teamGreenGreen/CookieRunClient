@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void PlayerTakeDamage(float value)
+    public void PlayerTakeDamage(float value)
     {
         player.hp -= value;
     }
