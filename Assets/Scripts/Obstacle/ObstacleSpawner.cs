@@ -9,8 +9,9 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField]
     private int curObstacleNum = 0;
     [SerializeField]
-    private int count = 0;
-
+    private float addXPos = 0;
+    [SerializeField]
+    private float yPos = 0;
     [SerializeField]
     public List<GameObject> obstaclePrefabs = new List<GameObject>();
 
@@ -31,15 +32,15 @@ public class ObstacleSpawner : MonoBehaviour
 
         if (player != null)
         {
-            Vector3 playerPos = player.transform.position;
-
             if (curObstacleNum > obstaclePrefabs.Count)
                 return;
 
-            if(curObstacleNum == 0)
-                Instantiate(obstaclePrefabs[curObstacleNum], playerPos + new Vector3(10, 0, 0), Quaternion.identity);
-            else
-                Instantiate(obstaclePrefabs[curObstacleNum], playerPos + new Vector3(10, 10, 0), Quaternion.identity);
+            Vector3 curPos = transform.position;
+            curPos.x += addXPos;
+            curPos.y = yPos;
+            curPos.z = -10.0f;
+
+            Instantiate(obstaclePrefabs[curObstacleNum], curPos, Quaternion.identity);
         }
     }
 }

@@ -37,6 +37,7 @@ public class Obstacle : MonoBehaviour
     protected void Move(string dir)
     {
         if (dir == null) return;
+
         float realVelocity = player.speed / depth;
         Vector2 pos = transform.position;
 
@@ -52,7 +53,7 @@ public class Obstacle : MonoBehaviour
         transform.position = pos;
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.gameObject.GetComponent<Player>();
         if (player != null)

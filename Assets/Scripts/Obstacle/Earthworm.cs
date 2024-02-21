@@ -6,11 +6,6 @@ public class Earthworm : Obstacle
 {
     bool isGround = false;
 
-    private void Awake()
-    {
-        base.Awake();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +24,16 @@ public class Earthworm : Obstacle
         }
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnTriggerEnter2D(collision);
+        Player player = collision.gameObject.GetComponent<Player>();
+        if(player != null)
+        {
+            base.OnTriggerEnter2D(collision);
+        }
+
         Ground ground = collision.gameObject.GetComponent<Ground>();
-        if (ground != null)
+        if (ground != null && !isGround)
         {
             isGround = true;
             gameObject.AddComponent<Parallax>();

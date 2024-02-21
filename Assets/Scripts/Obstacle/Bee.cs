@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Bee : Obstacle
 {
-    private void Awake()
-    {
-        base.Awake();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     void FixedUpdate()
@@ -24,10 +18,5 @@ public class Bee : Obstacle
     void Update()
     {
         
-    }
-
-    protected void OnTriggerEnter2D(Collider2D collision)
-    {
-        base.OnTriggerEnter2D(collision);
     }
 }
