@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5565641157434581613}
   - component: {fileID: 3905320370554816776}
   m_Layer: 5
-  m_Name: Count
+  m_Name: Item_Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 1408961621939855819}
   - component: {fileID: 2901483375686081164}
   m_Layer: 5
-  m_Name: Item_Count
+  m_Name: Day_Count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
