@@ -49,6 +49,9 @@ public class Login : MonoBehaviour
 
             if (res.Result == EErrorCode.None)
             {
+                // 연결될 서버의 URL을 게임서버의 URL로 교체
+                HttpManager.Instance.ServerURL = HttpManager.GAME_SERVER_URL; 
+                // 인증 완료 후 씬 변경
                 loadSceneManager.SceneChange();
             }
             else

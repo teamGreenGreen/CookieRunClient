@@ -13,7 +13,10 @@ using Cysharp.Threading.Tasks;
 public class HttpManager : MonoBehaviour
 {
     private static HttpManager instance;
-    public string ServerURL { get; set; } = "https://localhost:7034";
+    public const string GAME_SERVER_URL = "https://localhost:7034";
+    public const string AUTH_SERVER_URL = "https://localhost:7270";
+
+    public string ServerURL { get; set; } = AUTH_SERVER_URL;
 
     public static HttpManager Instance
     {
