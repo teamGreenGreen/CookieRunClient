@@ -65,6 +65,19 @@ public class Login : MonoBehaviour
         }
     }
 
+    public async void LoginGameServer(Int64 userId, string authToken)
+    {
+        // TODO : 닉네임 설정 기능 추가
+        GameServerLoginRes res = await HttpManager.Instance.Post<GameServerLoginRes>("Login", new
+        {
+            UserId = userId,
+            AuthToken = authToken,
+            UserName = "test"
+        });
+
+        HttpManager.Instance.SetAuthInfo(res.Uid, res.SessionId);
+    }
+
     private bool IsValidPassword()
     {
         if (string.IsNullOrEmpty(inputPassword.text))

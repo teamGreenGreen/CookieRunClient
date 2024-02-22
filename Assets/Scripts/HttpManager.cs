@@ -18,6 +18,9 @@ public class HttpManager : MonoBehaviour
 
     public string ServerURL { get; set; } = AUTH_SERVER_URL;
 
+    private Int64 uid;
+    private string sessionId;
+
     public static HttpManager Instance
     {
         get
@@ -62,7 +65,12 @@ public class HttpManager : MonoBehaviour
         // 응답 데이터를 메모리 버퍼에 저장하는 다운로드 핸들러를 설정
         req.downloadHandler = new DownloadHandlerBuffer();
         // 전송 데이터가 JSON 형식임을 서버에 알려줌
+
+        // 헤더 설정
         req.SetRequestHeader("Content-Type", "application/json");
+        // 인증 정보 설정
+        req.SetRequestHeader("Uid", uid.ToString());
+        req.SetRequestHeader("Authorization", sessionId);
 
         await req.SendWebRequest();
 
@@ -80,6 +88,12 @@ public class HttpManager : MonoBehaviour
         }
 
         return default(TResponse);
+    }
+
+    public void SetAuthInfo(Int64 uid, string sessionId)
+    {
+        this.uid = uid;
+        this.sessionId = sessionId;
     }
 
 }
