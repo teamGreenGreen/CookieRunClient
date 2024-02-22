@@ -10648,6 +10648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9f7ce96589b274087a91a46725f7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseSpeed: 0.1
   HPBar: {fileID: 813889882}
 --- !u!4 &892824396
 Transform:

@@ -38,7 +38,7 @@ public class ObstacleSpawner : MonoBehaviour
             Vector3 curPos = transform.position;
             curPos.x += addXPos;
             curPos.y = yPos;
-            curPos.z = -10.0f;
+            curPos.z = -1.0f;
 
             Instantiate(obstaclePrefabs[curObstacleNum], curPos, Quaternion.identity);
         }
