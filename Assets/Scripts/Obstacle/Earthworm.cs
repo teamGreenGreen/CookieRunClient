@@ -5,10 +5,12 @@ using UnityEngine;
 public class Earthworm : Obstacle
 {
     bool isGround = false;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -28,9 +30,10 @@ public class Earthworm : Obstacle
         }
 
         Ground ground = collision.gameObject.GetComponent<Ground>();
-        if (ground != null && !isGround)
+        if (ground != null && !isGround && animator != null)
         {
             isGround = true;
+            animator.SetBool("isGround", true);
             gameObject.AddComponent<Parallax>();
         }
     }
