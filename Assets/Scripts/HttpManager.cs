@@ -13,7 +13,7 @@ using Cysharp.Threading.Tasks;
 public class HttpManager : MonoBehaviour
 {
     private static HttpManager instance;
-    public string ServerURL { get; set; } = "https://localhost:7034";
+    public string ServerURL { get; set; } = "http://localhost:7270";
 
     public static HttpManager Instance
     {
