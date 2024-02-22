@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +7,28 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameResult;
+using static UnityEditor.Progress;
+
+
+public enum EItemId
+{
+    SilverCoin = 1,
+    GoldCoin,
+    JellyBean,
+    JellyBearYellow,
+    JellyBearPink,
+    JellyBearBig,
+    JellyB,
+    JellyO,
+    JellyN,
+    JellyU,
+    JellyS,
+    JellyT,
+    JellyI,
+    JellyM,
+    JellyE,
+}
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +43,7 @@ public class Player : MonoBehaviour
     public bool bSliding = false;
 
     public float speed = 1.0f;
+    public int currentCookieId = 0;
 
     public float hp { get; set; }
     public float maxHp { get; set; }
@@ -28,7 +52,27 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
+    private bool onceCheck = false;
+
     public string cookieName = "";
+    Dictionary<int/*itemID*/, int/*count*/>? acquiredItems = new Dictionary<int, int>
+    {
+        { 1, 0 },
+        { 2, 0 },
+        { 3, 0 },
+        { 4, 0 },
+        { 5, 0 },
+        { 6, 0 },
+        { 7, 0 },
+        { 8, 0 },
+        { 9, 0 },
+        { 10, 0 },
+        { 11, 0 },
+        { 12, 0 },
+        { 13, 0 },
+        { 14, 0 },
+        { 15, 0 },
+    };
 
     void Start()
     {
@@ -47,12 +91,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         // 플레이어가 죽으면
-        if (hp <= 0.0f)
+        if (hp <= 0.0f && !onceCheck)
         {
+            onceCheck = true;
             // 현재 플레이어 hp 값만 체크하기 때문에 0.0f 밑이면 계속 해당 함수 호출됨
             // 애니메이션 완성되면 애니메이션이 끝날 때 한 번만 호출되어야 함
             // 그리고 플레이어가 죽었는지 아닌지에 따라 아래의 update 내용을 호출할지 안할지를 결정해 줄 수 있는 bool값 필요해보임
-            GameManager.OpenLoadingCanvas();
+            GameManager.OpenLoadingCanvas(acquiredItems, currentCookieId);
         }
 
         if (bGround)
@@ -84,6 +129,7 @@ public class Player : MonoBehaviour
 
         UpdateAnimation();
     }
+
     private void FixedUpdate()
     {
         Vector2 pos = transform.position;
@@ -146,6 +192,7 @@ public class Player : MonoBehaviour
         Item item = collision.gameObject.GetComponent<Item>();
         if (item != null)
         {
+            ++acquiredItems[item.ID];
             // BONUSTIME이면
             if (item.Alphabet)
                 GameManager.AddAlphabet(item.name);
