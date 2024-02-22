@@ -42,7 +42,7 @@ public class Login : MonoBehaviour
 
         if (isValidEmail && isValidPassword)
         {
-            LoginAccountRes res = await HttpManager.Instance.Post<LoginAccountRes>("Account/Login", new {
+            AuthServerLoginRes res = await HttpManager.Instance.Post<AuthServerLoginRes>("Account/Login", new {
                 Email = inputEmail.text,
                 Password = inputPassword.text
             });
