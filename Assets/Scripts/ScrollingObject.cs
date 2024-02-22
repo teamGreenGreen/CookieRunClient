@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollingObject : MonoBehaviour
 {
-    // ³ªÁß¿¡ ÇÃ·¹ÀÌ¾î ¼ÓµµÀÇ ºñ·ÊÇØ¼­ ¹Ù²îµµ·Ï º¯°æ
+    // ë‚˜ì¤‘ì— í”Œë ˆì´ì–´ ì†ë„ì˜ ë¹„ë¡€í•´ì„œ ë°”ë€Œë„ë¡ ë³€ê²½
     public float speed = 1f;
 
     private void Update()

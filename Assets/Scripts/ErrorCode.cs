@@ -14,7 +14,9 @@ public enum EErrorCode
     // 인증 관련
     CreateAccountFail = 1001,
     LoginFail = 1002,
-    AuthFailInvalidResponse = 1003,
+    // TODO : 인증 서버, 게임 서버의 에러 코드가 달라서 수정이 필요함
+    CreateAccountFailDuplicate = 1003,
+    //AuthFailInvalidResponse = 1003,
     LoginFailUserNotExist = 1004,
     LoginFailAddRedis = 1005,
     // 캐릭터 생성
