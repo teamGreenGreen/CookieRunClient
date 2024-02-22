@@ -1,0 +1,2151 @@
+fileFormatVersion: 2
+guid: 1ce43787c2c033049834f86063368e2c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bc_weeklyReward_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1992
+        width: 880
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ca08b044f556c46bdd66a057d47d07
+      internalID: 1273655825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_1
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 1958
+        width: 138
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9613d405252c6e418dd1f019c3190ff
+      internalID: -1817584697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1932
+        width: 849
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defca5321fde34d43a26696ca76db582
+      internalID: 1245041285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_3
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 1690
+        width: 24
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa74bbfc22e5b34b8edf76225a8ded3
+      internalID: 2076851705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_4
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1916
+        width: 132
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a70eeb38bd4f5044ab7d3f2b3997e0d
+      internalID: -652001014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_5
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1943
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c555afb521dc5c848ae8a5adb1803a3d
+      internalID: 908956589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1871
+        width: 849
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b47fea30fbfa1429eecdddcefe302e
+      internalID: 984797941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_7
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1926
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba23a4704339354bb818dde19fd392b
+      internalID: 1366331318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_8
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1874
+        width: 132
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69001d329939f554f9e443a6933da8f7
+      internalID: 1871124301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_9
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1909
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8592b62048d6c7c4cb4ea51a7a9e8cab
+      internalID: -795165161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_10
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1892
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4847d283c8305c64a8a87357ef362cb9
+      internalID: 149969364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_11
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1877
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c936a3dda1f7c7f4fb46f65a00008e6e
+      internalID: 620574541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1802
+        width: 438
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2566562ee3e7b05499e6a20d3ca53d75
+      internalID: 225939898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_13
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1636
+        width: 117
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2139be937642d9a479559fc5b4d35d85
+      internalID: 662729837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_14
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1636
+        width: 253
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9ddb6b1f3cd394c8034587f7e1b78f
+      internalID: -1280815847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_15
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1835
+        width: 25
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403d19ce12d0c2147be5dce4601f0313
+      internalID: -771603992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_16
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1727
+        width: 130
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 25, z: 0, w: 25}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05462be7c801879478fb64aeb4b19b2a
+      internalID: 1257701540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_17
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1859
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54507daa56b339e4dbf124c331326a63
+      internalID: -515954682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_18
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1842
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 412d69b723d29db4180754c42f3b15f1
+      internalID: 1717124929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_19
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1801
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5e9ad25e9a97e42b430f8e6abcce9b
+      internalID: -311737537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_20
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1825
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35f8ad779d6b2e4898c95a4a9712c60
+      internalID: -213434486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_21
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1704
+        width: 415
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf557c2a41f9af5409b44adae953d63c
+      internalID: -1534783530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_22
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1738
+        width: 20
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4108c16598e54124bb7f99801b4217ab
+      internalID: -233271461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_23
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 1775
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6cc66883db6974db66816c3fc7b058
+      internalID: 1656081265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_24
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 1344
+        width: 7
+        height: 478
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33e5be851a9b8d48a41277953dd4744
+      internalID: -514299642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_25
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 1749
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710cc9fd2b98ac4429958a6029f342ea
+      internalID: 187931769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_26
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1701
+        width: 6
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851c37b3364bc5b4d81a21d575041ba9
+      internalID: -981824899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_27
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1724
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa153c8d94cf924aa8ac2d91cd6aa8a
+      internalID: -1506532562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_28
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1580
+        width: 130
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76d9b651e00d8b46b88779cea569e03
+      internalID: 1406306343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_29
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1704
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09b79138f13ea841891970e9a609a53
+      internalID: -110336955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_30
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1528
+        width: 343
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7f592100078db439a5e9de8eb99ba2
+      internalID: 1477090118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_31
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1424
+        width: 86
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b086c25e6488a846ba9d91032dcf90b
+      internalID: -314718265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_32
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 1548
+        width: 274
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0602c459fd538488ddef4f88d9b728
+      internalID: 422508990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_33
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1616
+        width: 50
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae75a40c6cea4a46be61a15fe19e882
+      internalID: 363349843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_34
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 1574
+        width: 166
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88f04ac3c397434ca2ca05d4df85ca9
+      internalID: -1780786332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_35
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 1365
+        width: 116
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6282a4f3f85984da673b37176fd7a4
+      internalID: -873395477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_36
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 1512
+        width: 264
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7032fc3ff06b44c408107bba694625f0
+      internalID: 881289186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_37
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 1532
+        width: 166
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc458bcdd0c496349a8b3f246e8aab87
+      internalID: 486560501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_38
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1496
+        width: 327
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b765c44a3c273d4c968b210bc616f56
+      internalID: -1435870397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_39
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 1442
+        width: 255
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6ccd647d9a67e498cde9e951f2fd16
+      internalID: 803011521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_40
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1348
+        width: 170
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65d143d8b62e81498a3b4f0c626bfb2
+      internalID: -127087608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_41
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1430
+        width: 289
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1550d794fdf7d3b448498b56af28c3d4
+      internalID: 44421564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_42
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1228
+        width: 49
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bdb3ee4b7497824db591fafb6739d91
+      internalID: 909743065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_43
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 1372
+        width: 255
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a80c98aa5454dfb4589ed02322fd3128
+      internalID: 591466020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_44
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1388
+        width: 289
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a0fc78d4faddf4697104d16981a542
+      internalID: 1183758921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_45
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1232
+        width: 86
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb85a91957dd5d4593c406bf4b9070f
+      internalID: -740994235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_46
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1348
+        width: 287
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac055949b0554454585d02c43a1af3c5
+      internalID: -2109089453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_47
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1289
+        width: 252
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1ebfd1b66211d4bb7375b832a7dff6
+      internalID: -153329396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_48
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 1211
+        width: 116
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb025d1cbf741ca4995abd10811d4015
+      internalID: -594383003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_49
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1259
+        width: 274
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df713e6698a20ee45a3c81ae00ce0390
+      internalID: 405580337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_50
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1250
+        width: 245
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9885bbc444db48640a77a472981268a1
+      internalID: -1027890512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_51
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1176
+        width: 182
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a7be0fa003b6e749a540df7f5934108
+      internalID: -1119393472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_52
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1169
+        width: 274
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789b7c838d205934fb2b6e350aa0996f
+      internalID: 1365519896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_53
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1186
+        width: 62
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b69dfbb252f124f98d5f2c7f16b7f5
+      internalID: 134593827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_54
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 1040
+        width: 86
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ed7e4ec29662646b2735e24bc3e43c
+      internalID: -133980150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_55
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1211
+        width: 227
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806d09408f9d6a34ead18ade8c5050e4
+      internalID: -156697298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_56
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1074
+        width: 61
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3734f3abe9edeed40a24253aff014e05
+      internalID: 390520942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_57
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1169
+        width: 199
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23627a845572ec148a2e734b4717cda0
+      internalID: 1573406923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_58
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1171
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f01be983d29437478328e6b786612ea
+      internalID: 1030439773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_59
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1004
+        width: 182
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c80eff26dd603a4e99b01f94b67ce99
+      internalID: 1093230271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_60
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 968
+        width: 143
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3872b0e01657e5341bb29b4a94acbf43
+      internalID: -1619057670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_61
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 995
+        width: 182
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037bcab93ead2244fbf85507e0abf8c1
+      internalID: -1197539674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_62
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1003
+        width: 86
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6e785d95a20cd4f9fdedc7d4f8cc6f
+      internalID: -1473880356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_63
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1127
+        width: 199
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d92d8f385a2818469a368567a4fbe27
+      internalID: 1802224607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_64
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1137
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05656950941389468ec3b0677c223b9
+      internalID: 869592806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_65
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1085
+        width: 196
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349ce4707d17b4143a6ec05472074865
+      internalID: 1461946384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_66
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 1103
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6355337944e50b14990ea4fcb3f31970
+      internalID: 1651387540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_67
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 1040
+        width: 59
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3b8dc5f62eccc41919ea0c5befd631
+      internalID: 1043917345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_68
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1043
+        width: 196
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd1f9ddebbd2e44ea6df772fa5eebf0
+      internalID: 1180480002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_69
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1069
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6023e294ae904354ab75b6a9f2227e70
+      internalID: -169284039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_70
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 868
+        width: 151
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d7a6fc5b2e0e24eb0f121d770dc4d4
+      internalID: -1967310392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_71
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 955
+        width: 190
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65cf26981319624f840c1b16299b23f
+      internalID: 808689036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_72
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1030
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3586a0737ad7e4b8f260cccec43a96
+      internalID: 1619724894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_73
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 839
+        width: 86
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4084441b9defb48458d7ae94c808e180
+      internalID: -726094832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_74
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 994
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4109d3afcd4fc1344bc057f13dce56cb
+      internalID: -1882206705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_75
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 916
+        width: 190
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b18a0f72f95f341b93f850476424da
+      internalID: -1629925634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_76
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 823
+        width: 182
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5edb7474c38ba914ca326779028c560f
+      internalID: -1299193103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_77
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 959
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d0206b4d13e6742a7f16573ea2a9b2
+      internalID: 394764130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_78
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 880
+        width: 162
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 014229e8bd9d9ff44b587ad80671e2ad
+      internalID: 1242606495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_79
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 946
+        width: 162
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e99d0ea0845d4140a28c0ff76f54a85
+      internalID: -1047907789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_80
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 917
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3889a4589d252f4a85015237f1f6a7e
+      internalID: -587797439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_81
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 922
+        width: 35
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008fe59fccc9fd44a9502d65c5f3394a
+      internalID: 1009752914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_82
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 890
+        width: 34
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aafd38bec72d7d4a9c7f64bee06c98b
+      internalID: 548679914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_83
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 813
+        width: 105
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971864c9c276ac7458352a32cf7f4ec8
+      internalID: 1032224716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_84
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 880
+        width: 81
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00832b97affb86443b2f899fe4ccbe8b
+      internalID: -839740989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_85
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 805
+        width: 110
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f8053f3f13d194b926ffb778c85fc7
+      internalID: 879303036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_86
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 865
+        width: 162
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d41af1ff15a494aaf5ea8d9edf1b69
+      internalID: -447736718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_87
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 805
+        width: 81
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4144102768683404eab8da1bebcf3ac1
+      internalID: -124481254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_88
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 835
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eff1ad074e1d7a143b5346f3b02bbe9b
+      internalID: 323336478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_89
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 760
+        width: 110
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd4a84dbcf87a6a49849b7090e0d432e
+      internalID: -813163134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_90
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 711
+        width: 61
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f401aaf240e4bff41afab5cf074ab955
+      internalID: -772898366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_weeklyReward_91
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 697
+        width: 110
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4a3df6b253fee42b727a608d1e4864
+      internalID: -172626474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bc_weeklyReward_0: 1273655825
+      bc_weeklyReward_1: -1817584697
+      bc_weeklyReward_10: 149969364
+      bc_weeklyReward_11: 620574541
+      bc_weeklyReward_12: 225939898
+      bc_weeklyReward_13: 662729837
+      bc_weeklyReward_14: -1280815847
+      bc_weeklyReward_15: -771603992
+      bc_weeklyReward_16: 1257701540
+      bc_weeklyReward_17: -515954682
+      bc_weeklyReward_18: 1717124929
+      bc_weeklyReward_19: -311737537
+      bc_weeklyReward_2: 1245041285
+      bc_weeklyReward_20: -213434486
+      bc_weeklyReward_21: -1534783530
+      bc_weeklyReward_22: -233271461
+      bc_weeklyReward_23: 1656081265
+      bc_weeklyReward_24: -514299642
+      bc_weeklyReward_25: 187931769
+      bc_weeklyReward_26: -981824899
+      bc_weeklyReward_27: -1506532562
+      bc_weeklyReward_28: 1406306343
+      bc_weeklyReward_29: -110336955
+      bc_weeklyReward_3: 2076851705
+      bc_weeklyReward_30: 1477090118
+      bc_weeklyReward_31: -314718265
+      bc_weeklyReward_32: 422508990
+      bc_weeklyReward_33: 363349843
+      bc_weeklyReward_34: -1780786332
+      bc_weeklyReward_35: -873395477
+      bc_weeklyReward_36: 881289186
+      bc_weeklyReward_37: 486560501
+      bc_weeklyReward_38: -1435870397
+      bc_weeklyReward_39: 803011521
+      bc_weeklyReward_4: -652001014
+      bc_weeklyReward_40: -127087608
+      bc_weeklyReward_41: 44421564
+      bc_weeklyReward_42: 909743065
+      bc_weeklyReward_43: 591466020
+      bc_weeklyReward_44: 1183758921
+      bc_weeklyReward_45: -740994235
+      bc_weeklyReward_46: -2109089453
+      bc_weeklyReward_47: -153329396
+      bc_weeklyReward_48: -594383003
+      bc_weeklyReward_49: 405580337
+      bc_weeklyReward_5: 908956589
+      bc_weeklyReward_50: -1027890512
+      bc_weeklyReward_51: -1119393472
+      bc_weeklyReward_52: 1365519896
+      bc_weeklyReward_53: 134593827
+      bc_weeklyReward_54: -133980150
+      bc_weeklyReward_55: -156697298
+      bc_weeklyReward_56: 390520942
+      bc_weeklyReward_57: 1573406923
+      bc_weeklyReward_58: 1030439773
+      bc_weeklyReward_59: 1093230271
+      bc_weeklyReward_6: 984797941
+      bc_weeklyReward_60: -1619057670
+      bc_weeklyReward_61: -1197539674
+      bc_weeklyReward_62: -1473880356
+      bc_weeklyReward_63: 1802224607
+      bc_weeklyReward_64: 869592806
+      bc_weeklyReward_65: 1461946384
+      bc_weeklyReward_66: 1651387540
+      bc_weeklyReward_67: 1043917345
+      bc_weeklyReward_68: 1180480002
+      bc_weeklyReward_69: -169284039
+      bc_weeklyReward_7: 1366331318
+      bc_weeklyReward_70: -1967310392
+      bc_weeklyReward_71: 808689036
+      bc_weeklyReward_72: 1619724894
+      bc_weeklyReward_73: -726094832
+      bc_weeklyReward_74: -1882206705
+      bc_weeklyReward_75: -1629925634
+      bc_weeklyReward_76: -1299193103
+      bc_weeklyReward_77: 394764130
+      bc_weeklyReward_78: 1242606495
+      bc_weeklyReward_79: -1047907789
+      bc_weeklyReward_8: 1871124301
+      bc_weeklyReward_80: -587797439
+      bc_weeklyReward_81: 1009752914
+      bc_weeklyReward_82: 548679914
+      bc_weeklyReward_83: 1032224716
+      bc_weeklyReward_84: -839740989
+      bc_weeklyReward_85: 879303036
+      bc_weeklyReward_86: -447736718
+      bc_weeklyReward_87: -124481254
+      bc_weeklyReward_88: 323336478
+      bc_weeklyReward_89: -813163134
+      bc_weeklyReward_9: -795165161
+      bc_weeklyReward_90: -772898366
+      bc_weeklyReward_91: -172626474
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
