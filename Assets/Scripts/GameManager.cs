@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     private bool isPaused = false;
-    private static int money = 0;
-    private static int score = 0;
+    public static int money { get; set; }
+    public static int score { get; set; }
     private static bool[] alphabets = new bool[9];
     private static Texture2D[] bonusTimeTextures = new Texture2D[9];
     private Player player = null;
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
 
         if (currentDamage > 0 && player.hp > 0)
         {
-            float decreaseAmount = currentDamage * Time.deltaTime * decreaseSpeed; // 매 프레임마다 감소되는 양 계산
+            float decreaseAmount = currentDamage * Time.deltaTime * decreaseSpeed * 10; // 매 프레임마다 감소되는 양 계산
             player.hp -= decreaseAmount;
             HPBar.fillAmount = player.hp / (float)player.maxHp;
 
@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void OpenLoadingCanvas()
+    public static void OpenLoadingCanvas(Dictionary<int, int> acquiredItems, int currentCookieId)
     {
         OpenCanvas canvas = GameObject.Find("LoadingCanvasController").GetComponent<OpenCanvas>();
 
@@ -211,5 +211,7 @@ public class GameManager : MonoBehaviour
         {
             canvas.OnClick();
         }
+
+        GameResult.GameResultPost(acquiredItems, GameManager.score, GameManager.money, 10, currentCookieId);
     }
 }
