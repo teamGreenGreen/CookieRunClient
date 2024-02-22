@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6873134662708802306, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8638818616811314684, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
       propertyPath: loadSceneManager
