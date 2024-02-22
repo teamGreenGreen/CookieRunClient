@@ -18,7 +18,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using static System.Net.WebRequestMethods;
 
-public class Account : MonoBehaviour
+public class Login : MonoBehaviour
 {
     [SerializeField]
     private TMP_InputField inputEmail;
@@ -30,8 +30,10 @@ public class Account : MonoBehaviour
     private TMP_Text textPasswordWarning;
     [SerializeField]
     private GameObject notificationUI;
+    [SerializeField]
+    private LoadSceneManager loadSceneManager;
 
-    public async void OnClick()
+    public async void LoginAuthServer()
     {
         bool isValidEmail = false, isValidPassword = false;
 
@@ -40,22 +42,21 @@ public class Account : MonoBehaviour
 
         if (isValidEmail && isValidPassword)
         {
-            CreateAccountRes res = await HttpManager.Instance.Post<CreateAccountRes>("Account/Create", new {
+            LoginAccountRes res = await HttpManager.Instance.Post<LoginAccountRes>("Account/Login", new {
                 Email = inputEmail.text,
                 Password = inputPassword.text
             });
 
-            notificationUI.SetActive(true);
-            TMP_Text tmp = notificationUI.GetComponentInChildren<TMP_Text>();
             if (res.Result == EErrorCode.None)
             {
-                tmp.text = "회원가입이 완료되었습니다";
+                loadSceneManager.SceneChange();
             }
-            else if (res.Result == EErrorCode.CreateAccountFailDuplicate)
+            else
             {
-                tmp.text = "이미 등록된 이메일 입니다";
+                notificationUI.SetActive(true);
+                TMP_Text tmp = notificationUI.GetComponentInChildren<TMP_Text>();
+                tmp.text = "로그인에 실패했습니다";
             }
-               
 
             return;
         }

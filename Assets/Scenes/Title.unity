@@ -267,6 +267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 339816236142663239, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11.329987
+      objectReference: {fileID: 0}
     - target: {fileID: 1071953281994879835, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -347,42 +351,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2148619438455606182, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -61.99298
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148619438455606182, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -93.50162
-      objectReference: {fileID: 0}
-    - target: {fileID: 2250815702644233098, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2982766758973010175, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 4079965161999892957, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1788528646}
     - target: {fileID: 5615747033335161632, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
       propertyPath: m_Name
       value: Login Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5615747033335161632, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6241080061885049593, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8536927907330832774, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 2150773298
-      objectReference: {fileID: 0}
+    - target: {fileID: 8638818616811314684, guid: 47e77b85f223e5346bcc85e680baf94a, type: 3}
+      propertyPath: loadSceneManager
+      value: 
+      objectReference: {fileID: 1788528646}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
