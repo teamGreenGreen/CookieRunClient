@@ -53,6 +53,9 @@ public class Login : MonoBehaviour
                 Password = inputPassword.text
             });
 
+            HttpManager.Instance.userId = res.UserId;
+
+            // 인증서버 로그인 성공
             if (res.Result == EErrorCode.None)
             {
                 // 연결될 서버의 URL을 게임서버의 URL로 교체

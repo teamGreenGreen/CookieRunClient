@@ -18,6 +18,7 @@ public class HttpManager : MonoBehaviour
 
     public string ServerURL { get; set; } = "https://localhost:7270";
 
+    public Int64 userId;
     public Int64 uid;
     public string sessionId;
 

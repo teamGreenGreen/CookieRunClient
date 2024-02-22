@@ -1,4 +1,5 @@
 using Assets.Scripts.DTO;
+using Cysharp.Threading.Tasks.Triggers;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -20,11 +21,17 @@ public class CreateUser : MonoBehaviour
         if(IsValidUserName())
         {
             // 게임 서버로 유저 생성 요청
-            GameServerCreateRes loginRes = await HttpManager.Instance.LoginServer<GameServerCreateRes>("CreateUser", new
+            GameServerCreateRes res = await HttpManager.Instance.LoginServer<GameServerCreateRes>("CreateUser", new
             {
-                UserId = HttpManager.Instance.uid,
-                AuthToken = HttpManager.Instance.sessionId
+                UserId = HttpManager.Instance.userId,
+                UserName = inputUserName.text
             });
+
+            if(res.Result == EErrorCode.None)
+            {
+                HttpManager.Instance.SetAuthInfo(res.Uid, res.SessionId);
+                loadSceneManager.SceneChange();
+            }
         }
         // TODO : 이미 등록된 닉네임 처리
         else
@@ -32,10 +39,7 @@ public class CreateUser : MonoBehaviour
             //notificationUI.SetActive(true);
             //TMP_Text tmp = notificationUI.GetComponentInChildren<TMP_Text>();
             //tmp.text = "이미 등록된 닉네임 입니다";
-            
         }
-
-        loadSceneManager.SceneChange();
     }
 
     private bool IsValidUserName()
