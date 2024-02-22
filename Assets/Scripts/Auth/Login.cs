@@ -32,6 +32,10 @@ public class Login : MonoBehaviour
     private GameObject notificationUI;
     [SerializeField]
     private LoadSceneManager loadSceneManager;
+    [SerializeField]
+    private GameObject loginPannel;
+    [SerializeField]
+    private GameObject nicknameUI;
 
     public async void LoginAuthServer()
     {
@@ -44,7 +48,7 @@ public class Login : MonoBehaviour
 
         if (isValidEmail && isValidPassword)
         {
-            AuthServerLoginRes res = await HttpManager.Instance.LoginAuthServer<AuthServerLoginRes>("Account/Login", new {
+            AuthServerLoginRes res = await HttpManager.Instance.LoginServer<AuthServerLoginRes>("Account/Login", new {
                 Email = inputEmail.text,
                 Password = inputPassword.text
             });
@@ -52,9 +56,23 @@ public class Login : MonoBehaviour
             if (res.Result == EErrorCode.None)
             {
                 // 연결될 서버의 URL을 게임서버의 URL로 교체
-                HttpManager.Instance.ServerURL = HttpManager.GAME_SERVER_URL; 
-                // 인증 완료 후 씬 변경
-                loadSceneManager.SceneChange();
+                HttpManager.Instance.ServerURL = HttpManager.GAME_SERVER_URL;
+
+                // 게임 서버로 로그인 요청
+                GameServerLoginRes loginRes = await HttpManager.Instance.LoginServer<GameServerLoginRes>("Login", new
+                {
+                    UserId = res.UserId,
+                    AuthToken = res.AuthToken,
+                });
+
+                HttpManager.Instance.SetAuthInfo(loginRes.Uid, loginRes.SessionId);
+
+                // 유저 데이터가 존재하지 않으면 게임 서버에 캐릭터를 생성해야 함
+                if (loginRes.Result == EErrorCode.LoginFailUserNotExist)
+                {
+                    loginPannel.SetActive(false);
+                    nicknameUI.SetActive(true);
+                }
             }
             else
             {
@@ -65,19 +83,6 @@ public class Login : MonoBehaviour
 
             return;
         }
-    }
-
-    public async void LoginGameServer(Int64 userId, string authToken)
-    {
-        // TODO : 닉네임 설정 기능 추가
-        GameServerLoginRes res = await HttpManager.Instance.Post<GameServerLoginRes>("Login", new
-        {
-            UserId = userId,
-            AuthToken = authToken,
-            UserName = "test"
-        });
-
-        HttpManager.Instance.SetAuthInfo(res.Uid, res.SessionId);
     }
 
     private bool IsValidPassword()

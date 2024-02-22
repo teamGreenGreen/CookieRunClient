@@ -18,8 +18,8 @@ public class HttpManager : MonoBehaviour
 
     public string ServerURL { get; set; } = "https://localhost:7270";
 
-    private Int64 uid;
-    private string sessionId;
+    public Int64 uid;
+    public string sessionId;
 
     public static HttpManager Instance
     {
@@ -50,7 +50,7 @@ public class HttpManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public async UniTask<TResponse> LoginAuthServer<TResponse>(string path, object dto)
+    public async UniTask<TResponse> LoginServer<TResponse>(string path, object dto)
     {
         string url = ServerURL + '/' + path;
 
@@ -162,5 +162,4 @@ public class HttpManager : MonoBehaviour
         this.uid = uid;
         this.sessionId = sessionId;
     }
-
 }
