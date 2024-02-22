@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using static UnityEditor.Progress;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class UserInfo : MonoBehaviour
+public class UserInfoData : MonoBehaviour
 {    public class UserInfoRes : ErrorCodeDTO
     {
         public Int64 Uid { get; set; }

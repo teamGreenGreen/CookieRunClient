@@ -52,7 +52,7 @@ public class LoadSceneManager : MonoBehaviour
     {
         if (scnene.name == ESceneName.LobbyScene.ToString())
         {
-            UserInfo.RequestUserInfoPost();
+            UserInfoData.RequestUserInfoPost();
         }
     }
 }

@@ -38,7 +38,7 @@ public class LobbyUIManager : MonoBehaviour
     {
     }
 
-    public static void UpdateUserInfoUI(UserInfoRes res)
+    public static void UpdateUserInfoUI(UserInfoData.UserInfoRes res)
     {
         levelText.text = res.Level.ToString("N0");
         // 경험치는 최대 경험치 받아서 수정 필요
