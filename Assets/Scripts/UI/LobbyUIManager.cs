@@ -15,6 +15,7 @@ public class LobbyUIManager : MonoBehaviour
     public static TextMeshProUGUI levelText;
     public static TextMeshProUGUI expText;
     public static TextMeshProUGUI userNameText;
+    public static int acquiredCookieId;
 
     void Start()
     {
@@ -43,5 +44,6 @@ public class LobbyUIManager : MonoBehaviour
         expText.text = res.Exp.ToString("N0");
         coinCountText.text = res.Money.ToString("N0");
         gemCountText.text = res.Diamond.ToString("N0");
+        acquiredCookieId = res.AcquiredCookieId;
     }
 }
