@@ -15,6 +15,8 @@ public class CreateUser : MonoBehaviour
     private TMP_Text textUserNameWarning;
     [SerializeField]
     private LoadSceneManager loadSceneManager;
+    [SerializeField]
+    private GameObject notificationUI;
 
     public async void GameServerCreateUser()
     {
@@ -32,13 +34,12 @@ public class CreateUser : MonoBehaviour
                 HttpManager.Instance.SetAuthInfo(res.Uid, res.SessionId);
                 loadSceneManager.SceneChange();
             }
-        }
-        // TODO : 이미 등록된 닉네임 처리
-        else
-        {
-            //notificationUI.SetActive(true);
-            //TMP_Text tmp = notificationUI.GetComponentInChildren<TMP_Text>();
-            //tmp.text = "이미 등록된 닉네임 입니다";
+            if(res.Result != EErrorCode.CreateUserFailDuplicateNickname)
+            {
+                notificationUI.SetActive(true);
+                TMP_Text tmp = notificationUI.GetComponentInChildren<TMP_Text>();
+                tmp.text = "이미 등록된 닉네임 입니다";
+            }
         }
     }
 
