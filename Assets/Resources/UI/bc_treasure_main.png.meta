@@ -1,0 +1,1711 @@
+fileFormatVersion: 2
+guid: 126f68482302e5f469e3301d4d7184ac
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bc_treasure_main_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1976
+        width: 935
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5669a6e4eee1064296788ed26c32ea6
+      internalID: -1097839001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_1
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1801
+        width: 78
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae5f4c0d59a31045814fe788a4e70d0
+      internalID: 1808509895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1902
+        width: 935
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee5daa94a232bb42a33598e41aa3091
+      internalID: -742957272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1860
+        width: 935
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75854a698b5eb9d48a0d2879900445df
+      internalID: 1546433306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1828
+        width: 935
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6172b43b3e80a5646bbe5c54f4f68572
+      internalID: -1104522260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1802
+        width: 521
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deedfc3d1e69a654a97e43f07d1dbd23
+      internalID: 184768893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_6
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1603
+        width: 354
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4071add4f61a36249841daa97764b449
+      internalID: 1456430057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_7
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1686
+        width: 59
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac42d900c76d5314ca9e4ec4102ec5e2
+      internalID: -323480061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_8
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1764
+        width: 499
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a078af6988a1840816f249b872a242
+      internalID: 596970474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_9
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1784
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14815b6b6eb56f64fbb55aa36a72cc37
+      internalID: -71253642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_10
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1741
+        width: 73
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97d3b60abc4cf945a78c63222700d01
+      internalID: -951514542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_11
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1766
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03305cbb59b8b0a42bad31690cfad9cb
+      internalID: -1574188745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1731
+        width: 499
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2fea07b561cd147ad7dd183ef91476
+      internalID: -413607050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_13
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1699
+        width: 16
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08377695aa446164191b3f5b57d7cc63
+      internalID: 1439784418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_14
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1686
+        width: 16
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75539eabab7e9044d8d29207d63eca06
+      internalID: -1139024963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1692
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac66614d912b57d47983c9bfc485b316
+      internalID: -1975461724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_16
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1666
+        width: 496
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93d9e0c9274eb4d4988eac9aeb664e6f
+      internalID: 1150658052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1526
+        width: 20
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44f2b05590f0e540a0cbdc7c185e1c8
+      internalID: 780150458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_18
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1680
+        width: 140
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dba1a74f63f1ad54bb93d6873f95bc90
+      internalID: -1968782197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_19
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1599
+        width: 484
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dc72a6389f9a0540863b8a0ae5331aa
+      internalID: 391156187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_20
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 1564
+        width: 10
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e273e50da819f17499858d0e0ab03c24
+      internalID: 976185105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_21
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1550
+        width: 194
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a9b3d196ceb204f93a14302c98dfa3
+      internalID: 1786225924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_22
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 1549
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490b8dec14546114590a595bb0344b80
+      internalID: -858452209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_23
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1551
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c3c782a2e8f3140be8d8305d16a6cf
+      internalID: 1050840993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_24
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1558
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d389421829d2034fa288a8406a97eaa
+      internalID: 405762129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_25
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1548
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32732acd60b486d42a838c2a7ddf13ba
+      internalID: -1196404748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_26
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 1466
+        width: 4
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d16e27f989d67d44871ef0d7db2c2e7
+      internalID: 933335984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_27
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1393
+        width: 432
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 10, z: 10, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7109f9ea91382d941a4297b8d25d3986
+      internalID: 872561666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_28
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1565
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cef97cc478e78c4f9dcafc10703cb06
+      internalID: 229107513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_29
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1586
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acfc70a69ad7b7741a3abc688ced912e
+      internalID: -1487220802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_30
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1515
+        width: 59
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3775bab94f32cc44a1990d8a3017886
+      internalID: -672641688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_31
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1485
+        width: 16
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbb2e31afcbbee4a9221b85bb6fa19d
+      internalID: 634664539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_32
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 1446
+        width: 486
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92b95cced5836cb41866399d328a8b3e
+      internalID: 1162561590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_33
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1473
+        width: 57
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf6c3362dfc22a43906d5f940a5e9e0
+      internalID: -1512045707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_34
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1467
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fbb5f789b9f17d4f82eed06cc0c6542
+      internalID: 1453096969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_35
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 1431
+        width: 57
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5334c0505cb0ad4b91c30d21edc32ae
+      internalID: 1271821591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_36
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1449
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41beba6bf02dd7148a05a6799f161fed
+      internalID: -1321211390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_37
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1452
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6611fa839fc7e484b957d27300033cb0
+      internalID: 2039422256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_38
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1410
+        width: 9
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011287aef987f7b4db7fe01403cb0287
+      internalID: 380258326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_39
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1318
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2e0de432d3c31d4ab3454958f3464a3
+      internalID: -1056767105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_40
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 1318
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468da0d320ea2bc42a9a10216aa4378d
+      internalID: 834815786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_41
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 1318
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e378763f8fd40a74688c96589c2904b8
+      internalID: 1009138953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_42
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1438
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c055e3e8068f3c647838f2a07a83d19f
+      internalID: -612230424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_43
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1237
+        width: 428
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b0591025d682dc4a9e5a6918499c0c4
+      internalID: 2111902003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_44
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1135
+        width: 50
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4251c0d62bc6d543af74841d2d55eaf
+      internalID: 735580115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_45
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1190
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7892e8ff8b0c68048a2a0994e71d52b9
+      internalID: 600267293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_46
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1190
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cba5beecd7edf42ae6f6b6fdb299ea
+      internalID: 58379756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_47
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1190
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c77c3a00bb6c91d4ca8010003573a780
+      internalID: 1812137384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_48
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1310
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3ae9c2d289de34287a244e9a9245ac
+      internalID: -65830066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_49
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1207
+        width: 332
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25899376fda6fd47830553c4beb4e38
+      internalID: 939424016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_50
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1123
+        width: 99
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece6d5715ab7fba4a9fc7bcb260c3b95
+      internalID: 540571179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_51
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 1182
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfe9b37b6d44cf47a04d94eba443d4a
+      internalID: 1371328621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_52
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1176
+        width: 207
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89556d45ab3ed343a47ff91934d4546
+      internalID: -1394876534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_53
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1088
+        width: 117
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00875df4fcb4b574e8080348bfec46ec
+      internalID: -1526514606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_54
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1062
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d42791cf0ae4254a9bf39f01ff8bb74
+      internalID: 722520925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_55
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1062
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7509967d002cd074f87f5dfd1287f7cd
+      internalID: 236834369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_56
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1062
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa26a0b8adf9a40428368fa6b0a8c2ab
+      internalID: -101910352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_57
+      rect:
+        serializedVersion: 2
+        x: 874
+        y: 1054
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df06ce03d0d19aa478fafb9ac59d2a72
+      internalID: 716964667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_58
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1133
+        width: 195
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19200a456b4a2842b1781a88e078ce8
+      internalID: 1509559641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_59
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1081
+        width: 173
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c60b651e253fc243b766bb8e45ce242
+      internalID: 1369299493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_60
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1101
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1830b43042c26af4d84bf62bacceea32
+      internalID: 1865769970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_61
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1090
+        width: 100
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9637c76a5fdbd8e49aa74f16aa33ce1d
+      internalID: -116272289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_62
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1097
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c498d67f2ba3e46b872d2b5ac71e06
+      internalID: -1662391729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_63
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 948
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82378d4e816106f47ab08a801586f993
+      internalID: -542296870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_64
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 1046
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2855e645cde6803438b68f0293a43ed9
+      internalID: -2048042736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_65
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1070
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01e9ed8669af43489c7c2bb4f516f48
+      internalID: -277112277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_66
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 978
+        width: 110
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e3cb53c0987ba418fe71e5b94722c6
+      internalID: -1312906345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_67
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 1017
+        width: 71
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea301d727f9b894da92c0f2c4d359d8
+      internalID: 2024436212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_68
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 995
+        width: 31
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853708745c633da4e8e69a69546ec3e5
+      internalID: 1681459310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_69
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 1039
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137d34a98ce77c04398e312eb40c5047
+      internalID: -1167284879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_70
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 934
+        width: 126
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ed7e883c3b7664fa1a99c736846ef2
+      internalID: 341896131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bc_treasure_main_71
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 869
+        width: 125
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c09f992ea74c4c41a3ce1cf6167e136
+      internalID: -1322293434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bc_treasure_main_0: -1097839001
+      bc_treasure_main_1: 1808509895
+      bc_treasure_main_10: -951514542
+      bc_treasure_main_11: -1574188745
+      bc_treasure_main_12: -413607050
+      bc_treasure_main_13: 1439784418
+      bc_treasure_main_14: -1139024963
+      bc_treasure_main_15: -1975461724
+      bc_treasure_main_16: 1150658052
+      bc_treasure_main_17: 780150458
+      bc_treasure_main_18: -1968782197
+      bc_treasure_main_19: 391156187
+      bc_treasure_main_2: -742957272
+      bc_treasure_main_20: 976185105
+      bc_treasure_main_21: 1786225924
+      bc_treasure_main_22: -858452209
+      bc_treasure_main_23: 1050840993
+      bc_treasure_main_24: 405762129
+      bc_treasure_main_25: -1196404748
+      bc_treasure_main_26: 933335984
+      bc_treasure_main_27: 872561666
+      bc_treasure_main_28: 229107513
+      bc_treasure_main_29: -1487220802
+      bc_treasure_main_3: 1546433306
+      bc_treasure_main_30: -672641688
+      bc_treasure_main_31: 634664539
+      bc_treasure_main_32: 1162561590
+      bc_treasure_main_33: -1512045707
+      bc_treasure_main_34: 1453096969
+      bc_treasure_main_35: 1271821591
+      bc_treasure_main_36: -1321211390
+      bc_treasure_main_37: 2039422256
+      bc_treasure_main_38: 380258326
+      bc_treasure_main_39: -1056767105
+      bc_treasure_main_4: -1104522260
+      bc_treasure_main_40: 834815786
+      bc_treasure_main_41: 1009138953
+      bc_treasure_main_42: -612230424
+      bc_treasure_main_43: 2111902003
+      bc_treasure_main_44: 735580115
+      bc_treasure_main_45: 600267293
+      bc_treasure_main_46: 58379756
+      bc_treasure_main_47: 1812137384
+      bc_treasure_main_48: -65830066
+      bc_treasure_main_49: 939424016
+      bc_treasure_main_5: 184768893
+      bc_treasure_main_50: 540571179
+      bc_treasure_main_51: 1371328621
+      bc_treasure_main_52: -1394876534
+      bc_treasure_main_53: -1526514606
+      bc_treasure_main_54: 722520925
+      bc_treasure_main_55: 236834369
+      bc_treasure_main_56: -101910352
+      bc_treasure_main_57: 716964667
+      bc_treasure_main_58: 1509559641
+      bc_treasure_main_59: 1369299493
+      bc_treasure_main_6: 1456430057
+      bc_treasure_main_60: 1865769970
+      bc_treasure_main_61: -116272289
+      bc_treasure_main_62: -1662391729
+      bc_treasure_main_63: -542296870
+      bc_treasure_main_64: -2048042736
+      bc_treasure_main_65: -277112277
+      bc_treasure_main_66: -1312906345
+      bc_treasure_main_67: 2024436212
+      bc_treasure_main_68: 1681459310
+      bc_treasure_main_69: -1167284879
+      bc_treasure_main_7: -323480061
+      bc_treasure_main_70: 341896131
+      bc_treasure_main_71: -1322293434
+      bc_treasure_main_8: 596970474
+      bc_treasure_main_9: -71253642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

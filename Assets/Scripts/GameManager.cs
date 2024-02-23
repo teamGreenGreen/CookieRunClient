@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     private bool isPaused = false;
-    private static int money = 0;
-    private static int score = 0;
+    public static int money { get; set; }
+    public static int score { get; set; }
     private static bool[] alphabets = new bool[9];
     private static Texture2D[] bonusTimeTextures = new Texture2D[9];
     private Player player = null;
     private float elapsedTime = 0.0f;
+    public float decreaseSpeed = 2.0f; // 매 프레임마다 감소되는 속도
+    private float currentDamage = 0f; // 현재 감소하는 양
 
     [SerializeField]
     private Image HPBar;
@@ -66,8 +68,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
-    { 
-        if(player == null)
+    {
+        if (player == null)
         {
             player = GameObject.Find("Player").GetComponent<Player>();
         }
@@ -78,15 +80,28 @@ public class GameManager : MonoBehaviour
             if (elapsedTime > 1.0f && player.hp > 0.0f && HPBar != null)
             {
                 elapsedTime -= 1.0f;
-                PlayerTakeDamage(0.1f);
+                currentDamage = 1.0f; // 감소량 설정
+            }
+        }
+
+        if (currentDamage > 0 && player.hp > 0)
+        {
+            float decreaseAmount = currentDamage * Time.deltaTime * decreaseSpeed * 10; // 매 프레임마다 감소되는 양 계산
+            player.hp -= decreaseAmount;
+            HPBar.fillAmount = player.hp / (float)player.maxHp;
+
+            currentDamage -= decreaseAmount; // 감소량 업데이트
+
+            if (currentDamage <= 0)
+            {
+                currentDamage = 0f;
             }
         }
     }
 
     public void PlayerTakeDamage(float value)
     {
-        player.hp -= value;
-        HPBar.fillAmount = player.hp / (float)player.maxHp;
+        currentDamage = value;
     }
 
     public void TogglePause()
@@ -188,7 +203,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void OpenLoadingCanvas()
+    public static async void OpenLoadingCanvas(Dictionary<int, int> acquiredItems, int currentCookieId)
     {
         OpenCanvas canvas = GameObject.Find("LoadingCanvasController").GetComponent<OpenCanvas>();
 
@@ -196,5 +211,7 @@ public class GameManager : MonoBehaviour
         {
             canvas.OnClick();
         }
+
+        await GameResult.GameResultPost(acquiredItems, GameManager.score, GameManager.money, 10, currentCookieId);
     }
 }

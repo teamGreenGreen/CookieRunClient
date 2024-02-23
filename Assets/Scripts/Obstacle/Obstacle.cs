@@ -38,10 +38,10 @@ public class Obstacle : MonoBehaviour
             // 내 위치에서 플레이어 위치를 뺀다.
             float gapXPos = myPos.x - playerPos.x;
 
-            // 해당 값이 -10보다 작으면 destroy 한다.
+            // 해당 값이 -10보다 작으면 active를 false로 바꾼다.
             if (gapXPos < -10)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

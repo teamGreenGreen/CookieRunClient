@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7782882299601599976}
   - component: {fileID: 7325434776803696869}
   - component: {fileID: -4539409883565952581}
+  - component: {fileID: 2488757687371503027}
   m_Layer: 0
   m_Name: BigEarthworm
   m_TagString: Untagged
@@ -119,10 +120,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.8}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.25, y: 2.27}
     newSize: {x: 1.25, y: 2.27}
     adaptiveTilingThreshold: 0.5
@@ -173,5 +174,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: down
   depth: 1
-  damage: 0.5
+  damage: 3
   speed: 2
+--- !u!95 &2488757687371503027
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5178061963237494228}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9181f89fda86e1b4d86bc62d12b00de4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

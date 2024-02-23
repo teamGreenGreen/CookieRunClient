@@ -1,8 +1,14 @@
+using Assets.Scripts.DTO;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
+using UnityEngine.SocialPlatforms.Impl;
 
-namespace Assets.Scripts.DTO
-{
-    public class UserInfo
+public class UserInfoData : MonoBehaviour
+{    public class UserInfoRes : ErrorCodeDTO
     {
         public Int64 Uid { get; set; }
         public Int64 UserId { get; set; }
@@ -13,5 +19,11 @@ namespace Assets.Scripts.DTO
         public int MaxScore { get; set; }
         public int AcquiredCookieId { get; set; }
         public int Diamond { get; set; }
+    }
+
+    public static async void RequestUserInfoPost()
+    {
+        UserInfoRes res = await HttpManager.Instance.Post<UserInfoRes>("UserInfoLoad", null);
+        LobbyUIManager.UpdateUserInfoUI(res);
     }
 }
