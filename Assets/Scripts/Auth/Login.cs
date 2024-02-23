@@ -70,8 +70,13 @@ public class Login : MonoBehaviour
 
                 HttpManager.Instance.SetAuthInfo(loginRes.Uid, loginRes.SessionId);
 
+                // 로그인에 성공하면 로비 씬으로 변경
+                if(loginRes.Result == EErrorCode.None)
+                {
+                    loadSceneManager.SceneChange();
+                }
                 // 유저 데이터가 존재하지 않으면 게임 서버에 캐릭터를 생성해야 함
-                if (loginRes.Result == EErrorCode.LoginFailUserNotExist)
+                else if (loginRes.Result == EErrorCode.LoginFailUserNotExist)
                 {
                     loginPannel.SetActive(false);
                     nicknameUI.SetActive(true);
