@@ -9,8 +9,8 @@ public class MailBox : MonoBehaviour
     public int mailBoxId = -1;
     private TextMeshProUGUI mailNameText;
     private TextMeshProUGUI mailContentText;
-    private TextMeshProUGUI sender;
-    private TextMeshProUGUI content;
+    public TextMeshProUGUI sender;
+    public TextMeshProUGUI content;
 
     public void OnClickedDetail()
     {
@@ -22,6 +22,7 @@ public class MailBox : MonoBehaviour
         }
 
         mailNameText = gameObject.GetComponent<TextMeshProUGUI>();
+
         if (mailNameText != null && sender != null)
         {
             mailNameText.text = sender.text.ToString();

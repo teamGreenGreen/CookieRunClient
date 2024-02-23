@@ -103,7 +103,7 @@ public class LobbyUIManager : MonoBehaviour
                 
                 if(mailInfoText != null)
                 {
-                    mailInfoText.text = mail.Content.ToString();
+                    mailInfoText.text = mail.Sender.ToString();
                 }
             }
 
@@ -115,6 +115,7 @@ public class LobbyUIManager : MonoBehaviour
                 if (senderText != null)
                 {
                     senderText.text = mail.Sender.ToString();
+                    mailBox.sender.text = mail.Sender.ToString();
                 }
             }
 
@@ -126,6 +127,7 @@ public class LobbyUIManager : MonoBehaviour
                 if (contentText != null)
                 {
                     contentText.text = mail.Content.ToString();
+                    mailBox.content.text = mail.Content.ToString();
                 }
             }
 
