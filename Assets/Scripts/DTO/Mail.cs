@@ -10,8 +10,7 @@ using System.Dynamic;
 using static UserInfoData;
 using static GameResult;
 
-public class Mail : MonoBehaviour
-{
+
     public class MailInfo
     {
         public int MailboxId { get; set; }
@@ -24,7 +23,8 @@ public class Mail : MonoBehaviour
         public DateTime ExpiredAt { get; set; }
         public DateTime CreatedAt { get; set; }
     }
-
+public class Mail : MonoBehaviour
+{
     public class MailOpenReq
     {
         public int MailboxId { get; set; }

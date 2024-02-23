@@ -95,7 +95,7 @@ public class LobbyUIManager : MonoBehaviour
         {
             GameObject mailObject = Instantiate(mailPrefab, content);
             MailBox mailBox = mailObject.GetComponent<MailBox>();
-            //mailBox.mailBoxId = mail.MailboxId;
+            mailBox.mailBoxId = mail.MailboxId;
             Transform textTransform = mailObject.transform.Find("preview");
             if(textTransform != null)
             {

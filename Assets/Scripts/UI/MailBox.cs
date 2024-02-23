@@ -6,10 +6,11 @@ using Unity.VisualScripting;
 
 public class MailBox : MonoBehaviour
 {
+    public int mailBoxId = -1;
     private TextMeshProUGUI mailNameText;
     private TextMeshProUGUI mailContentText;
-    public TextMeshProUGUI sender;
-    public TextMeshProUGUI content;
+    private TextMeshProUGUI sender;
+    private TextMeshProUGUI content;
 
     public void OnClickedDetail()
     {
@@ -21,7 +22,10 @@ public class MailBox : MonoBehaviour
         }
 
         mailNameText = gameObject.GetComponent<TextMeshProUGUI>();
-        mailNameText.text = sender.ToString();
+        if (mailNameText != null && sender != null)
+        {
+            mailNameText.text = sender.text.ToString();
+        }
 
         gameObject = GameObject.Find("MailContent_Txt");
 
@@ -31,6 +35,10 @@ public class MailBox : MonoBehaviour
         }
 
         mailContentText = gameObject.GetComponent<TextMeshProUGUI>();
-        mailContentText.text = content.ToString();
+
+        if (mailContentText != null && content != null)
+        {
+            mailContentText.text = content.text.ToString();
+        }
     }
 }
