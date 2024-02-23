@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using static Mail;
 using static UserInfo;
 
 public class LobbyUIManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class LobbyUIManager : MonoBehaviour
     public static TextMeshProUGUI levelText;
     public static TextMeshProUGUI expText;
     public static TextMeshProUGUI userNameText;
+    public ScrollRect scrollRect;
+    public GameObject mailPrefab;
     public static int acquiredCookieId;
 
     void Start()
@@ -30,20 +33,118 @@ public class LobbyUIManager : MonoBehaviour
 
         gameObject = GameObject.Find("Exp_Txt");
         expText = gameObject.GetComponent<TextMeshProUGUI>();
+
+        gameObject = GameObject.Find("UserName_Txt");
+        userNameText = gameObject.GetComponent<TextMeshProUGUI>();
     }
+
+    public float elapseedTime = 0;
+    public bool onceCheck = false;
 
     // Update is called once per frame
     void Update()
     {
+
+        elapseedTime += Time.deltaTime;
+        if(elapseedTime > 2.0f && !onceCheck)
+        {
+            onceCheck = true;
+            // 새 MailInfo 인스턴스 생성
+            MailListRes test = new MailListRes();
+            test.MailList = new List<MailInfo>
+            {
+                new MailInfo
+                {
+                    MailboxId = 1,
+                    Uid = 1,
+                    IsRead = false,
+                    Sender = "운영자",
+                    Content = "레벨 업 ㅊㅋ",
+                    RewardType = "diamond",
+                    Count = 20,
+                    CreatedAt = DateTime.Now,
+                    ExpiredAt = DateTime.Now.AddDays(7)
+                }
+            };
+
+            UpdateMailListUI(test);
+        }
     }
 
-    public static void UpdateUserInfoUI(UserInfoData.UserInfoRes res)
+    public static void UpdateUserInfoUI(UserInfoRes res)
     {
-        levelText.text = res.Level.ToString("N0");
+        levelText.text = res.UserInfo.Level.ToString("N0");
         // 경험치는 최대 경험치 받아서 수정 필요
-        expText.text = res.Exp.ToString("N0");
-        coinCountText.text = res.Money.ToString("N0");
-        gemCountText.text = res.Diamond.ToString("N0");
-        acquiredCookieId = res.AcquiredCookieId;
+        expText.text = res.UserInfo.Exp.ToString("N0");
+        coinCountText.text = res.UserInfo.Money.ToString("N0");
+        gemCountText.text = res.UserInfo.Diamond.ToString("N0");
+        acquiredCookieId = res.UserInfo.AcquiredCookieId;
+        userNameText.text = res.UserInfo.UserName.ToString();
+    }
+
+    public void UpdateMailListUI(Mail.MailListRes res)
+    {
+        if (scrollRect == null)
+        {
+            return;
+        }
+        RectTransform content = scrollRect.content;
+
+        foreach (MailInfo mail in res.MailList)
+        {
+            GameObject mailObject = Instantiate(mailPrefab, content);
+
+            Transform textTransform = mailObject.transform.Find("preview");
+            if(textTransform != null)
+            {
+                TextMeshProUGUI mailInfoText = textTransform.GetComponent<TextMeshProUGUI>();
+                
+                if(mailInfoText != null)
+                {
+                    mailInfoText.text = mail.Content.ToString();
+                }
+            }
+
+            Transform senderTransform = mailObject.transform.Find("sender");
+            if (senderTransform != null)
+            {
+                TextMeshProUGUI senderText = senderTransform.GetComponent<TextMeshProUGUI>();
+
+                if (senderText != null)
+                {
+                    senderText.text = mail.Sender.ToString();
+                }
+            }
+
+            Transform contentTransform = mailObject.transform.Find("content");
+            if (contentTransform != null)
+            {
+                TextMeshProUGUI contentText = contentTransform.GetComponent<TextMeshProUGUI>();
+
+                if (contentText != null)
+                {
+                    contentText.text = mail.Content.ToString();
+                }
+            }
+
+            if (mail.RewardType == "diamond")
+            {
+                Transform diamondTransform = mailObject.transform.Find("diamond");
+
+                if(diamondTransform != null)
+                {
+                    diamondTransform.gameObject.SetActive(true);
+                }
+            }
+            else if(mail.RewardType == "money")
+            {
+                Transform moneyTransform = mailObject.transform.Find("coin");
+
+                if (moneyTransform != null)
+                {
+                    moneyTransform.gameObject.SetActive(true);
+                }
+            }
+        }
     }
 }
