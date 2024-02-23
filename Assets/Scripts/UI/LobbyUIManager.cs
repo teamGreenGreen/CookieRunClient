@@ -52,6 +52,8 @@ public class LobbyUIManager : MonoBehaviour
         {
             foreach (Transform child in scrollRect.content.transform)
             {
+                MailBox mailBox = child.GetComponent<MailBox>();
+                mailBox.ClearDetailInfo();
                 Destroy(child.gameObject);
             }
         }
@@ -96,6 +98,7 @@ public class LobbyUIManager : MonoBehaviour
             GameObject mailObject = Instantiate(mailPrefab, content);
             MailBox mailBox = mailObject.GetComponent<MailBox>();
             mailBox.mailBoxId = mail.MailboxId;
+
             Transform textTransform = mailObject.transform.Find("preview");
             if(textTransform != null)
             {

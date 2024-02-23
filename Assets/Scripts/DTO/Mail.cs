@@ -11,18 +11,18 @@ using static UserInfoData;
 using static GameResult;
 
 
-    public class MailInfo
-    {
-        public int MailboxId { get; set; }
-        public int Uid { get; set; }
-        public bool IsRead { get; set; }
-        public string Sender { get; set; }
-        public string Content { get; set; }
-        public string RewardType { get; set; }
-        public int Count { get; set; }
-        public DateTime ExpiredAt { get; set; }
-        public DateTime CreatedAt { get; set; }
-    }
+public class MailInfo
+{
+    public int MailboxId { get; set; }
+    public int Uid { get; set; }
+    public bool IsRead { get; set; }
+    public string Sender { get; set; }
+    public string Content { get; set; }
+    public string RewardType { get; set; }
+    public int Count { get; set; }
+    public DateTime ExpiredAt { get; set; }
+    public DateTime CreatedAt { get; set; }
+}
 public class Mail : MonoBehaviour
 {
     public class MailOpenReq

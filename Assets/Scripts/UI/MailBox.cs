@@ -41,5 +41,33 @@ public class MailBox : MonoBehaviour
         {
             mailContentText.text = content.text.ToString();
         }
+
+        Buttons.curMailBoxId = mailBoxId;
+    }
+
+    public void ClearDetailInfo()
+    {
+        GameObject gameObject = GameObject.Find("MailName_Txt");
+
+        if (gameObject == null)
+        {
+            return;
+        }
+
+        mailNameText = gameObject.GetComponent<TextMeshProUGUI>();
+
+        if (mailNameText != null && sender != null)
+        {
+            mailNameText.text = "";
+        }
+
+        mailContentText = gameObject.GetComponent<TextMeshProUGUI>();
+
+        if (mailContentText != null && content != null)
+        {
+            mailContentText.text = "";
+        }
+
+        Buttons.curMailBoxId = -1;
     }
 }
