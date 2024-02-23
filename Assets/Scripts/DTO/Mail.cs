@@ -46,6 +46,7 @@ public class Mail : MonoBehaviour
         if(gameObject != null)
         {
             LobbyUIManager lobbyUIManager = gameObject.GetComponent<LobbyUIManager>();
+            lobbyUIManager.ClearAllMails();
             lobbyUIManager.UpdateMailListUI(res);
         }
     }
