@@ -5,9 +5,12 @@ using static CookieSelectShop;
 using UnityEngine.UI;
 using static CookieBuy;
 using System.Threading.Tasks;
+using TMPro;
 
 public class BuyCookieBtn : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject ErrorPerfab;
     public GameObject myGameObject;
     public int cookieNum = -1;
     private bool isBuySuccess;
@@ -35,13 +38,33 @@ public class BuyCookieBtn : MonoBehaviour
         {
             CookieId = cookieNum
         });
-        if(res.Result == EErrorCode.None)
+        if (res.Result == EErrorCode.None)
         {
             UserInfoData.RequestUserInfoPost();
             return true;
         }
-        else if(res.Result == EErrorCode.NotEnoughDiamond)
+        else if (res.Result == EErrorCode.NotEnoughDiamond)
         {
+            GameObject warningPrefab = Instantiate(ErrorPerfab);
+
+            Transform alertTxtTransform = warningPrefab.transform.Find("Alert_Txt");
+            TextMeshProUGUI alertText = alertTxtTransform.GetComponentInChildren<TextMeshProUGUI>();
+            alertText.text = "다이아몬드가 부족합니다.";
+
+            Canvas canvas = GetComponentInParent<Canvas>();
+
+            if (canvas != null)
+            {
+                RectTransform prefabRectTransform = warningPrefab.GetComponent<RectTransform>();
+                prefabRectTransform.SetParent(canvas.transform, false);
+                prefabRectTransform.localPosition = Vector3.zero;
+                warningPrefab.transform.SetParent(canvas.transform, false);
+            }
+            else
+            {
+                Debug.LogError("CookieSelect_Canvas 스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
+            }
+
             return false;
         }
         else
