@@ -1,3 +1,4 @@
+using Assets.Scripts.DTO;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +13,15 @@ public class AttendanceManager : MonoBehaviour
     private string[] rewards;
     GameObject layout; 
     // 캔버스가 활성화 되면 켜진다.
-    private void OnEnable()
+    private async void OnEnable()
     {
-
-
-        // TODO : 서버에 연결하여 출석 요청 및 Count와 보상 목록 얻어오기
-        count = 14;
-        rewards = new string[] { "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1", "diamond:1" };
-
+        // 서버에 연결하여 출석 요청 및 Count와 보상 목록 얻어오기
+        AttendanceRes res = await HttpManager.Instance.Post<AttendanceRes>("attendance/request", null);
+        count = res.AttendanceCount;
+        rewards = res.Rewards;
 
         Transform refresh = transform.Find("RefreshRemain");
-        refresh.GetComponent<Text>().text = $"{19-count+1}일 후 갱신됩니다.";
+        refresh.GetComponent<Text>().text = $"{res.RemainDays}일 후 갱신됩니다.";
         layout = transform.Find("Layout").gameObject;
 
         foreach (Transform child in layout.transform)
