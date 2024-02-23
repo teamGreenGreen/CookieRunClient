@@ -7,7 +7,6 @@ namespace Assets.Scripts.DTO
     {
         public Int64 UserId { get; set; }
         public string AuthToken { get; set; }
-        public string UserName { get; set; }
     }
 
     public class GameServerLoginRes : ErrorCodeDTO
