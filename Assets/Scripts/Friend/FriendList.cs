@@ -22,6 +22,8 @@ public class FriendList : MonoBehaviour
 
         if(res.Result == 0)
         {
+            ClearContentTransform();
+
             // FriendList에서 각 FriendElement를 꺼내어 출력
             foreach (FriendElement friend in res.FriendList)
             {
@@ -38,5 +40,13 @@ public class FriendList : MonoBehaviour
         }
 
         return;
+    }
+    private void ClearContentTransform()
+    {
+        // contentTransform의 모든 자식 객체 제거
+        foreach (Transform child in contentTransform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }
