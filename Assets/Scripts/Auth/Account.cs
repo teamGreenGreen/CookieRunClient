@@ -35,6 +35,8 @@ public class Account : MonoBehaviour
     {
         bool isValidEmail = false, isValidPassword = false;
 
+        HttpManager.Instance.ServerURL = HttpManager.AUTH_SERVER_URL;
+
         isValidEmail = IsValidEmail();
         isValidPassword = IsValidPassword();
 
@@ -56,7 +58,6 @@ public class Account : MonoBehaviour
                 tmp.text = "이미 등록된 이메일 입니다";
             }
                
-
             return;
         }
     }
