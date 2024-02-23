@@ -9,9 +9,14 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HttpManager : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject notificationUI;
+
     private static HttpManager instance;
     public const string GAME_SERVER_URL = "https://localhost:7270";
     public const string AUTH_SERVER_URL = "https://localhost:7034";
@@ -51,7 +56,7 @@ public class HttpManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public async UniTask<TResponse> LoginServer<TResponse>(string path, object dto)
+    public async UniTask<TResponse> LoginServer<TResponse>(string path, object dto) where TResponse : ErrorCodeDTO
     {
         string url = ServerURL + '/' + path;
 
@@ -80,6 +85,11 @@ public class HttpManager : MonoBehaviour
             // JSON 데이터를 역직렬화해서 DTO 객체에 담는다
             TResponse response = JsonConvert.DeserializeObject<TResponse>(jsonResponse);
 
+            if (response.Result == EErrorCode.SessionIdNotFound)
+            {
+                ActiveNotificationUi();
+            }
+
             return response;
         }
 
@@ -88,7 +98,7 @@ public class HttpManager : MonoBehaviour
 
     // 서버에 post 요청을 보내는 함수
     // 요청, 응답의 타입을 지정해서 사용
-    public async UniTask<TResponse> Post<TResponse>(string path, object dto)
+    public async UniTask<TResponse> Post<TResponse>(string path, object dto) where TResponse : ErrorCodeDTO
     {
         string url = ServerURL + '/' + path;
 
@@ -119,6 +129,11 @@ public class HttpManager : MonoBehaviour
             string jsonResponse = req.downloadHandler.text;
             // JSON 데이터를 역직렬화해서 DTO 객체에 담는다
             TResponse response = JsonConvert.DeserializeObject<TResponse>(jsonResponse);
+
+            if(response.Result == EErrorCode.SessionIdNotFound)
+            {
+                ActiveNotificationUi();
+            }
 
             return response;
         }
@@ -162,5 +177,19 @@ public class HttpManager : MonoBehaviour
     {
         this.uid = uid;
         this.sessionId = sessionId;
+    }
+
+    public void ActiveNotificationUi()
+    {
+        notificationUI.SetActive(true);
+        TMP_Text tmp = notificationUI.GetComponentInChildren<TMP_Text>();
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            tmp.text = "서버에 연결할 수 없습니다";
+        }
+        else
+        {
+            tmp.text = "서버와 연결이 끊어졌습니다";
+        }
     }
 }
