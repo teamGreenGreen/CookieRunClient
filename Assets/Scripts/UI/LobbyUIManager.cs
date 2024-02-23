@@ -73,13 +73,13 @@ public class LobbyUIManager : MonoBehaviour
             return;
         }
 
-        levelText.text = res.userInfo.Level.ToString("N0");
+        levelText.text = res.UserInfo.Level.ToString("N0");
         // TODO.김초원 : 경험치는 최대 경험치 받아서 수정 필요
-        expText.text = res.userInfo.Exp.ToString("N0");
-        coinCountText.text = res.userInfo.Money.ToString("N0");
-        gemCountText.text = res.userInfo.Diamond.ToString("N0");
-        acquiredCookieId = res.userInfo.AcquiredCookieId;
-        userNameText.text = res.userInfo.UserName.ToString();
+        expText.text = res.UserInfo.Exp.ToString("N0");
+        coinCountText.text = res.UserInfo.Money.ToString("N0");
+        gemCountText.text = res.UserInfo.Diamond.ToString("N0");
+        acquiredCookieId = res.UserInfo.AcquiredCookieId;
+        userNameText.text = res.UserInfo.UserName.ToString();
     }
 
     public void UpdateMailListUI(MailListRes res)
@@ -95,7 +95,7 @@ public class LobbyUIManager : MonoBehaviour
         {
             GameObject mailObject = Instantiate(mailPrefab, content);
             MailBox mailBox = mailObject.GetComponent<MailBox>();
-            mailBox.mailBoxId = mail.MailboxId;
+            //mailBox.mailBoxId = mail.MailboxId;
             Transform textTransform = mailObject.transform.Find("preview");
             if(textTransform != null)
             {
