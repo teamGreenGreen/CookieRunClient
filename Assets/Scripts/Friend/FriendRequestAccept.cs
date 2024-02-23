@@ -26,6 +26,16 @@ public class FriendRequestAccept : MonoBehaviour
         {
             Debug.Log("수락 성공");
         }
+        else if(res.Result == EErrorCode.FriendReqAcceptFailMyFriendCountExceeded)
+        {
+            Debug.Log("나의 최대 친구 수를 초과합니다.");
+            return;
+        }
+        else if (res.Result == EErrorCode.FriendReqAcceptFailTargetFriendCountExceeded)
+        {
+            Debug.Log("상대방의 최대 친구 수를 초과합니다.");
+            return;
+        }
         else
         {
             Debug.Log("에러");

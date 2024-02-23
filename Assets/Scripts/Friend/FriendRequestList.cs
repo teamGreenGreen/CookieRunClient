@@ -22,11 +22,10 @@ public class FriendRequestList : MonoBehaviour
 
         if (res.Result == 0)
         {
-            Debug.Log("요청 성공");
+            ClearContentTransform();
             // FriendList에서 각 FriendElement를 꺼내어 출력
             foreach (FriendRequestElement friend in res.FriendRequestList)
             {
-                Debug.Log("요청 보낸 사람의 이름: " + friend.FromUserName);
                 GameObject friendRequestObject = Instantiate(friendRequestPrefab, contentTransform);
                 FriendRequestElementUI friendRequestElementUI = friendRequestObject.GetComponent<FriendRequestElementUI>();
                 friendRequestElementUI.SetFriendInfo(friend);
@@ -39,5 +38,13 @@ public class FriendRequestList : MonoBehaviour
         }
 
         return;
+    }
+    private void ClearContentTransform()
+    {
+        // contentTransform의 모든 자식 객체 제거
+        foreach (Transform child in contentTransform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

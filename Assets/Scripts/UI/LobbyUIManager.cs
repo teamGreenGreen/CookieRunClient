@@ -5,11 +5,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using static NowCookie;
 using static Mail;
 using static UserInfo;
+using System.Security.Cryptography;
 
 public class LobbyUIManager : MonoBehaviour
 {
+    [SerializeField]
+    public Image mainCookieImage;
     // Start is called before the first frame update
     public static TextMeshProUGUI gemCountText;
     public static TextMeshProUGUI coinCountText;
@@ -19,6 +23,7 @@ public class LobbyUIManager : MonoBehaviour
     public ScrollRect scrollRect;
     public GameObject mailPrefab;
     public static int acquiredCookieId;
+    public int nowCookieId;
 
     void Start()
     {
@@ -149,6 +154,25 @@ public class LobbyUIManager : MonoBehaviour
                     moneyTransform.gameObject.SetActive(true);
                 }
             }
+        }
+    }
+    public void LoadAndSetCookieImage(int cookieId)
+    {
+        nowCookieId = cookieId;
+        // 이미지 파일명을 생성
+        string imageName = "Cookie" + cookieId;
+
+        // Resources 폴더 내의 CookieImages 폴더에서 이미지 로드
+        Sprite cookieSprite = Resources.Load<Sprite>("Cookie/StandCookie/" + imageName);
+
+        // 이미지가 로드되었는지 확인 후 교체
+        if (cookieSprite != null)
+        {
+            mainCookieImage.sprite = cookieSprite;
+        }
+        else
+        {
+            Debug.LogError("Image not found for cookieId: " + cookieId);
         }
     }
 }
