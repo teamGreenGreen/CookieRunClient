@@ -16,8 +16,6 @@ public class LobbyUIManager : MonoBehaviour
     public static TextMeshProUGUI expText;
     public static TextMeshProUGUI userNameText;
 
-    float elapsedTime = 0;
-
     void Start()
     {
         GameObject gameObject = GameObject.Find("GemGount_Txt");

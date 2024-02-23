@@ -55,4 +55,15 @@ public class LoadSceneManager : MonoBehaviour
             UserInfoData.RequestUserInfoPost();
         }
     }
+
+    public void ReturnToLobbyAfterDelay(float delayTime)
+    {
+        StartCoroutine(DelayedSceneChange(delayTime));
+    }
+
+    private IEnumerator DelayedSceneChange(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        SceneChangeByEnumValue(ESceneName.LobbyScene);
+    }
 }

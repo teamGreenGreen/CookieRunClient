@@ -14867,7 +14867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -540014187, guid: 38056a97d090fe84196df5e391d5b37e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cea47bff9a331074f952cbc0d3215261, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14895,7 +14895,7 @@ Animator:
   m_GameObject: {fileID: 1467613077}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 14304d1be84f2234ab770d4404707c43, type: 2}
+  m_Controller: {fileID: 9100000, guid: fcedc6303c4612141a40fd40a82dae46, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -14947,12 +14947,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -540014187, guid: 38056a97d090fe84196df5e391d5b37e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cea47bff9a331074f952cbc0d3215261, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.98, y: 2.26}
+  m_Size: {x: 1.04, y: 1.04}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

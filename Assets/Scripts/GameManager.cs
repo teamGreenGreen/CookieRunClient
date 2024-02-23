@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void OpenLoadingCanvas(Dictionary<int, int> acquiredItems, int currentCookieId)
+    public static async void OpenLoadingCanvas(Dictionary<int, int> acquiredItems, int currentCookieId)
     {
         OpenCanvas canvas = GameObject.Find("LoadingCanvasController").GetComponent<OpenCanvas>();
 
@@ -212,6 +212,6 @@ public class GameManager : MonoBehaviour
             canvas.OnClick();
         }
 
-        GameResult.GameResultPost(acquiredItems, GameManager.score, GameManager.money, 10, currentCookieId);
+        await GameResult.GameResultPost(acquiredItems, GameManager.score, GameManager.money, 10, currentCookieId);
     }
 }

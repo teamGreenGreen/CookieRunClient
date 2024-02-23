@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
     private bool onceCheck = false;
 
     public string cookieName = "";
-    Dictionary<int/*itemID*/, int/*count*/>? acquiredItems = new Dictionary<int, int>
+    Dictionary<int/*itemID*/, int/*count*/> acquiredItems = new Dictionary<int, int>
     {
         { 1, 0 },
         { 2, 0 },
