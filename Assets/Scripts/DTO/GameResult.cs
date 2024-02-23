@@ -7,27 +7,27 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public class GameResultReq
+{
+    // 젤리, 돈, 플레이 시간
+    public Dictionary<int/*itemID*/, int/*count*/> Items { get; set; }
+    public int Score { get; set; }
+    public int Money { get; set; }
+    public int Speed { get; set; }
+    public int CurrentCookieId { get; set; }
+}
+
+public class GameResultRes : ErrorCodeDTO
+{
+    public int Money { get; set; }
+    public int Level { get; set; }
+    public int Exp { get; set; }
+
+    public int MaxExp { get; set; }
+}
+
 public class GameResult : MonoBehaviour
 {
-   public class GameResultReq
-    {
-        // 젤리, 돈, 플레이 시간
-        public Dictionary<int/*itemID*/, int/*count*/> Items { get; set; }
-        public int Score { get; set; }
-        public int Money { get; set; }
-        public int Speed { get; set; }
-        public int CurrentCookieId { get; set; }
-    }
-
-    public class GameResultRes : ErrorCodeDTO
-    {
-        public int Money { get; set; }
-        public int Level { get; set; }
-        public int Exp { get; set; }
-
-        public int MaxExp { get; set; }
-    }
-
     public static async Task GameResultPost(Dictionary<int/*itemID*/, int/*count*/> items, int score, int money, int speed, int currentCookieId)
     {
         GameResultRes res = await HttpManager.Instance.Post<GameResultRes>("GameResult", new
