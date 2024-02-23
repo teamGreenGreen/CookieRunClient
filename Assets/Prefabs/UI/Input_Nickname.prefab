@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 4131753964249711486}
   - component: {fileID: 7347536742943664288}
   m_Layer: 5
-  m_Name: CoinText
+  m_Name: TEXT_OK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,8 +531,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD655\uC778"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 73d2c739d0d863e4c817743f14cba6de, type: 2}
-  m_sharedMaterial: {fileID: 3505152142019701290, guid: 73d2c739d0d863e4c817743f14cba6de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f05d20aba26afba48b27a517f689ad32, type: 2}
+  m_sharedMaterial: {fileID: -4991872034232629930, guid: f05d20aba26afba48b27a517f689ad32, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -612,7 +612,7 @@ GameObject:
   - component: {fileID: 7258868107396673618}
   - component: {fileID: 339855316634378641}
   m_Layer: 5
-  m_Name: PLAY_Btn
+  m_Name: BTN__OK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
