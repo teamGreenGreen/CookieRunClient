@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a898de8df1f9e0042bcf53d83e6ad102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  userNameText: {fileID: 0}
+  friendNameTxt: {fileID: 2177364623292393545}
 --- !u!1 &7970282224913739099
 GameObject:
   m_ObjectHideFlags: 0

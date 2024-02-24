@@ -5,11 +5,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using static NowCookie;
 using static Mail;
 using static UserInfo;
+using System.Security.Cryptography;
 
 public class LobbyUIManager : MonoBehaviour
 {
+    [SerializeField]
+    public Image mainCookieImage;
     // Start is called before the first frame update
     public static TextMeshProUGUI gemCountText;
     public static TextMeshProUGUI coinCountText;
@@ -19,6 +23,7 @@ public class LobbyUIManager : MonoBehaviour
     public ScrollRect scrollRect;
     public GameObject mailPrefab;
     public static int acquiredCookieId;
+    public int nowCookieId;
 
     void Start()
     {
@@ -44,37 +49,39 @@ public class LobbyUIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
 
-        elapseedTime += Time.deltaTime;
-        if(elapseedTime > 2.0f && !onceCheck)
+    public void ClearAllMails()
+    {
+        if (scrollRect != null)
         {
-            onceCheck = true;
-            // 새 MailInfo 인스턴스 생성
-            MailListRes test = new MailListRes();
-            test.MailList = new List<MailInfo>
+            foreach (Transform child in scrollRect.content.transform)
             {
-                new MailInfo
-                {
-                    MailboxId = 1,
-                    Uid = 1,
-                    IsRead = false,
-                    Sender = "운영자",
-                    Content = "레벨 업 ㅊㅋ",
-                    RewardType = "diamond",
-                    Count = 20,
-                    CreatedAt = DateTime.Now,
-                    ExpiredAt = DateTime.Now.AddDays(7)
-                }
-            };
-
-            UpdateMailListUI(test);
+                MailBox mailBox = child.GetComponent<MailBox>();
+                mailBox.ClearDetailInfo();
+                Destroy(child.gameObject);
+            }
         }
     }
 
     public static void UpdateUserInfoUI(UserInfoRes res)
     {
+        if (res == null)
+        {
+            return;
+        }
+
+        if(levelText == null ||
+            expText == null ||
+            coinCountText == null ||
+            gemCountText == null ||
+            userNameText == null)
+        {
+            return;
+        }
+
         levelText.text = res.UserInfo.Level.ToString("N0");
-        // 경험치는 최대 경험치 받아서 수정 필요
+        // TODO.김초원 : 경험치는 최대 경험치 받아서 수정 필요
         expText.text = res.UserInfo.Exp.ToString("N0");
         coinCountText.text = res.UserInfo.Money.ToString("N0");
         gemCountText.text = res.UserInfo.Diamond.ToString("N0");
@@ -82,17 +89,20 @@ public class LobbyUIManager : MonoBehaviour
         userNameText.text = res.UserInfo.UserName.ToString();
     }
 
-    public void UpdateMailListUI(Mail.MailListRes res)
+    public void UpdateMailListUI(MailListRes res)
     {
         if (scrollRect == null)
         {
             return;
         }
+
         RectTransform content = scrollRect.content;
 
         foreach (MailInfo mail in res.MailList)
         {
             GameObject mailObject = Instantiate(mailPrefab, content);
+            MailBox mailBox = mailObject.GetComponent<MailBox>();
+            mailBox.mailBoxId = mail.MailboxId;
 
             Transform textTransform = mailObject.transform.Find("preview");
             if(textTransform != null)
@@ -101,7 +111,7 @@ public class LobbyUIManager : MonoBehaviour
                 
                 if(mailInfoText != null)
                 {
-                    mailInfoText.text = mail.Content.ToString();
+                    mailInfoText.text = mail.Sender.ToString();
                 }
             }
 
@@ -113,6 +123,7 @@ public class LobbyUIManager : MonoBehaviour
                 if (senderText != null)
                 {
                     senderText.text = mail.Sender.ToString();
+                    mailBox.sender.text = mail.Sender.ToString();
                 }
             }
 
@@ -124,6 +135,7 @@ public class LobbyUIManager : MonoBehaviour
                 if (contentText != null)
                 {
                     contentText.text = mail.Content.ToString();
+                    mailBox.content.text = mail.Content.ToString();
                 }
             }
 
@@ -145,6 +157,25 @@ public class LobbyUIManager : MonoBehaviour
                     moneyTransform.gameObject.SetActive(true);
                 }
             }
+        }
+    }
+    public void LoadAndSetCookieImage(int cookieId)
+    {
+        nowCookieId = cookieId;
+        // 이미지 파일명을 생성
+        string imageName = "Cookie" + cookieId;
+
+        // Resources 폴더 내의 CookieImages 폴더에서 이미지 로드
+        Sprite cookieSprite = Resources.Load<Sprite>("Cookie/StandCookie/" + imageName);
+
+        // 이미지가 로드되었는지 확인 후 교체
+        if (cookieSprite != null)
+        {
+            mainCookieImage.sprite = cookieSprite;
+        }
+        else
+        {
+            Debug.LogError("Image not found for cookieId: " + cookieId);
         }
     }
 }
