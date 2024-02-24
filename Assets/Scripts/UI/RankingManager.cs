@@ -2,6 +2,7 @@ using Assets.Scripts.DTO;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,12 +20,26 @@ public class RankingManager : MonoBehaviour
     private async void OnEnable()
     {
         // TODO : 서버에 연결하여 내 랭킹 요청
-        RankGetRes res = await HttpManager.Instance.Post<RankGetRes>("rank/user",null);
+        RankGetRes res = await HttpManager.Instance.Post<RankGetRes>("rank/user", null);
+
         myRank = res.Rank;
         Transform myScore = transform.Find("My_Score");
-        myScore.GetComponent<Text>().text = $"{myRank.Split(":")[1]} 점";
         Transform myRankText = transform.Find("My_Rank_Text");
-        myRankText.GetComponent<Text>().text = $"{myRank.Split(":")[0]} 등";
+        Transform myName = transform.Find("My_Name");
+        if (res.Rank != null)
+        {
+            myScore.GetComponent<Text>().text = $"{myRank.Split(":")[1]} 점";
+            myRankText.GetComponent<Text>().text = $"{myRank.Split(":")[0]} 등";
+        }
+        else
+        {
+            myScore.GetComponent<Text>().text = $"게임을 먼저 진행하세요";
+            myRankText.GetComponent<Text>().text = $"-";
+        }
+        GameObject go = GameObject.Find("UserName_Txt");
+        string userName = go.GetComponent<TextMeshProUGUI>().text;
+        myName.GetComponent<Text>().text = userName;
+
         SetRanks();
         SetButton();
     }
