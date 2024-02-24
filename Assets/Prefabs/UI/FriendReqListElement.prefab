@@ -1047,6 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0fcc4be8718e8b49b0361c8be489587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ErrorPrefab: {fileID: 4281966797167513029, guid: d2a6bc6e289e61d4bbcab053173e61bc, type: 3}
   requestIdTxt: {fileID: 871773539057577402}
 --- !u!1 &9025546976170746742
 GameObject:
