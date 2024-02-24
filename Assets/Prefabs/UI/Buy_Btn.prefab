@@ -146,6 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 058a6cca77f17da48aacedade75650da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ErrorPerfab: {fileID: 4281966797167513029, guid: d2a6bc6e289e61d4bbcab053173e61bc, type: 3}
+  myGameObject: {fileID: 0}
   cookieNum: -1
 --- !u!1 &9102679596705179082
 GameObject:
