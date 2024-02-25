@@ -1,29 +1,38 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
-using static NowCookie;
 using static Mail;
-using static UserInfo;
-using System.Security.Cryptography;
 
 public class LobbyUIManager : MonoBehaviour
 {
     [SerializeField]
     public Image mainCookieImage;
     // Start is called before the first frame update
-    public static TextMeshProUGUI gemCountText;
-    public static TextMeshProUGUI coinCountText;
-    public static TextMeshProUGUI levelText;
-    public static Slider slider;
-    public static TextMeshProUGUI userNameText;
+    public TextMeshProUGUI gemCountText;
+    public TextMeshProUGUI coinCountText;
+    public TextMeshProUGUI levelText;
+    public Slider slider;
+    public TextMeshProUGUI userNameText;
     public ScrollRect scrollRect;
     public GameObject mailPrefab;
-    public static int acquiredCookieId;
+    public int acquiredCookieId;
     public int nowCookieId;
+
+    private static LobbyUIManager instance;
+    public static LobbyUIManager Instance
+    {
+        get
+        {
+            instance = FindObjectOfType<LobbyUIManager>();
+            if (instance == null)
+            {
+                GameObject go = new GameObject("LobbyUIManager");
+                instance = go.AddComponent<LobbyUIManager>();
+            }
+
+            return instance;
+        }
+    }
 
     void Start()
     {
@@ -64,7 +73,7 @@ public class LobbyUIManager : MonoBehaviour
         }
     }
 
-    public static void UpdateUserInfoUI(UserInfoRes res)
+    public void UpdateUserInfoUI(UserInfoRes res)
     {
         if (res == null)
         {

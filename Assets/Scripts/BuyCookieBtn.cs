@@ -40,7 +40,7 @@ public class BuyCookieBtn : MonoBehaviour
         });
         if (res.Result == EErrorCode.None)
         {
-            UserInfoData.RequestUserInfoPostAsync();
+            UserInfoData.Instance.RequestUserInfoPostAsync();
             return true;
         }
         else if (res.Result == EErrorCode.NotEnoughDiamond)

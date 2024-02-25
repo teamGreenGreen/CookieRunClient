@@ -18,9 +18,8 @@ public class CookieSelectShop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LobbyUIManager lobbyUIManagerInstance = FindObjectOfType<LobbyUIManager>();
-        myAcquiredCookieId = LobbyUIManager.acquiredCookieId;
-        myNowCookieId = lobbyUIManagerInstance.nowCookieId;
+        myAcquiredCookieId = LobbyUIManager.Instance.acquiredCookieId;
+        myNowCookieId = LobbyUIManager.Instance.nowCookieId;
         string binaryCookieID = Convert.ToString(myAcquiredCookieId, 2).PadLeft(4, '0');
 
         for (int i = 0; i < 4; i++)

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEditor.Build.Content;
 
 public class CreateMap : MonoBehaviour
 {

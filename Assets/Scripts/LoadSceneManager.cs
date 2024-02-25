@@ -1,11 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static GameResult;
-using static UnityEditor.Progress;
-using UnityEngine.SocialPlatforms.Impl;
-using System.Threading.Tasks;
 
 public enum ESceneName
 {
@@ -46,6 +41,7 @@ public class LoadSceneManager : MonoBehaviour
     }
     public void SceneChangeByEnumValue(ESceneName name)
     {
+        sceneNumber = (int)name;
         SceneManager.LoadScene((int)name);
     }
 
@@ -53,25 +49,15 @@ public class LoadSceneManager : MonoBehaviour
     {
         if (scnene.name == ESceneName.LobbyScene.ToString())
         {
-            _ = UserInfoData.RequestUserInfoPostAsync();
+            sceneNumber = (int)ESceneName.LobbyScene;
+            _ = UserInfoData.Instance.RequestUserInfoPostAsync();
             UserInfoData.RequestNowCookieId();
         }
 
         else if(scnene.name == "TestMap"/*ESceneName.InGame.ToString()*/)
         {
+            sceneNumber = (int)ESceneName.InGame;
             GameManager.Instance.Reset();
         }
-    }
-
-    public void ReturnToLobbyAfterDelay(float delayTime)
-    {
-        StartCoroutine(DelayedSceneChange(delayTime));
-    }
-
-    private IEnumerator DelayedSceneChange(float delayTime)
-    {
-        yield return new WaitForSeconds(delayTime);
-        sceneNumber = (int)ESceneName.LobbyScene;
-        SceneChangeByEnumValue(ESceneName.LobbyScene);
     }
 }

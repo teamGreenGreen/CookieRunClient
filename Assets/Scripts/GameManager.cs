@@ -217,7 +217,7 @@ public class GameManager : MonoBehaviour
             return;
 
         score += curScore;
-
+        
         TextMeshProUGUI curScoreText = gameObject.GetComponent<TextMeshProUGUI>();
 
         if (curScoreText)
@@ -252,6 +252,6 @@ public class GameManager : MonoBehaviour
             canvas.OnClick();
         }
 
-        await GameResult.GameResultPost(acquiredItems, score, money, speed, currentCookieId);
+        await GameResult.Instance.GameResultPostAsync(acquiredItems, score, money, speed, currentCookieId);
     }
 }
