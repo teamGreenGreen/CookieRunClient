@@ -40,6 +40,11 @@ public class Mail : MonoBehaviour
     {
     }
 
+    public class MailDeleteRes : ErrorCodeDTO
+    {
+
+    }
+
     public static async void MailListPost()
     {
         MailListRes res = await HttpManager.Instance.Post<MailListRes>("MailList", null);
@@ -55,6 +60,19 @@ public class Mail : MonoBehaviour
     public static async Task MailOpenPostAsync(int mailboxId)
     {
         MailOpenRes res = await HttpManager.Instance.Post<MailOpenRes>("MailOpen", new
+        {
+            MailboxId = mailboxId
+        });
+
+        if (res.Result == EErrorCode.None)
+        {
+            MailListPost();
+        }
+    }
+
+    public static async Task MailDeletePostAsync(int mailboxId)
+    {
+        MailDeleteRes res = await HttpManager.Instance.Post<MailDeleteRes>("MailDelete", new
         {
             MailboxId = mailboxId
         });
