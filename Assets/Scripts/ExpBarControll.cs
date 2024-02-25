@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class ExpBarControll : MonoBehaviour
 {
@@ -11,14 +12,14 @@ public class ExpBarControll : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI expTxt;
 
-    private int maxExp = 6170;
-    private int nowExp = 6000;
+    private int maxExp = 6000;
+    private int nowExp = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         expSlider.value = (float)nowExp / (float)maxExp;
-        expTxt.text = string.Format("{0:#,###}/{1:#,###}", nowExp, maxExp);
+        expTxt.text = nowExp.ToString("N0") + '/' + maxExp.ToString("N0");
     }
 
     // Update is called once per frame
