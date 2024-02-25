@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int score { get; set; }
     private bool[] alphabets = new bool[9];
     private Texture2D[] bonusTimeTextures = new Texture2D[9];
-    private Player player = null;
+    private Player player;
     private float elapsedTime = 0.0f;
     public float decreaseSpeed = 2.0f; // 매 프레임마다 감소되는 속도
     private float currentDamage = 0f; // 현재 감소하는 양

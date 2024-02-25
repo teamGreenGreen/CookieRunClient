@@ -27,6 +27,7 @@ public class UserInfoData : MonoBehaviour
     }
     private static UserInfoData instance;
 
+    //TODO.김준철 : 출석 체크에 아래 업데이트 함수 적용하기
     public async Task RequestUserInfoPostAsync()
     {
         UserInfoRes res = await HttpManager.Instance.Post<UserInfoRes>("UserInfoLoad", null);

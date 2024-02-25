@@ -3953,8 +3953,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCookieImage: {fileID: 1467613079}
+  gemCountText: {fileID: 0}
+  coinCountText: {fileID: 0}
+  levelText: {fileID: 0}
+  slider: {fileID: 0}
+  userNameText: {fileID: 0}
   scrollRect: {fileID: 1626566013}
   mailPrefab: {fileID: 7095297909637106023, guid: 5a176a6ce7b2eeb4baf1ba8d70d28772, type: 3}
+  acquiredCookieId: 0
   nowCookieId: 0
   elapseedTime: 0
   onceCheck: 0
@@ -17529,8 +17535,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expSlider: {fileID: 1998206765}
   expTxt: {fileID: 333481250}
-  maxExp: 6000
-  nowExp: 0
 --- !u!1 &2003678588
 GameObject:
   m_ObjectHideFlags: 0

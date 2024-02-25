@@ -92,23 +92,14 @@ public class LobbyUIManager : MonoBehaviour
         levelText.text = res.UserInfo.Level.ToString("N0");
         ExpBarControll expBarController = slider.GetComponent<ExpBarControll>();
         expBarController.nowExp = res.UserInfo.Exp / 1000;
+        
         int maxExp = 0;
-        if(res.UserInfo.Level == 1)
-        {
-            maxExp = 6000;
-        }
-        else if(res.UserInfo.Level == 2)
-        {
-            maxExp = 10000;
-        }
-        else if(res.UserInfo.Level == 3)
-        {
-            maxExp = 30000;
-        }
-        else
-        {
-            maxExp = 50000;
-        }
+      
+        if (res.UserInfo.Level == 1) maxExp = 6000;
+        else if (res.UserInfo.Level == 2) maxExp = 10000;
+        else if (res.UserInfo.Level == 3) maxExp = 30000;
+        else maxExp = 50000;
+
         expBarController.maxExp = maxExp;
         coinCountText.text = res.UserInfo.Money.ToString("N0");
         gemCountText.text = res.UserInfo.Diamond.ToString("N0");
@@ -165,14 +156,24 @@ public class LobbyUIManager : MonoBehaviour
                     mailBox.content.text = mail.Content.ToString();
                 }
             }
+            Transform countTransform = mailObject.transform.Find("count");
+            if (countTransform != null)
+            {
+                TextMeshProUGUI countText = countTransform.GetComponent<TextMeshProUGUI>();
+                if (countText != null)
+                {
+                    countText.text = mail.Count.ToString();
+                }
+            }
 
             if (mail.RewardType == "diamond")
             {
                 Transform diamondTransform = mailObject.transform.Find("diamond");
 
-                if(diamondTransform != null)
+                if(diamondTransform != null && countTransform != null)
                 {
                     diamondTransform.gameObject.SetActive(true);
+                    countTransform.gameObject.SetActive(true);
                 }
             }
             else if(mail.RewardType == "money")
@@ -182,6 +183,7 @@ public class LobbyUIManager : MonoBehaviour
                 if (moneyTransform != null)
                 {
                     moneyTransform.gameObject.SetActive(true);
+                    countTransform.gameObject.SetActive(true);
                 }
             }
         }
