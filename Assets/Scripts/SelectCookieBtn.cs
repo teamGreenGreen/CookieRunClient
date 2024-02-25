@@ -17,11 +17,9 @@ public class SelectCookieBtn : MonoBehaviour
             return;
         }
 
-        LobbyUIManager lobbyUIManagerInstance = FindObjectOfType<LobbyUIManager>();
-
         SetNowCookieId();
 
-        GameObject oldCookie = cookieObjects[lobbyUIManagerInstance.nowCookieId - 1];
+        GameObject oldCookie = cookieObjects[LobbyUIManager.Instance.nowCookieId - 1];
         GameObject newCookie = cookieObjects[cookieNum - 1];
 
         SelectColor(newCookie);

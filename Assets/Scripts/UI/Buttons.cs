@@ -17,10 +17,10 @@ public class Buttons : MonoBehaviour
 
     public async Task OpenMailAsync()
     {
-        await Mail.MailOpenPostAsync(curMailBoxId);
+        await Mail.Instance.MailOpenPostAsync(curMailBoxId);
 
         // 로비씬 유저 데이터 UI 업데이트
-        _ = UserInfoData.RequestUserInfoPostAsync();
+        _ = UserInfoData.Instance.RequestUserInfoPostAsync();
     }
 
     public void OnClickedDelete()
@@ -33,6 +33,16 @@ public class Buttons : MonoBehaviour
 
     public async Task DeleteMailAsync()
     {
-        await Mail.MailDeletePostAsync(curMailBoxId);
+        await Mail.Instance.MailDeletePostAsync(curMailBoxId);
+    }
+
+    public void OnClickedOkButton()
+    {
+        GameObject obj = GameObject.Find("GameManager");
+        if (obj != null)
+        {
+            LoadSceneManager loadSceneManager = obj.GetComponent<LoadSceneManager>();
+            loadSceneManager.SceneChangeByEnumValue(ESceneName.LobbyScene);
+        }
     }
 }

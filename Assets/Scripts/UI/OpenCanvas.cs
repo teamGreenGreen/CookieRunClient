@@ -27,6 +27,6 @@ public class OpenCanvas : MonoBehaviour
     public void OnClickedMailBox()
     {
         targetCanvas.gameObject.SetActive(true);
-        Mail.MailListPost();
+        Mail.Instance.MailListPostAsync();
     }
 }

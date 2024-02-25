@@ -1,13 +1,8 @@
 using Assets.Scripts.DTO;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
-using UnityEngine.SocialPlatforms.Impl;
 using static NowCookie;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 public class UserInfoRes : ErrorCodeDTO
 {
@@ -16,10 +11,26 @@ public class UserInfoRes : ErrorCodeDTO
 
 public class UserInfoData : MonoBehaviour
 {
-    public static async Task RequestUserInfoPostAsync()
+    public static UserInfoData Instance
+    {
+        get
+        {
+            instance = FindObjectOfType<UserInfoData>();
+            if (instance == null)
+            {
+                GameObject go = new GameObject("GameManager");
+                instance = go.AddComponent<UserInfoData>();
+            }
+
+            return instance;
+        }
+    }
+    private static UserInfoData instance;
+
+    public async Task RequestUserInfoPostAsync()
     {
         UserInfoRes res = await HttpManager.Instance.Post<UserInfoRes>("UserInfoLoad", null);
-        LobbyUIManager.UpdateUserInfoUI(res);
+        LobbyUIManager.Instance.UpdateUserInfoUI(res);
     }
     public static async void RequestNowCookieId()
     {

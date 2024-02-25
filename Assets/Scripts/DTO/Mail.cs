@@ -1,15 +1,9 @@
 using Assets.Scripts.DTO;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
-using UnityEngine.SocialPlatforms.Impl;
-using System.Dynamic;
-using static UserInfoData;
-using static GameResult;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 
 
 public class MailInfo
@@ -26,6 +20,25 @@ public class MailInfo
 }
 public class Mail : MonoBehaviour
 {
+    public static Mail Instance
+    {
+        get
+        {
+            instance = FindObjectOfType<Mail>();
+            if (instance == null)
+            {
+                GameObject go = new GameObject("LobbyUIManager");
+                if(go !=  null)
+                {
+                    instance = go.AddComponent<Mail>();
+                }
+            }
+
+            return instance;
+        }
+    }
+    private static Mail instance;
+
     public class MailOpenReq
     {
         public int MailboxId { get; set; }
@@ -45,7 +58,7 @@ public class Mail : MonoBehaviour
 
     }
 
-    public static async void MailListPost()
+    public async void MailListPostAsync()
     {
         MailListRes res = await HttpManager.Instance.Post<MailListRes>("MailList", null);
         GameObject gameObject = GameObject.Find("LobbyUIManager");
@@ -57,7 +70,7 @@ public class Mail : MonoBehaviour
         }
     }
 
-    public static async Task MailOpenPostAsync(int mailboxId)
+    public async Task MailOpenPostAsync(int mailboxId)
     {
         MailOpenRes res = await HttpManager.Instance.Post<MailOpenRes>("MailOpen", new
         {
@@ -66,11 +79,11 @@ public class Mail : MonoBehaviour
 
         if (res.Result == EErrorCode.None)
         {
-            MailListPost();
+            MailListPostAsync();
         }
     }
 
-    public static async Task MailDeletePostAsync(int mailboxId)
+    public async Task MailDeletePostAsync(int mailboxId)
     {
         MailDeleteRes res = await HttpManager.Instance.Post<MailDeleteRes>("MailDelete", new
         {
@@ -79,7 +92,7 @@ public class Mail : MonoBehaviour
 
         if (res.Result == EErrorCode.None)
         {
-            MailListPost();
+            MailListPostAsync();
         }
     }
 }

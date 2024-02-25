@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class GameResultReq
 {
-    // 젤리, 돈, 플레이 시간
     public Dictionary<int/*itemID*/, int/*count*/> Items { get; set; }
     public int Score { get; set; }
     public int Money { get; set; }
@@ -27,7 +26,23 @@ public class GameResultRes : ErrorCodeDTO
 
 public class GameResult : MonoBehaviour
 {
-    public static async Task GameResultPost(Dictionary<int/*itemID*/, int/*count*/> items, int score, int money, int speed, int currentCookieId)
+    private static GameResult instance;
+    public static GameResult Instance
+    {
+        get
+        {
+            instance = FindObjectOfType<GameResult>();
+            if (instance == null)
+            {
+                GameObject go = new GameObject("GameManager");
+                instance = go.AddComponent<GameResult>();
+            }
+
+            return instance;
+        }
+    }
+
+    public async Task GameResultPostAsync(Dictionary<int/*itemID*/, int/*count*/> items, int score, int money, int speed, int currentCookieId)
     {
         GameResultRes res = await HttpManager.Instance.Post<GameResultRes>("GameResult", new
         {
@@ -57,12 +72,6 @@ public class GameResult : MonoBehaviour
             {
                 scoreText.text = score.ToString("N0");
             }
-
-            // 3초 지나면 LobbyScene으로 돌아가기
-
-            LoadSceneManager loadSceneManager = GameObject.Find("SceneManager").GetComponent<LoadSceneManager>();
-            loadSceneManager.ReturnToLobbyAfterDelay(3.0f);
-
         }
     }
 }

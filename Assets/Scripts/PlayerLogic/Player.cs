@@ -1,15 +1,11 @@
-using Cysharp.Threading.Tasks;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
+using UnityEditor.Build.Content;
 using UnityEngine;
-using UnityEngine.UI;
-using static GameResult;
-using static UnityEditor.Progress;
-
+using System.IO;
+using static CreateMap;
+using System.Text.RegularExpressions;
+using System;
+using Unity.VisualScripting;
 
 public enum EItemId
 {
@@ -55,6 +51,16 @@ public class Player : MonoBehaviour
     private bool bDeath = false;
 
     public string cookieName = "";
+
+    public List<List<int>> cookieDatas = new List<List<int>>
+    {
+        new List<int> {0, 0},
+        new List<int> {0, 0},
+        new List<int> {5, 0},
+        new List<int> {5, 5},
+        new List<int> {10, 10},
+    };
+
     Dictionary<int/*itemID*/, int/*count*/> acquiredItems = new Dictionary<int, int>
     {
         { 1, 0 },
@@ -74,8 +80,6 @@ public class Player : MonoBehaviour
         { 15, 0 },
     };
 
-    GameManager gameManager;
-
     void Start()
     {
         playerRender = GetComponent<SpriteRenderer>();
@@ -89,27 +93,16 @@ public class Player : MonoBehaviour
 
         hp = 10.0f;
         maxHp = 10.0f;
-
-        GameObject obj = GameObject.Find("GameManager");
-        if(obj != null)
-        {
-            gameManager = obj.GetComponent<GameManager>();
-        }
     }
     void Update()
     {
-        // 플레이어가 죽으면
         if (hp <= 0.0f && !bDeath)
         {
             bDeath = true;
             // TODO.김초원 : 쿠키 ID 받을 수 있게 되면 주석 풀기
-            if(gameManager != null)
-            {
-                gameManager.OpenLoadingCanvas(acquiredItems, /*currentCookieId*/ 1, (int)speed);
-                gameManager.StopBackgroundScrolling();
-            }
+            GameManager.Instance.OpenLoadingCanvas(acquiredItems, /*currentCookieId*/ 1, (int)speed);
+            GameManager.Instance.StopBackgroundScrolling();
             speed = 0f;
-            // 배경 멈추게 하기
         }
 
         if (bGround)
@@ -206,14 +199,16 @@ public class Player : MonoBehaviour
         {
             ++acquiredItems[item.ID];
             // BONUSTIME이면
-            if (item.Alphabet && gameManager != null)
-                gameManager.AddAlphabet(item.name);
+            if (item.Alphabet)
+                GameManager.Instance.AddAlphabet(item.name);
 
-            if(gameManager != null)
-            {
-                gameManager.AddScore(item.ScorePoint);
-                gameManager.AddCoin(item.MoneyPoint);
-            }
+            int curScore = item.ScorePoint;
+            curScore += curScore / 100 * cookieDatas[currentCookieId][0];
+            GameManager.Instance.AddScore(curScore);
+
+            int money = item.MoneyPoint;
+            money += money / 100 * cookieDatas[currentCookieId][1];
+            GameManager.Instance.AddCoin(money);
 
             Destroy(collision.gameObject);
         }
