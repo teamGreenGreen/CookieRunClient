@@ -16,4 +16,9 @@ public class BackgroundScrolling : MonoBehaviour
     {
         meshRenderer.material.mainTextureOffset += new Vector2(speed * Time.deltaTime, 0);
     }
+
+    public void Stop()
+    {
+        speed = 0f;
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using static GameResult;
 using static UnityEditor.Progress;
 using UnityEngine.SocialPlatforms.Impl;
+using System.Threading.Tasks;
 
 public enum ESceneName
 {
@@ -52,8 +53,13 @@ public class LoadSceneManager : MonoBehaviour
     {
         if (scnene.name == ESceneName.LobbyScene.ToString())
         {
-            UserInfoData.RequestUserInfoPostAsync();
+            _ = UserInfoData.RequestUserInfoPostAsync();
             UserInfoData.RequestNowCookieId();
+        }
+
+        else if(scnene.name == "TestMap"/*ESceneName.InGame.ToString()*/)
+        {
+            GameManager.Instance.Reset();
         }
     }
 
@@ -65,6 +71,7 @@ public class LoadSceneManager : MonoBehaviour
     private IEnumerator DelayedSceneChange(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
+        sceneNumber = (int)ESceneName.LobbyScene;
         SceneChangeByEnumValue(ESceneName.LobbyScene);
     }
 }
