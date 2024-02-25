@@ -1,5 +1,8 @@
+using Assets.Scripts.DTO;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,26 +11,46 @@ public class RankingManager : MonoBehaviour
     int page;
     string myRank;
     string[] ranks;
-    int rankSize;
+    double rankSize;
+    const int PlayerNum = 15;
     GameObject RankContent;
     GameObject BtnContent;
 
     // Start is called before the first frame update
-    private void OnEnable()
+    private async void OnEnable()
     {
         // TODO : 서버에 연결하여 내 랭킹 요청
-        myRank = "32:999999999";
+        RankGetRes res = await HttpManager.Instance.Post<RankGetRes>("rank/user", null);
+
+        myRank = res.Rank;
         Transform myScore = transform.Find("My_Score");
-        myScore.GetComponent<Text>().text = $"{myRank.Split(":")[1]} 점";
         Transform myRankText = transform.Find("My_Rank_Text");
-        myRankText.GetComponent<Text>().text = $"{myRank.Split(":")[0]} 등";
+        Transform myName = transform.Find("My_Name");
+        if (res.Rank != null)
+        {
+            myScore.GetComponent<Text>().text = $"{myRank.Split(":")[1]} 점";
+            myRankText.GetComponent<Text>().text = $"{myRank.Split(":")[0]} 등";
+        }
+        else
+        {
+            myScore.GetComponent<Text>().text = $"게임을 먼저 진행하세요";
+            myRankText.GetComponent<Text>().text = $"-";
+        }
+        GameObject go = GameObject.Find("UserName_Txt");
+        string userName = go.GetComponent<TextMeshProUGUI>().text;
+        myName.GetComponent<Text>().text = userName;
+
         SetRanks();
         SetButton();
     }
-    public void SetRanks(int page = 1)
+    public async void SetRanks(int page = 1)
     {
+        RanksLoadReq req = new RanksLoadReq();
+        req.PlayerNum = PlayerNum;
+        req.Page = page;
         // TODO : api 서버에 연동하여 아래의 값 가져오기
-        ranks = new string[] { "남훈:1000", "정아:900", "준철:150", "초원:1", "세상아:1", "남훈:1", "정아:1", "준철:1", "초원:1", "세상아:1", "남훈:1", "정아:1", "준철:1", "초원:1", "세상아:1" };
+        RanksLoadRes res = await HttpManager.Instance.Post<RanksLoadRes>("rank/total-rank", req);
+        ranks = res.Ranks;
 
         RankContent = transform.Find("ScrollRanks").Find("Viewport").Find("Content").gameObject;
         RankContent.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
@@ -53,10 +76,11 @@ public class RankingManager : MonoBehaviour
             score.GetComponent<Text>().text = $"{ranks[i].Split(":")[1]} 점";
         }
     }
-    public void SetButton()
+    public async void SetButton()
     {
         // TODO : api 서버에서 rank 크기 가져오기
-        rankSize = 3;
+        RankSizeRes res = await HttpManager.Instance.Post<RankSizeRes>("rank/size-rank",null);
+        rankSize = Math.Ceiling((double)res.Size/(float)PlayerNum);
 
         BtnContent = transform.Find("ScrollBtn").Find("Viewport").Find("Content").gameObject;
 
