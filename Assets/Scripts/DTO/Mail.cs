@@ -9,6 +9,7 @@ using UnityEngine.SocialPlatforms.Impl;
 using System.Dynamic;
 using static UserInfoData;
 using static GameResult;
+using System.Threading.Tasks;
 
 
 public class MailInfo
@@ -51,14 +52,14 @@ public class Mail : MonoBehaviour
         }
     }
 
-    public static async void MailOpenPost(int mailboxId)
+    public static async Task MailOpenPostAsync(int mailboxId)
     {
         MailOpenRes res = await HttpManager.Instance.Post<MailOpenRes>("MailOpen", new
         {
             MailboxId = mailboxId
         });
 
-        if(res.Result == EErrorCode.None)
+        if (res.Result == EErrorCode.None)
         {
             MailListPost();
         }

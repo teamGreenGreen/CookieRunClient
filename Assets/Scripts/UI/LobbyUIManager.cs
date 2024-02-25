@@ -18,7 +18,7 @@ public class LobbyUIManager : MonoBehaviour
     public static TextMeshProUGUI gemCountText;
     public static TextMeshProUGUI coinCountText;
     public static TextMeshProUGUI levelText;
-    public static TextMeshProUGUI expText;
+    public static Slider slider;
     public static TextMeshProUGUI userNameText;
     public ScrollRect scrollRect;
     public GameObject mailPrefab;
@@ -36,8 +36,8 @@ public class LobbyUIManager : MonoBehaviour
         gameObject = GameObject.Find("Level_Txt");
         levelText = gameObject.GetComponent<TextMeshProUGUI>();
 
-        gameObject = GameObject.Find("Exp_Txt");
-        expText = gameObject.GetComponent<TextMeshProUGUI>();
+        gameObject = GameObject.Find("Slider");
+        slider = gameObject.GetComponent<Slider>();
 
         gameObject = GameObject.Find("UserName_Txt");
         userNameText = gameObject.GetComponent<TextMeshProUGUI>();
@@ -72,7 +72,7 @@ public class LobbyUIManager : MonoBehaviour
         }
 
         if(levelText == null ||
-            expText == null ||
+            slider == null ||
             coinCountText == null ||
             gemCountText == null ||
             userNameText == null)
@@ -81,8 +81,26 @@ public class LobbyUIManager : MonoBehaviour
         }
 
         levelText.text = res.UserInfo.Level.ToString("N0");
-        // TODO.김초원 : 경험치는 최대 경험치 받아서 수정 필요
-        expText.text = res.UserInfo.Exp.ToString("N0");
+        ExpBarControll expBarController = slider.GetComponent<ExpBarControll>();
+        expBarController.nowExp = res.UserInfo.Exp / 1000;
+        int maxExp = 0;
+        if(res.UserInfo.Level == 1)
+        {
+            maxExp = 6000;
+        }
+        else if(res.UserInfo.Level == 2)
+        {
+            maxExp = 10000;
+        }
+        else if(res.UserInfo.Level == 3)
+        {
+            maxExp = 30000;
+        }
+        else
+        {
+            maxExp = 50000;
+        }
+        expBarController.maxExp = maxExp;
         coinCountText.text = res.UserInfo.Money.ToString("N0");
         gemCountText.text = res.UserInfo.Diamond.ToString("N0");
         acquiredCookieId = res.UserInfo.AcquiredCookieId;

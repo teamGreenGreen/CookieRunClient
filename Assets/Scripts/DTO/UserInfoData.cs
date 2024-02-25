@@ -7,14 +7,16 @@ using UnityEngine.SceneManagement;
 using static UnityEditor.Progress;
 using UnityEngine.SocialPlatforms.Impl;
 using static NowCookie;
+using System.Threading.Tasks;
 
 public class UserInfoRes : ErrorCodeDTO
 {
     public UserInfo UserInfo { get; set; }
 }
+
 public class UserInfoData : MonoBehaviour
 {
-    public static async void RequestUserInfoPost()
+    public static async Task RequestUserInfoPostAsync()
     {
         UserInfoRes res = await HttpManager.Instance.Post<UserInfoRes>("UserInfoLoad", null);
         LobbyUIManager.UpdateUserInfoUI(res);
