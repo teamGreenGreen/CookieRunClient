@@ -12,14 +12,14 @@ public class ExpBarControll : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI expTxt;
 
-    private int maxExp = 6000;
-    private int nowExp = 0;
+    public int maxExp = 6000;
+    public int nowExp = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         expSlider.value = (float)nowExp / (float)maxExp;
-        expTxt.text = nowExp.ToString("N0") + '/' + maxExp.ToString("N0");
+        expTxt.text = nowExp.ToString("N0") + " / " + maxExp.ToString("N0");
     }
 
     // Update is called once per frame

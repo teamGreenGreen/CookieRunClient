@@ -56,14 +56,21 @@ public class MailBox : MonoBehaviour
 
         mailNameText = gameObject.GetComponent<TextMeshProUGUI>();
 
-        if (mailNameText != null && sender != null)
+        if (mailNameText != null)
         {
             mailNameText.text = "";
         }
 
+        gameObject = GameObject.Find("MailContent_Txt");
+
+        if (gameObject == null)
+        {
+            return;
+        }
+
         mailContentText = gameObject.GetComponent<TextMeshProUGUI>();
 
-        if (mailContentText != null && content != null)
+        if (mailContentText != null)
         {
             mailContentText.text = "";
         }

@@ -2172,7 +2172,6 @@ RectTransform:
   - {fileID: 1998206764}
   - {fileID: 1517568859}
   - {fileID: 1273693254}
-  - {fileID: 1985505102}
   m_Father: {fileID: 107049584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -17505,6 +17504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expSlider: {fileID: 1998206765}
   expTxt: {fileID: 333481250}
+  maxExp: 6000
+  nowExp: 0
 --- !u!1 &2003678588
 GameObject:
   m_ObjectHideFlags: 0
@@ -18336,7 +18337,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2052793588}
         m_TargetAssemblyTypeName: OpenCanvas, Assembly-CSharp
-        m_MethodName: OnClickMailBox
+        m_MethodName: OnClickedMailBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
