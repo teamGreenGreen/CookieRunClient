@@ -22,4 +22,17 @@ public class Buttons : MonoBehaviour
         // 로비씬 유저 데이터 UI 업데이트
         _ = UserInfoData.RequestUserInfoPostAsync();
     }
+
+    public void OnClickedDelete()
+    {
+        if (curMailBoxId != -1)
+        {
+            _ = DeleteMailAsync();
+        }
+    }
+
+    public async Task DeleteMailAsync()
+    {
+        await Mail.MailDeletePostAsync(curMailBoxId);
+    }
 }
