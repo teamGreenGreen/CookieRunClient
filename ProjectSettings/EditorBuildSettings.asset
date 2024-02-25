@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LobbyScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SelectStage.unity
     guid: 340322378e95b8347bb33f722adcf26d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/InGame.unity
     guid: 08c6682cf067dd546be16540e65b83cb
+  - enabled: 1
+    path: Assets/Scenes/TestMap.unity
+    guid: 447d1e767d9712c43b14c081ddde24c4
   m_configObjects: {}

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public bool bSliding = false;
 
     public float speed = 1.0f;
-    public int currentCookieId = 0;
+    public int currentCookieId = 1;
 
     public float hp { get; set; }
     public float maxHp { get; set; }
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
     private Animator anim;
 
-    private bool onceCheck = false;
+    private bool bDeath = false;
 
     public string cookieName = "";
     Dictionary<int/*itemID*/, int/*count*/> acquiredItems = new Dictionary<int, int>
@@ -74,6 +74,8 @@ public class Player : MonoBehaviour
         { 15, 0 },
     };
 
+    GameManager gameManager;
+
     void Start()
     {
         playerRender = GetComponent<SpriteRenderer>();
@@ -87,17 +89,27 @@ public class Player : MonoBehaviour
 
         hp = 10.0f;
         maxHp = 10.0f;
+
+        GameObject obj = GameObject.Find("GameManager");
+        if(obj != null)
+        {
+            gameManager = obj.GetComponent<GameManager>();
+        }
     }
     void Update()
     {
         // 플레이어가 죽으면
-        if (hp <= 0.0f && !onceCheck)
+        if (hp <= 0.0f && !bDeath)
         {
-            onceCheck = true;
-            // 현재 플레이어 hp 값만 체크하기 때문에 0.0f 밑이면 계속 해당 함수 호출됨
-            // 애니메이션 완성되면 애니메이션이 끝날 때 한 번만 호출되어야 함
-            // 그리고 플레이어가 죽었는지 아닌지에 따라 아래의 update 내용을 호출할지 안할지를 결정해 줄 수 있는 bool값 필요해보임
-            GameManager.OpenLoadingCanvas(acquiredItems, currentCookieId);
+            bDeath = true;
+            // TODO.김초원 : 쿠키 ID 받을 수 있게 되면 주석 풀기
+            if(gameManager != null)
+            {
+                gameManager.OpenLoadingCanvas(acquiredItems, /*currentCookieId*/ 1, (int)speed);
+                gameManager.StopBackgroundScrolling();
+            }
+            speed = 0f;
+            // 배경 멈추게 하기
         }
 
         if (bGround)
@@ -194,11 +206,14 @@ public class Player : MonoBehaviour
         {
             ++acquiredItems[item.ID];
             // BONUSTIME이면
-            if (item.Alphabet)
-                GameManager.AddAlphabet(item.name);
+            if (item.Alphabet && gameManager != null)
+                gameManager.AddAlphabet(item.name);
 
-            GameManager.AddScore(item.ScorePoint);
-            GameManager.AddCoin(item.MoneyPoint);
+            if(gameManager != null)
+            {
+                gameManager.AddScore(item.ScorePoint);
+                gameManager.AddCoin(item.MoneyPoint);
+            }
 
             Destroy(collision.gameObject);
         }

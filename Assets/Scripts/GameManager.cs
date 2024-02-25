@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks.Triggers;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,10 +14,10 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     private bool isPaused = false;
-    public static int money { get; set; }
-    public static int score { get; set; }
-    private static bool[] alphabets = new bool[9];
-    private static Texture2D[] bonusTimeTextures = new Texture2D[9];
+    public int money { get; set; }
+    public int score { get; set; }
+    private bool[] alphabets = new bool[9];
+    private Texture2D[] bonusTimeTextures = new Texture2D[9];
     private Player player = null;
     private float elapsedTime = 0.0f;
     public float decreaseSpeed = 2.0f; // 매 프레임마다 감소되는 속도
@@ -53,6 +54,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        money = 0;
+        score = 0;
+
+        for(int i = 0; i < alphabets.Length; i++)
+        {
+            alphabets[i] = false;
+        }
+
+        elapsedTime = 0f;
+    }
+
+    public void StopBackgroundScrolling()
+    {
+        GameObject background = GameObject.Find("bg1");
+        if(background != null)
+        {
+            ScrollingObject scrollingObj = background.GetComponent<ScrollingObject>();
+            scrollingObj.speed = 0f;
+        }
+
+        background = GameObject.Find("bg2");
+        if (background != null)
+        {
+            ScrollingObject scrollingObj = background.GetComponent<ScrollingObject>();
+            scrollingObj.speed = 0f;
+        }
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -76,6 +107,15 @@ public class GameManager : MonoBehaviour
         else
         {
             elapsedTime += Time.deltaTime;
+
+            if(HPBar == null)
+            {
+                GameObject obj = GameObject.Find("GaugeBar");
+                if(obj != null)
+                {
+                    HPBar = obj.GetComponent<Image>();
+                }
+            }
 
             if (elapsedTime > 1.0f && player.hp > 0.0f && HPBar != null)
             {
@@ -128,7 +168,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f; 
     }
 
-    public static void AddAlphabet(string name)
+    public void AddAlphabet(string name)
     {
         GameObject imageObject = GameObject.Find("Bonus" + name);
 
@@ -169,7 +209,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void AddScore(int curScore)
+    public void AddScore(int curScore)
     {
         GameObject gameObject = GameObject.Find("ScoreText");
 
@@ -186,7 +226,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void AddCoin(int curCoin)
+    public void AddCoin(int curCoin)
     {
         GameObject gameObject = GameObject.Find("CoinText");
 
@@ -203,7 +243,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static async void OpenLoadingCanvas(Dictionary<int, int> acquiredItems, int currentCookieId)
+    public async void OpenLoadingCanvas(Dictionary<int, int> acquiredItems, int currentCookieId, int speed)
     {
         OpenCanvas canvas = GameObject.Find("LoadingCanvasController").GetComponent<OpenCanvas>();
 
@@ -212,6 +252,6 @@ public class GameManager : MonoBehaviour
             canvas.OnClick();
         }
 
-        await GameResult.GameResultPost(acquiredItems, GameManager.score, GameManager.money, 10, currentCookieId);
+        await GameResult.GameResultPost(acquiredItems, score, money, speed, currentCookieId);
     }
 }
