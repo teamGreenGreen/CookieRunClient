@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 14971175}
   - component: {fileID: 14971174}
   - component: {fileID: 14971173}
-  - component: {fileID: 14971172}
+  - component: {fileID: 14971176}
   m_Layer: 5
   m_Name: Close_Btn
   m_TagString: Untagged
@@ -333,19 +333,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: -90}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &14971172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14971170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 339663d69fb55434197bfc4b50181ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetCanvas: {fileID: 1060999266}
 --- !u!114 &14971173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,8 +377,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 14971172}
-        m_TargetAssemblyTypeName: CloseCanvas, Assembly-CSharp
+      - m_Target: {fileID: 14971176}
+        m_TargetAssemblyTypeName: CloseCookieSelectCanvas, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -440,6 +427,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14971170}
   m_CullTransparentMesh: 1
+--- !u!114 &14971176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14971170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1845def37e1c7845ac0e27c99a2b4f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCanvas: {fileID: 1060999266}
 --- !u!1 &37084186
 GameObject:
   m_ObjectHideFlags: 0
