@@ -16,6 +16,10 @@ public class SelectCookieBtn : MonoBehaviour
         {
             return;
         }
+        if(cookieNum == LobbyUIManager.Instance.nowCookieId)
+        {
+            return;
+        }
 
         SetNowCookieId();
 
