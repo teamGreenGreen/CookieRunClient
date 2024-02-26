@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using static Mail;
 
@@ -17,6 +19,7 @@ public class LobbyUIManager : MonoBehaviour
     public GameObject mailPrefab;
     public int acquiredCookieId;
     public int nowCookieId;
+    public Canvas loadingCanvas;
 
     private static LobbyUIManager instance;
     public static LobbyUIManager Instance
@@ -65,7 +68,26 @@ public class LobbyUIManager : MonoBehaviour
         {
             userNameText = gameObject.GetComponent<TextMeshProUGUI>();
         }
+
+        gameObject = GameObject.Find("LoadingCanvas");
+        if (gameObject != null)
+        {
+            loadingCanvas = gameObject.GetComponent<Canvas>();
+        }
+
+        StartCoroutine(WaitAndOpenCanvas(1.0f));
     }
+
+    private IEnumerator WaitAndOpenCanvas(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        if(loadingCanvas != null)
+        {
+            loadingCanvas.gameObject.SetActive(false);
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -84,6 +106,8 @@ public class LobbyUIManager : MonoBehaviour
             }
         }
     }
+
+
 
 
     public void UpdateUserInfoUI(UserInfoRes res)

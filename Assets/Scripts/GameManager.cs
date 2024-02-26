@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
             if (elapsedTime > 1.0f && player.hp > 0.0f && HPBar != null)
             {
                 elapsedTime = 0.0f;
-                currentDamage = 0.5f; // 감소량 설정
+                currentDamage = 0.7f; // 감소량 설정
             }
 
             if (currentDamage > 0 && player.hp > 0)

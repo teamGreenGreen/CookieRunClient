@@ -50,6 +50,7 @@ public class LoadSceneManager : MonoBehaviour
         if (scnene.name == ESceneName.LobbyScene.ToString())
         {
             sceneNumber = (int)ESceneName.LobbyScene;
+            LobbyUIManager.Instance.loadingCanvas.gameObject.SetActive(true);
             _ = UserInfoData.Instance.RequestUserInfoPostAsync();
             UserInfoData.Instance.RequestNowCookieId();
         }
