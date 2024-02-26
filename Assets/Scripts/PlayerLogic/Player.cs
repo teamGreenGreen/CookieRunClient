@@ -239,4 +239,8 @@ public class Player : MonoBehaviour
             anim.SetBool("sliding", false);
         }
     }
+    private void OnBecameInvisible()
+    {
+        hp = 0;
+    }
 }

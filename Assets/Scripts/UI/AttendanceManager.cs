@@ -2,6 +2,7 @@ using Assets.Scripts.DTO;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using UnityEditor.Overlays;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,13 @@ public class AttendanceManager : MonoBehaviour
     GameObject layout; 
     // 캔버스가 활성화 되면 켜진다.
     private async void OnEnable()
+    {
+        // 런타임 중 출석체크 및 게임 오브젝트 생성
+        await RecvAndCreateComponent();
+        // 클라이언트 UI 정보 업데이트
+        await UserInfoData.Instance.RequestUserInfoPostAsync();
+    }
+    private async Task RecvAndCreateComponent()
     {
         // 서버에 연결하여 출석 요청 및 Count와 보상 목록 얻어오기
         AttendanceRes res = await HttpManager.Instance.Post<AttendanceRes>("attendance/request", null);
@@ -46,9 +54,9 @@ public class AttendanceManager : MonoBehaviour
             Image image = itemImage.GetComponent<Image>();
             image.sprite = _sprite;
             itemCount.GetComponent<Text>().text = $"{rewards[i].Split(":")[1]}";
-            dayCount.GetComponent<Text>().text = $"{i+1}일";
+            dayCount.GetComponent<Text>().text = $"{i + 1}일";
 
-            if (i+1 <= count)
+            if (i + 1 <= count)
             {
                 Color colorItem = item.GetComponent<Image>().color;
                 colorItem.a = 0.8f;
@@ -69,12 +77,5 @@ public class AttendanceManager : MonoBehaviour
                 check.gameObject.SetActive(false);
             }
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
