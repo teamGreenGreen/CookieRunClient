@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
         {
             bDeath = true;
             // TODO.김초원 : 쿠키 ID 받을 수 있게 되면 주석 풀기
-            GameManager.Instance.OpenLoadingCanvas(acquiredItems, /*currentCookieId*/ 1, (int)speed);
+            GameManager.Instance.OpenLoadingCanvas(acquiredItems, GameManager.Instance.currentCookieId, (int)speed);
             GameManager.Instance.StopBackgroundScrolling();
             speed = 0f;
         }
