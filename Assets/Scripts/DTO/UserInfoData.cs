@@ -33,12 +33,12 @@ public class UserInfoData : MonoBehaviour
         UserInfoRes res = await HttpManager.Instance.Post<UserInfoRes>("UserInfoLoad", null);
         LobbyUIManager.Instance.UpdateUserInfoUI(res);
     }
-    public static async void RequestNowCookieId()
+    public async void RequestNowCookieId()
     {
         NowCookieRes res = await HttpManager.Instance.Post<NowCookieRes>("nowcookie", null);
         UpdateNowCookieId(res);
     }
-    private static void UpdateNowCookieId(NowCookieRes res)
+    private void UpdateNowCookieId(NowCookieRes res)
     {
         // UserInfoData에 nowCookieId를 저장하거나 필요한 처리 수행
 
