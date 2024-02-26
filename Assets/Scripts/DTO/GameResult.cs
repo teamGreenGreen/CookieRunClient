@@ -54,6 +54,26 @@ public class GameResult : MonoBehaviour
             CurrentCookieId = currentCookieId
         });
 
+        if(res.Result == EErrorCode.GameResultService_GetRedisUserInfoFail ||
+           res.Result == EErrorCode.GameResultService_RewardCalcFail ||
+           res.Result == EErrorCode.GameResultService_DBUserInfoUpdateFail ||
+           res.Result == EErrorCode.GameResultService_AddLevelUpRewardFail ||
+           res.Result == EErrorCode.GameResultService_RedisUpdateError)
+        {
+            GameManager.Instance.OnMessage("서버 연결이 끊어졌습니다. 다시 로그인 해주세요.");
+            return;
+        }
+        else if(res.Result == EErrorCode.GameResultService_PlayerSpeedChangedDetected)
+        {
+            GameManager.Instance.OnMessage("속도 변경이 감지되었습니다. 다시 로그인 해주세요.");
+            return;
+        }
+        else if (res.Result == EErrorCode.GameResultService_MoneyOrExpChangedDetected)
+        {
+            GameManager.Instance.OnMessage("점수나 코인 변경이 감지되었습니다. 다시 로그인 해주세요.");
+            return;
+        }
+
         // 결과창 켜기 -> 1초 대기
         StartCoroutine(WaitAndOpenCanvas(score, money));
     }

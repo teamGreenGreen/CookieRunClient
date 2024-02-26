@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using static Mail;
+using Unity.VisualScripting;
 
 public class LobbyUIManager : MonoBehaviour
 {
@@ -106,9 +107,6 @@ public class LobbyUIManager : MonoBehaviour
             }
         }
     }
-
-
-
 
     public void UpdateUserInfoUI(UserInfoRes res)
     {

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public float decreaseSpeed = 2.0f; // 매 프레임마다 감소되는 속도
     private float currentDamage = 0f; // 현재 감소하는 양
     public int currentCookieId = 1;
+    public Canvas messageCanvas;
 
     [SerializeField]
     private Image HPBar;
@@ -102,6 +103,19 @@ public class GameManager : MonoBehaviour
     public void SetPlayer()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
+    }
+    public void OnMessage(string message)
+    {
+        if (messageCanvas != null)
+        {
+            TextMeshProUGUI alertMessage = messageCanvas.GetComponentInChildren<TextMeshProUGUI>();
+            if (alertMessage != null)
+            {
+                alertMessage.text = message;
+            }
+
+            messageCanvas.gameObject.SetActive(true);
+        }
     }
 
     private void Update()

@@ -28,7 +28,7 @@ public class Mail : MonoBehaviour
             if (instance == null)
             {
                 GameObject go = new GameObject("LobbyUIManager");
-                if(go !=  null)
+                if (go != null)
                 {
                     instance = go.AddComponent<Mail>();
                 }
@@ -61,13 +61,14 @@ public class Mail : MonoBehaviour
     public async void MailListPostAsync()
     {
         MailListRes res = await HttpManager.Instance.Post<MailListRes>("MailList", null);
-        GameObject gameObject = GameObject.Find("LobbyUIManager");
-        if(gameObject != null)
+        if (res.Result != EErrorCode.None)
         {
-            LobbyUIManager lobbyUIManager = gameObject.GetComponent<LobbyUIManager>();
-            lobbyUIManager.ClearAllMails();
-            lobbyUIManager.UpdateMailListUI(res);
+            GameManager.Instance.OnMessage("메일 리스트를 불러오는 데\n실패했습니다. \n 잠시 후 다시 시도해주세요");
+            return;
         }
+
+        LobbyUIManager.Instance.ClearAllMails();
+        LobbyUIManager.Instance.UpdateMailListUI(res);
     }
 
     public async Task MailOpenPostAsync(int mailboxId)
@@ -77,10 +78,13 @@ public class Mail : MonoBehaviour
             MailboxId = mailboxId
         });
 
-        if (res.Result == EErrorCode.None)
+        if (res.Result != EErrorCode.None)
         {
-            MailListPostAsync();
+            GameManager.Instance.OnMessage("메일 열기를 실패했습니다. \n 잠시 후 다시 시도해주세요");
+            return;
         }
+
+        MailListPostAsync();
     }
 
     public async Task MailDeletePostAsync(int mailboxId)
@@ -90,9 +94,12 @@ public class Mail : MonoBehaviour
             MailboxId = mailboxId
         });
 
-        if (res.Result == EErrorCode.None)
+        if (res.Result != EErrorCode.None)
         {
-            MailListPostAsync();
+            GameManager.Instance.OnMessage("메일 삭제를 실패했습니다. \n 잠시 후 다시 시도해주세요");
+            return;
         }
+
+        MailListPostAsync();
     }
 }
