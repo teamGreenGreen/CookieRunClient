@@ -45,4 +45,9 @@ public class Buttons : MonoBehaviour
             loadSceneManager.SceneChangeByEnumValue(ESceneName.LobbyScene);
         }
     }
+
+    public void OnClickedPauseButton()
+    {
+        GameManager.Instance.TogglePause();
+    }
 }
