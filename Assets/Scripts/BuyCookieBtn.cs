@@ -27,10 +27,6 @@ public class BuyCookieBtn : MonoBehaviour
             NewColor(myGameObject);
             SetButton(myGameObject);
         }
-        else
-        {
-            Debug.Log("구매에 실패했습니다.");
-        }
     }
     private async Task<bool> BuyCookie()
     {

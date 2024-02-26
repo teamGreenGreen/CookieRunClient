@@ -138,7 +138,6 @@ public class Player : MonoBehaviour
             {
                 bDoubleJump = true;
                 velocity.y = jumpVelocity * 0.8f;
-                Debug.Log("더블점프!");
             }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -175,7 +174,6 @@ public class Player : MonoBehaviour
 
                     if (ground != null)
                     {
-                        Debug.Log("ground hit!");
                         groundHeight = ground.groundHeight;
                         pos.y = groundHeight;
                         bGround = true;
@@ -199,7 +197,6 @@ public class Player : MonoBehaviour
 
             if (hit2D.collider == null)
             {
-                Debug.Log("떨어진다");
                 bGround = false;
                 bSliding = false;
             }

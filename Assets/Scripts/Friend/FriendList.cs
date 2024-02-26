@@ -27,7 +27,6 @@ public class FriendList : MonoBehaviour
             // FriendList에서 각 FriendElement를 꺼내어 출력
             foreach (FriendElement friend in res.FriendList)
             {
-                Debug.Log("친구 이름: " + friend.UserName);
                 GameObject friendObject = Instantiate(friendPrefab, contentTransform);
                 FriendElementUI friendElementUI = friendObject.GetComponent<FriendElementUI>();
                 friendElementUI.SetFriendInfo(friend);
