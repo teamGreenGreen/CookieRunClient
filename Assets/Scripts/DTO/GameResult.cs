@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameResultReq
 {
@@ -53,7 +54,14 @@ public class GameResult : MonoBehaviour
             CurrentCookieId = currentCookieId
         });
 
-        // 결과창 켜기
+        // 결과창 켜기 -> 1초 대기
+        StartCoroutine(WaitAndOpenCanvas(score, money));
+    }
+
+    private IEnumerator WaitAndOpenCanvas(int score,int money)
+    {
+        yield return new WaitForSeconds(1f);
+
         OpenCanvas canvas = GameObject.Find("ResultCanvasController").GetComponent<OpenCanvas>();
 
         if (canvas != null)

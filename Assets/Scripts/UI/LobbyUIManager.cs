@@ -67,9 +67,6 @@ public class LobbyUIManager : MonoBehaviour
         }
     }
 
-    public float elapseedTime = 0;
-    public bool onceCheck = false;
-
     // Update is called once per frame
     void Update()
     {

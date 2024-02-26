@@ -54,7 +54,7 @@ public class LoadSceneManager : MonoBehaviour
             UserInfoData.Instance.RequestNowCookieId();
         }
 
-        else if(scnene.name == "TestMap"/*ESceneName.InGame.ToString()*/)
+        else if(scnene.name == ESceneName.InGame.ToString())
         {
             sceneNumber = (int)ESceneName.InGame;
             GameManager.Instance.Reset();
