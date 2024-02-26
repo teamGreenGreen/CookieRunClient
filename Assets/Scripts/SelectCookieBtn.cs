@@ -32,7 +32,7 @@ public class SelectCookieBtn : MonoBehaviour
         {
             CookieId = cookieNum
         });
-        UserInfoData.RequestNowCookieId();
+        UserInfoData.Instance.RequestNowCookieId();
     }
     // 현재 선택된 쿠키의 color 조절
     private void SelectColor(GameObject cookieObject)

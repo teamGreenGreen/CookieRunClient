@@ -12,6 +12,6 @@ public class CloseCanvas : MonoBehaviour
     public void OnClick()
     {
         targetCanvas.gameObject.SetActive(false);
-        UserInfoData.RequestNowCookieId();
+        UserInfoData.Instance.RequestNowCookieId();
     }
 }
