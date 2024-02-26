@@ -1195,4 +1195,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99396589c5c0a04f8ad2e106df159bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ErrorPrefab: {fileID: 4281966797167513029, guid: d2a6bc6e289e61d4bbcab053173e61bc, type: 3}
   requestIdTxt: {fileID: 871773539057577402}

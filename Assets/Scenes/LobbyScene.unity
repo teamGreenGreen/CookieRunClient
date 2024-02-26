@@ -3962,6 +3962,7 @@ MonoBehaviour:
   scrollRect: {fileID: 1626566013}
   mailPrefab: {fileID: 7095297909637106023, guid: 5a176a6ce7b2eeb4baf1ba8d70d28772, type: 3}
   acquiredCookieId: 0
+  nowCookieId: 0
   elapseedTime: 0
   onceCheck: 0
 --- !u!4 &517763073
