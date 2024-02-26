@@ -41,7 +41,7 @@ public class FriendRequest : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CookieSelect_Canvas 스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
+                Debug.LogError("스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
             }
             return;
         }
@@ -64,7 +64,7 @@ public class FriendRequest : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CookieSelect_Canvas 스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
+                Debug.LogError("스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
             }
             return;
         }
@@ -87,7 +87,7 @@ public class FriendRequest : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CookieSelect_Canvas 스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
+                Debug.LogError("스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
             }
             return;
         }
@@ -110,7 +110,7 @@ public class FriendRequest : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CookieSelect_Canvas 스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
+                Debug.LogError("스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
             }
             return;
         }
@@ -133,7 +133,7 @@ public class FriendRequest : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CookieSelect_Canvas 스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
+                Debug.LogError("스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
             }
             return;
         }
@@ -156,7 +156,7 @@ public class FriendRequest : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CookieSelect_Canvas 스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
+                Debug.LogError("스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
             }
             return;
         }
@@ -165,7 +165,5 @@ public class FriendRequest : MonoBehaviour
             Debug.Log("에러");
             return;
         }
-
-        return;
     }
 }
