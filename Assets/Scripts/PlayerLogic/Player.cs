@@ -39,7 +39,6 @@ public class Player : MonoBehaviour
     public bool bSliding = false;
 
     public float speed = 1.0f;
-    public int currentCookieId = 1;
 
     public float hp { get; set; }
     public float maxHp { get; set; }
@@ -80,14 +79,33 @@ public class Player : MonoBehaviour
         { 15, 0 },
     };
 
+    public enum ECookieName
+    {
+        Brave = 1,
+        Lemon,
+        Blueberry_Pie,
+        Pancake,
+        End
+    }
+
     void Start()
     {
         playerRender = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        if (cookieName == "")
+
+        ECookieName cookieNameEnum = (ECookieName)GameManager.Instance.currentCookieId;
+        cookieName = cookieNameEnum.ToString();
+
+        if(cookieName == "0")
         {
             cookieName = "Brave";
         }
+
+        if (cookieNameEnum > ECookieName.End)
+        {
+            return;
+        }
+
         // 동적으로 애니메이션 할당. 씬이 넘어올 때 cookieName에 해당하는 컨트롤러 명을 넘겨줘야 한다. 만약 안넘어오면 용감한 쿠키로 됨
         anim.runtimeAnimatorController = (RuntimeAnimatorController)Instantiate(Resources.Load($"Cookie\\Animation\\{cookieName}_Cookie_Controller", typeof(RuntimeAnimatorController)));
 
@@ -203,11 +221,11 @@ public class Player : MonoBehaviour
                 GameManager.Instance.AddAlphabet(item.name);
 
             int curScore = item.ScorePoint;
-            curScore += curScore / 100 * cookieDatas[currentCookieId][0];
+            curScore += curScore / 100 * cookieDatas[GameManager.Instance.currentCookieId][0];
             GameManager.Instance.AddScore(curScore);
 
             int money = item.MoneyPoint;
-            money += money / 100 * cookieDatas[currentCookieId][1];
+            money += money / 100 * cookieDatas[GameManager.Instance.currentCookieId][1];
             GameManager.Instance.AddCoin(money);
 
             Destroy(collision.gameObject);

@@ -37,19 +37,34 @@ public class LobbyUIManager : MonoBehaviour
     void Start()
     {
         GameObject gameObject = GameObject.Find("GemGount_Txt");
-        gemCountText = gameObject.GetComponent<TextMeshProUGUI>();
+        if (gameObject != null)
+        {
+            gemCountText = gameObject.GetComponent<TextMeshProUGUI>();
+        }
 
         gameObject = GameObject.Find("CoinCount_Txt");
-        coinCountText = gameObject.GetComponent<TextMeshProUGUI>();
+        if(gameObject != null)
+        {
+            coinCountText = gameObject.GetComponent<TextMeshProUGUI>();
+        }
 
         gameObject = GameObject.Find("Level_Txt");
-        levelText = gameObject.GetComponent<TextMeshProUGUI>();
+        if(gameObject != null)
+        {
+            levelText = gameObject.GetComponent<TextMeshProUGUI>();
+        }
 
         gameObject = GameObject.Find("Slider");
-        slider = gameObject.GetComponent<Slider>();
+        if(gameObject != null)
+        {
+            slider = gameObject.GetComponent<Slider>();
+        }
 
         gameObject = GameObject.Find("UserName_Txt");
-        userNameText = gameObject.GetComponent<TextMeshProUGUI>();
+        if(gameObject != null)
+        {
+            userNameText = gameObject.GetComponent<TextMeshProUGUI>();
+        }
     }
 
     public float elapseedTime = 0;
@@ -72,6 +87,7 @@ public class LobbyUIManager : MonoBehaviour
             }
         }
     }
+
 
     public void UpdateUserInfoUI(UserInfoRes res)
     {
@@ -191,6 +207,8 @@ public class LobbyUIManager : MonoBehaviour
     public void LoadAndSetCookieImage(int cookieId)
     {
         nowCookieId = cookieId;
+        GameManager.Instance.currentCookieId = cookieId;
+
         // 이미지 파일명을 생성
         string imageName = "Cookie" + cookieId;
 

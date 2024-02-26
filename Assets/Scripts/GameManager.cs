@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private float elapsedTime = 0.0f;
     public float decreaseSpeed = 2.0f; // 매 프레임마다 감소되는 속도
     private float currentDamage = 0f; // 현재 감소하는 양
+    public int currentCookieId = 1;
 
     [SerializeField]
     private Image HPBar;
@@ -98,20 +99,21 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void SetPlayer()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
+
     private void Update()
     {
-        if (player == null)
-        {
-            player = GameObject.Find("Player").GetComponent<Player>();
-        }
-        else
+        if (player != null)
         {
             elapsedTime += Time.deltaTime;
 
-            if(HPBar == null)
+            if (HPBar == null)
             {
                 GameObject obj = GameObject.Find("GaugeBar");
-                if(obj != null)
+                if (obj != null)
                 {
                     HPBar = obj.GetComponent<Image>();
                 }
@@ -122,19 +124,19 @@ public class GameManager : MonoBehaviour
                 elapsedTime -= 1.0f;
                 currentDamage = 1.0f; // 감소량 설정
             }
-        }
 
-        if (currentDamage > 0 && player.hp > 0)
-        {
-            float decreaseAmount = currentDamage * Time.deltaTime * decreaseSpeed * 10; // 매 프레임마다 감소되는 양 계산
-            player.hp -= decreaseAmount;
-            HPBar.fillAmount = player.hp / (float)player.maxHp;
-
-            currentDamage -= decreaseAmount; // 감소량 업데이트
-
-            if (currentDamage <= 0)
+            if (currentDamage > 0 && player.hp > 0)
             {
-                currentDamage = 0f;
+                float decreaseAmount = currentDamage * Time.deltaTime * decreaseSpeed * 10; // 매 프레임마다 감소되는 양 계산
+                player.hp -= decreaseAmount;
+                HPBar.fillAmount = player.hp / (float)player.maxHp;
+
+                currentDamage -= decreaseAmount; // 감소량 업데이트
+
+                if (currentDamage <= 0)
+                {
+                    currentDamage = 0f;
+                }
             }
         }
     }

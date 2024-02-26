@@ -58,6 +58,7 @@ public class LoadSceneManager : MonoBehaviour
         {
             sceneNumber = (int)ESceneName.InGame;
             GameManager.Instance.Reset();
+            GameManager.Instance.SetPlayer();
         }
     }
 }
