@@ -45,13 +45,13 @@ public class LoadSceneManager : MonoBehaviour
         SceneManager.LoadScene((int)name);
     }
 
-    public void OnSceneLoaded(Scene scnene, LoadSceneMode mode)
+    public async void OnSceneLoaded(Scene scnene, LoadSceneMode mode)
     {
         if (scnene.name == ESceneName.LobbyScene.ToString())
         {
             sceneNumber = (int)ESceneName.LobbyScene;
             LobbyUIManager.Instance.loadingCanvas.gameObject.SetActive(true);
-            _ = UserInfoData.Instance.RequestUserInfoPostAsync();
+            await UserInfoData.Instance.RequestUserInfoPostAsync();
             UserInfoData.Instance.RequestNowCookieId();
         }
 
