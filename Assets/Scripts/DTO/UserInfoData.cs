@@ -41,17 +41,6 @@ public class UserInfoData : MonoBehaviour
     private void UpdateNowCookieId(NowCookieRes res)
     {
         // UserInfoData에 nowCookieId를 저장하거나 필요한 처리 수행
-
-        // LobbyUIManager의 인스턴스 찾기
-        LobbyUIManager lobbyUIManager = FindObjectOfType<LobbyUIManager>();
-        if (lobbyUIManager != null)
-        {
-            // LobbyUIManager의 메서드 호출
-            lobbyUIManager.LoadAndSetCookieImage(res.NowCookieId);
-        }
-        else
-        {
-            Debug.LogError("LobbyUIManager not found.");
-        }
+        LobbyUIManager.Instance.LoadAndSetCookieImage(res.NowCookieId);
     }
 }

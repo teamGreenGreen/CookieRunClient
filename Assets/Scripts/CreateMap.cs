@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions; 
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.SceneManagement;
 using System.IO;
-using UnityEditor.Build.Content;
+
+
 
 public class CreateMap : MonoBehaviour
 {
@@ -118,8 +118,9 @@ public class CreateMap : MonoBehaviour
             }
 
             string prefabPath = "Assets/Resources/Obj/" + values[(int)EObjectInfo.Name] + ".prefab";
-            PrefabUtility.SaveAsPrefabAsset(newObject, prefabPath);
-
+#if UNITY_EDITOR
+            UnityEditor.PrefabUtility.SaveAsPrefabAsset(newObject, prefabPath);
+#endif
             Destroy(newObject);
         }
     }

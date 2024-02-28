@@ -13,10 +13,10 @@ using Cysharp.Threading.Tasks;
 public class HttpManager : MonoBehaviour
 {
     private static HttpManager instance;
-    public const string GAME_SERVER_URL = "https://localhost:7270";
-    public const string AUTH_SERVER_URL = "https://localhost:7034";
+    public const string GAME_SERVER_URL = "https://www.cookierun.org";
+    public const string AUTH_SERVER_URL = "https://www.cookierun.org/auth-server";
 
-    public string ServerURL { get; set; } = "https://localhost:7270";
+    public string ServerURL { get; set; } = "https://www.cookierun.org";
 
     public Int64 userId;
     public Int64 uid;

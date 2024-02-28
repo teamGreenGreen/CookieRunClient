@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using System.IO;
 using static CreateMap;
@@ -99,6 +98,7 @@ public class Player : MonoBehaviour
         if(cookieName == "0")
         {
             cookieName = "Brave";
+            GameManager.Instance.currentCookieId = 1;
         }
 
         if (cookieNameEnum > ECookieName.End)
