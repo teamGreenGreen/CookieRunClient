@@ -12,8 +12,6 @@ using Assets.Scripts.DAO.GameServer;
 public class FriendRequestDeny : MonoBehaviour
 {
     [SerializeField]
-    public GameObject ErrorPrefab;
-    [SerializeField]
     private TextMeshProUGUI requestIdTxt;
     public async void OnClick()
     {
@@ -26,25 +24,7 @@ public class FriendRequestDeny : MonoBehaviour
 
         if (res.Result == 0)
         {
-            GameObject warningPrefab = Instantiate(ErrorPrefab);
-
-            Transform alertTxtTransform = warningPrefab.transform.Find("Alert_Txt");
-            TextMeshProUGUI alertText = alertTxtTransform.GetComponentInChildren<TextMeshProUGUI>();
-            alertText.text = "요청을 거절했습니다.";
-
-            Canvas canvas = GetComponentInParent<Canvas>();
-
-            if (canvas != null)
-            {
-                RectTransform prefabRectTransform = warningPrefab.GetComponent<RectTransform>();
-                prefabRectTransform.SetParent(canvas.transform, false);
-                prefabRectTransform.localPosition = Vector3.zero;
-                warningPrefab.transform.SetParent(canvas.transform, false);
-            }
-            else
-            {
-                Debug.LogError("스크립트가 붙은 객체의 상단 부모에 캔버스가 없습니다.");
-            }
+            GameManager.Instance.OnMessage("요청을 거절했습니다.");
             return;
         }
         else
